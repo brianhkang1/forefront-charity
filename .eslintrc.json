@@ -3,9 +3,16 @@
     "next/core-web-vitals",
     "next/typescript",
     "next",
-    //Below is for https://www.npmjs.com/package/eslint-plugin-tailwindcss
+    //Docs: https://www.npmjs.com/package/eslint-plugin-tailwindcss
     "plugin:tailwindcss/recommended",
-    //Below is for https://github.com/prettier/eslint-config-prettier
+    //Docs: https://github.com/prettier/eslint-config-prettier
     "prettier"
+  ],
+  "overrides": [
+    {
+      "files": "tests/**",
+      //Docs: https://github.com/playwright-community/eslint-plugin-playwright#readme
+      "extends": "plugin:playwright/recommended"
+    }
   ]
 }
