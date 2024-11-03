@@ -4,7 +4,13 @@
  */
 const config = {
   singleQuote: true,
-  plugins: ['prettier-plugin-tailwindcss'],
+  importOrder: ['<THIRD_PARTY_MODULES>', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+  plugins: [
+    'prettier-plugin-tailwindcss',
+    '@trivago/prettier-plugin-sort-imports',
+  ],
 };
 
 export default config;
