@@ -4,10 +4,9 @@ import { google } from 'googleapis';
 
 const getDriveFiles = async (accessToken: string) => {
   const auth = new google.auth.OAuth2();
-  const drive = google.drive({ version: 'v3', auth });
-
   auth.setCredentials({ access_token: accessToken });
 
+  const drive = google.drive({ version: 'v3', auth });
   const response = await drive.files.list({
     q: "'your-folder-id' in parents",
     fields: 'files(id, name, mimeType, webContentLink)',

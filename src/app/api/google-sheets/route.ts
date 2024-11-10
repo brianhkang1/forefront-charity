@@ -4,14 +4,15 @@ import { google } from 'googleapis';
 
 const getSheetData = async (accessToken: string) => {
   const auth = new google.auth.OAuth2();
-  const sheets = google.sheets({ version: 'v4', auth });
-
   auth.setCredentials({ access_token: accessToken });
+
+  const sheets = google.sheets({ version: 'v4', auth });
 
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: 'your-spreadsheet-id',
     range: 'Sheet1!A1:E10',
   });
+
   return response.data.values;
 };
 
