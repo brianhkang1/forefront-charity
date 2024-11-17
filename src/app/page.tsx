@@ -1,4 +1,8 @@
-export default function Home() {
+// import { getGoogleDriveFiles } from './api/google-drive';
+
+export default async function Home() {
+  // const data = await getGoogleDriveFiles();
+
   return (
     <div>
       <main>
