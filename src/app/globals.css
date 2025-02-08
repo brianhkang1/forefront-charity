@@ -1,1 +1,41 @@
 @import 'tailwindcss';
+
+@theme {
+  /* removes Tailwind default color palette */
+  --color-*: initial;
+
+  --color-forefront-text: #333333;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light-gray: #bfbfbf;
+  --color-gray: #808080;
+  --color-dark-gray: #404040;
+  --color-link: #0000ff;
+
+  --color-teal-100: #cef5f5;
+  --color-teal-200: #9fece9;
+  --color-teal-300: #6fe2df;
+  --color-teal-400: #40d9d4;
+  --color-teal-500: #57c5c7;
+  --color-teal-600: #0ca5a1;
+  --color-teal-700: #0a7c79;
+  --color-teal-800: #055350;
+  --color-teal-900: #042928;
+
+  --color-forefront-water: #0082c8;
+  --color-forefront-education: #f4bb27;
+  --color-forefront-medical: #e45455;
+  --color-forefront-empowerment: #8b5aa5;
+}
+
+/* 
+  Use @theme inline when defining colors that reference other colors. 
+  Source: https://tailwindcss.com/docs/colors#referencing-other-variables 
+*/
+@theme inline {
+  --color-forefront-teal: var(--color-teal-500);
+}
+
+.radix-themes {
+  color: var(--color-forefront-text);
+}

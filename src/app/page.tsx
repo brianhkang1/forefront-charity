@@ -5,7 +5,7 @@ export default async function Home() {
 
   return (
     <div>
-      <main className='m-8'>
+      <main>
         <h1>Hello Forefront Charity</h1>
       </main>
     </div>
