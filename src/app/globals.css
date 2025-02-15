@@ -35,7 +35,3 @@
 @theme inline {
   --color-forefront-teal: var(--color-teal-500);
 }
-
-.radix-themes {
-  color: var(--color-forefront-text);
-}
