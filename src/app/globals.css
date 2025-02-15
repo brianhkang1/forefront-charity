@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* removes Tailwind default color palette */
+  /* removes Tailwind default color palette and font */
   --color-*: initial;
 
   --color-forefront-text: #333333;
