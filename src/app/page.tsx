@@ -2,6 +2,7 @@
 import Button from '@/components/Button';
 import Title from '@/components/Title';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Home | FOREFRONT Charity',
@@ -18,7 +19,8 @@ export default async function Home() {
         <h2>Hello Forefront Charity</h2>
         <h3>Hello Forefront Charity</h3>
         <p>Hello Forefront Charity</p>
-        <a>Hello Forefront Charity</a>
+
+        <Link href='/'>Hello</Link>
 
         <div className='mt-1'>
           <Button>Test</Button>
