@@ -1,6 +1,11 @@
 // import { getGoogleDriveFiles } from './api/google-drive';
 import Button from '@/components/Button';
 import Title from '@/components/Title';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home | FOREFRONT Charity',
+};
 
 export default async function Home() {
   // const data = await getGoogleDriveFiles();
