@@ -1,8 +1,16 @@
 @import 'tailwindcss';
 
 @theme {
-  /* removes Tailwind default color palette and font */
+  /* Removes Tailwind default color palette and font */
   --color-*: initial;
+  --font-*: initial;
+  --default-font-*: initial;
+  --default-mono-font-*: initial;
+  --default-font-family: var(--font-mulish);
+
+  /* Overrides Tailwind default text-6xl values */
+  --text-6xl: 4rem;
+  --text-6xl--line-height: 1;
 
   --color-forefront-text: #333333;
   --color-white: #ffffff;
@@ -34,4 +42,36 @@
 */
 @theme inline {
   --color-forefront-teal: var(--color-teal-500);
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--text-4xl--line-height);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--text-2xl--line-height);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--text-lg--line-height);
+  }
+
+  p {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--text-base--line-height);
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
