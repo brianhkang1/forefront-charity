@@ -1,16 +1,15 @@
-// import { getGoogleDriveFiles } from './api/google-drive';
 import Button from '@/components/Button';
 import Title from '@/components/Title';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const revalidate = 3600; // Cache the page for 1 hour
 
 export const metadata: Metadata = {
   title: 'Home | FOREFRONT Charity',
 };
 
 export default async function Home() {
-  // const data = await getGoogleDriveFiles();
-
   return (
     <div>
       <main>

@@ -1,12 +1,12 @@
 import { google } from 'googleapis';
 
+const SCOPES = ['https://www.googleapis.com/auth/drive.readonly'];
+
 const auth = new google.auth.GoogleAuth({
-  projectId: process.env.GOOGLE_SERVICE_ACCOUNT_PROJECT_ID,
-  credentials: {
-    client_email: process.env.GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL,
-    private_key: process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY,
-  },
-  scopes: ['https://www.googleapis.com/auth/drive'],
+  credentials: JSON.parse(
+    process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS_JSON || '{}',
+  ),
+  scopes: SCOPES,
 });
 
 export const GoogleDriveService = google.drive({

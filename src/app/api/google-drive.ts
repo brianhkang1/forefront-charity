@@ -1,36 +1,58 @@
 import { GoogleDriveService } from './util';
 
-export const getGoogleDriveFiles = async () => {
+export async function getGoogleDriveFiles(folderId: string | undefined) {
+  if (!folderId) return;
+
   try {
     const response = await GoogleDriveService.files.list({
-      q: "'1sJy3UnQg14zJXj9F8dA0fTsSUsK4nOyw' in parents",
-      spaces: 'drive',
-      includeItemsFromAllDrives: true,
-      supportsAllDrives: true,
-      // fields: 'files(id, name, mimeType, webContentLink)',
+      q: `'${folderId}' in parents and trashed=false`,
+      fields: 'files(id, name, mimeType)',
+      supportsAllDrives: true, // Needed for shared drives
+      includeItemsFromAllDrives: true, // Needed for shared drives
     });
 
-    console.log('hello getGoogleDriveFiles', response);
-    return response.data.files;
-  } catch (err) {
-    console.error(err);
+    return response?.data?.files;
+  } catch (error) {
+    console.error('Error fetching files:', error);
   }
-};
+}
 
-export const downloadGoogleDriveFiles = async () => {
+export async function getGoogleDrivePhotos(folderId: string | undefined) {
+  if (!folderId) return;
+
   try {
-    const response = await GoogleDriveService.files.get(
-      {
-        fileId: '',
-        alt: 'media',
-        supportsAllDrives: true,
-      },
-      { responseType: 'stream' },
+    const files = await getGoogleDriveFiles(folderId);
+    if (!files?.length) return [];
+
+    // Generate temporary URLs for each image
+    const images = await Promise.all(
+      files.map(async (file) => {
+        if (!file.id) return;
+
+        const response = await GoogleDriveService.files.get(
+          {
+            fileId: file.id,
+            alt: 'media',
+          },
+          {
+            responseType: 'arraybuffer',
+          },
+        );
+
+        const base64 = Buffer.from(response.data as ArrayBuffer).toString(
+          'base64',
+        );
+
+        return {
+          id: file.id,
+          name: file.name,
+          url: `data:image/jpeg;base64,${base64}`,
+        };
+      }),
     );
 
-    console.log('hello downloadGoogleDriveFiles', response);
-    return response;
-  } catch (err) {
-    console.error(err);
+    return images;
+  } catch (error) {
+    console.error('Error fetching photos:', error);
   }
-};
+}
