@@ -1,3 +1,5 @@
+import { parseError } from '@/utils/error';
+
 import { GoogleSheetsService } from './util';
 
 export const getSheetData = async () => {
@@ -7,9 +9,8 @@ export const getSheetData = async () => {
       range: 'Sheet1!A1:E10',
     });
 
-    console.log('hello getSheetData', response);
     return response.data.values;
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error('Error fetching sheet: ', parseError(error).message);
   }
 };

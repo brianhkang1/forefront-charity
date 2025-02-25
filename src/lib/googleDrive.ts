@@ -1,3 +1,4 @@
+import { parseError } from '@/utils/error';
 import { Readable } from 'stream';
 
 import { GoogleDriveService } from './util';
@@ -15,7 +16,7 @@ export async function getGoogleDriveFiles(folderId: string | undefined) {
 
     return response?.data?.files;
   } catch (error) {
-    console.error('Error fetching files:', error);
+    console.error('Error fetching files: ', parseError(error).message);
   }
 }
 
@@ -55,7 +56,7 @@ export async function getGoogleDrivePhotos(folderId: string | undefined) {
 
     return images;
   } catch (error) {
-    console.error('Error fetching photos:', error);
+    console.error('Error fetching photos: ', parseError(error).message);
   }
 }
 
@@ -77,6 +78,6 @@ export async function downloadGoogleDriveFile(fileId: string) {
       stream.on('error', reject);
     });
   } catch (error) {
-    console.error('Error downloading file:', error);
+    console.error('Error downloading file: ', parseError(error).message);
   }
 }

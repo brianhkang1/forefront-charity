@@ -2,6 +2,7 @@
 
 import { downloadAnnualReport } from '@/action/serverActions';
 import Select from '@/components/Select';
+import { parseError } from '@/utils/error';
 import React from 'react';
 
 interface Props {
@@ -33,17 +34,15 @@ export default function SelectAnnualReport({ annualReportOptions }: Props) {
         URL.revokeObjectURL(fileURL);
       }
     } catch (error) {
-      console.error('Select annual report failed:', error);
+      console.error('Select annual report failed: ', parseError(error).message);
     }
   };
 
   return (
-    <>
-      <Select
-        ariaLabel='Select Annual Reports'
-        options={annualReportOptions}
-        onValueChange={onSelectAnnualReport}
-      />
-    </>
+    <Select
+      ariaLabel='Select Annual Reports'
+      options={annualReportOptions}
+      onValueChange={onSelectAnnualReport}
+    />
   );
 }

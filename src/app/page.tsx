@@ -2,7 +2,6 @@ import Button from '@/components/Button';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
 import Title from '@/components/Title';
 import { getGoogleDriveFiles } from '@/lib/googleDrive';
-import { DownloadGoogleDriveFileArgs } from '@/lib/types';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 

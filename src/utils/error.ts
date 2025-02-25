@@ -11,7 +11,7 @@ function isErrorWithMessage(error: unknown): error is ErrorWithMessage {
   );
 }
 
-export function getError(maybeError: unknown) {
+export function parseError(maybeError: unknown) {
   if (isErrorWithMessage(maybeError)) {
     return maybeError;
   }
