@@ -1,6 +1,6 @@
 import { parseError } from '@/utils/error';
 
-import { GoogleSheetsService } from './util';
+import { GoogleSheetsService } from './googleService';
 
 export const getSheetData = async () => {
   try {

@@ -5,7 +5,8 @@ import { getGoogleDriveFiles } from '@/lib/googleDrive';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const revalidate = 3600; // Cache the page for 1 hour
+// Default value, but explicitly set to ensure SSG
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: 'Home | FOREFRONT Charity',

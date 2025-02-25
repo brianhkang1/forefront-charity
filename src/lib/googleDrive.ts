@@ -1,7 +1,7 @@
 import { parseError } from '@/utils/error';
 import { Readable } from 'stream';
 
-import { GoogleDriveService } from './util';
+import { GoogleDriveService } from './googleService';
 
 export async function getGoogleDriveFiles(folderId: string | undefined) {
   if (!folderId) return;

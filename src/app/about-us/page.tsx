@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 import { getGoogleDrivePhotos } from '../../lib/googleDrive';
 
-export const revalidate = 3600; // Cache the page for 1 hour
+// Default value, but explicitly set to ensure SSG
+export const revalidate = false;
 
 export const metadata: Metadata = {
   title: 'About Us | FOREFRONT Charity',
