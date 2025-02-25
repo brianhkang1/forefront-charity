@@ -1,3 +1,5 @@
+import { Readable } from 'stream';
+
 import { GoogleDriveService } from './util';
 
 export async function getGoogleDriveFiles(folderId: string | undefined) {
@@ -54,5 +56,27 @@ export async function getGoogleDrivePhotos(folderId: string | undefined) {
     return images;
   } catch (error) {
     console.error('Error fetching photos:', error);
+  }
+}
+
+export async function downloadGoogleDriveFile(fileId: string) {
+  try {
+    const fileStream = await GoogleDriveService.files.get(
+      { fileId, alt: 'media' },
+      { responseType: 'stream' },
+    );
+    const stream: Readable = fileStream.data;
+
+    return new Promise<Blob>((resolve, reject) => {
+      const chunks: BlobPart[] = [];
+
+      stream.on('data', (chunk) => chunks.push(chunk));
+      stream.on('end', () => {
+        resolve(new Blob(chunks, { type: 'application/pdf' }));
+      });
+      stream.on('error', reject);
+    });
+  } catch (error) {
+    console.error('Error downloading file:', error);
   }
 }
