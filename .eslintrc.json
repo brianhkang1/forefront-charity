@@ -3,15 +3,12 @@
     "next/core-web-vitals",
     "next/typescript",
     "next",
-    //Docs: https://github.com/prettier/eslint-config-prettier
-    "prettier"
-    // TODO: install eslint-plugin-tailwindcss once tailwind v4.0.0 is compatible
+    "prettier" // https://github.com/prettier/eslint-config-prettier
   ],
   "overrides": [
     {
       "files": "tests/**",
-      //Docs: https://github.com/playwright-community/eslint-plugin-playwright#readme
-      "extends": "plugin:playwright/recommended"
+      "extends": "plugin:playwright/recommended" // https://github.com/playwright-community/eslint-plugin-playwright#readme
     }
   ]
 }
