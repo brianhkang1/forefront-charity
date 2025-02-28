@@ -1,3 +1,5 @@
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
 import { Mulish } from 'next/font/google';
 
@@ -25,9 +27,13 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${mulish.variable} antialiased text-forefront-text`}
+      className={`${mulish.variable} text-forefront-text antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

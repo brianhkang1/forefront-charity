@@ -1,7 +1,7 @@
 import Button from '@/components/Button';
-import SelectAnnualReport from '@/components/SelectAnnualReport';
+// import SelectAnnualReport from '@/components/SelectAnnualReport';
 import Title from '@/components/Title';
-import { getGoogleDriveFiles } from '@/lib/googleDrive';
+// import { getGoogleDriveFiles } from '@/lib/googleDrive';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const annualReportsData = await getGoogleDriveFiles(
-    process.env.ANNUAL_REPORTS_FILES_FOLDER_ID,
-  );
+  // const annualReportsData = await getGoogleDriveFiles(
+  //   process.env.ANNUAL_REPORTS_FILES_FOLDER_ID,
+  // );
 
-  const annualReportOptions = annualReportsData?.map((report) => ({
-    value: report.id,
-    label: report.name,
-    mimeType: report.mimeType,
-  }));
+  // const annualReportOptions = annualReportsData?.map((report) => ({
+  //   value: report.id,
+  //   label: report.name,
+  //   mimeType: report.mimeType,
+  // }));
 
   return (
     <main>
@@ -37,11 +37,11 @@ export default async function Home() {
         <Button>Test</Button>
       </div>
 
-      {!!annualReportOptions && (
+      {/* {!!annualReportOptions && (
         <div>
           <SelectAnnualReport annualReportOptions={annualReportOptions} />
         </div>
-      )}
+      )} */}
     </main>
   );
 }
