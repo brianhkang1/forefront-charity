@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '@/components/Image';
 import React from 'react';
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className='justify-self-center'>now</div>
       <div className='justify-self-end'>
         <Image
-          src='/platinumTransparency.png'
+          src='/platinumTransparency.svg'
           alt='Platinum Transparency Logo'
           width={108}
           height={108}

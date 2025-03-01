@@ -18,7 +18,7 @@ interface Props {
 const Select = ({ ariaLabel = 'Select', options, onValueChange }: Props) => (
   <RadixSelect.Root onValueChange={onValueChange}>
     <RadixSelect.Trigger
-      className='inline-flex h-[35px] items-center justify-center gap-[5px] rounded bg-white px-[15px] text-[13px] leading-none text-violet11 shadow-[0_2px_10px] shadow-black/10 outline-none hover:bg-mauve3 focus:shadow-[0_0_0_2px] focus:shadow-black data-[placeholder]:text-violet9'
+      className='text-violet11 hover:bg-mauve3 data-[placeholder]:text-violet9 inline-flex h-[35px] items-center justify-center gap-[5px] rounded bg-white px-[15px] text-[13px] leading-none shadow-[0_2px_10px] shadow-black/10 outline-none focus:shadow-[0_0_0_2px] focus:shadow-black'
       aria-label={ariaLabel}
     >
       <RadixSelect.Value placeholder='Select' />
@@ -29,19 +29,19 @@ const Select = ({ ariaLabel = 'Select', options, onValueChange }: Props) => (
 
     <RadixSelect.Portal>
       <RadixSelect.Content className='overflow-hidden rounded-md bg-white shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]'>
-        <RadixSelect.ScrollUpButton className='flex h-[25px] cursor-default items-center justify-center bg-white text-violet11'>
+        <RadixSelect.ScrollUpButton className='text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white'>
           <ChevronUpIcon />
         </RadixSelect.ScrollUpButton>
 
         <RadixSelect.Viewport className='p-[5px]'>
           {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <SelectItem key={option.value} value={option.value as string}>
               {option.label}
             </SelectItem>
           ))}
         </RadixSelect.Viewport>
 
-        <RadixSelect.ScrollDownButton className='flex h-[25px] cursor-default items-center justify-center bg-white text-violet11'>
+        <RadixSelect.ScrollDownButton className='text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white'>
           <ChevronDownIcon />
         </RadixSelect.ScrollDownButton>
       </RadixSelect.Content>
@@ -56,7 +56,7 @@ export const SelectItem = ({
   return (
     <RadixSelect.Item
       className={
-        'relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[35px] text-[13px] leading-none text-violet11 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 data-[highlighted]:outline-none'
+        'text-violet11 data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 relative flex h-[25px] items-center rounded-[3px] pr-[35px] pl-[25px] text-[13px] leading-none select-none data-[disabled]:pointer-events-none data-[highlighted]:outline-none'
       }
       {...props}
     >

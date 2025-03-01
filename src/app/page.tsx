@@ -1,9 +1,6 @@
-import Button from '@/components/Button';
 // import SelectAnnualReport from '@/components/SelectAnnualReport';
-import Title from '@/components/Title';
 // import { getGoogleDriveFiles } from '@/lib/googleDrive';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 // Default value, but explicitly set to ensure SSG
 export const revalidate = false;
@@ -12,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Home | FOREFRONT Charity',
 };
 
-export default async function Home() {
+export default async function HomePage() {
   // const annualReportsData = await getGoogleDriveFiles(
   //   process.env.ANNUAL_REPORTS_FILES_FOLDER_ID,
   // );
@@ -24,24 +21,12 @@ export default async function Home() {
   // }));
 
   return (
-    <main>
-      <Title>Hello Forefront Charity</Title>
-      <h1>Hello Forefront Charity</h1>
-      <h2>Hello Forefront Charity</h2>
-      <h3>Hello Forefront Charity</h3>
-      <p>Hello Forefront Charity</p>
-
-      <Link href='/'>Hello</Link>
-
-      <div className='mt-1'>
-        <Button>Test</Button>
-      </div>
-
+    <>
       {/* {!!annualReportOptions && (
         <div>
           <SelectAnnualReport annualReportOptions={annualReportOptions} />
         </div>
       )} */}
-    </main>
+    </>
   );
 }

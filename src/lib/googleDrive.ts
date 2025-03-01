@@ -20,16 +20,20 @@ export async function getGoogleDriveFiles(folderId: string | undefined) {
   }
 }
 
-export async function getGoogleDrivePhotos(folderId: string | undefined) {
+export async function getGoogleDriveImages(folderId: string | undefined) {
   if (!folderId) return;
 
   try {
     const files = await getGoogleDriveFiles(folderId);
     if (!files?.length) return [];
 
+    const filteredFiles = files.filter((file) => {
+      return file.mimeType?.startsWith('image/');
+    });
+
     // Generate temporary URLs for each image
     const images = await Promise.all(
-      files.map(async (file) => {
+      filteredFiles.map(async (file) => {
         if (!file.id) return;
 
         const response = await GoogleDriveService.files.get(

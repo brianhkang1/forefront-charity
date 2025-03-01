@@ -72,9 +72,4 @@
     line-height: var(--text-base--line-height);
     font-weight: var(--font-weight-normal);
   }
-
-  a {
-    color: var(--color-link);
-    text-decoration: underline;
-  }
 }
