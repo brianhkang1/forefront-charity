@@ -1,4 +1,7 @@
+'use server';
+
 import { parseError } from '@/utils/error';
+import 'server-only';
 import { Readable } from 'stream';
 
 import { GoogleDriveService } from './googleService';

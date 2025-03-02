@@ -1,6 +1,10 @@
 import { google } from 'googleapis';
+import 'server-only';
 
-const SCOPES = ['https://www.googleapis.com/auth/drive.readonly'];
+const SCOPES = [
+  'https://www.googleapis.com/auth/drive.readonly',
+  'https://www.googleapis.com/auth/spreadsheets',
+];
 
 const auth = new google.auth.GoogleAuth({
   credentials: JSON.parse(

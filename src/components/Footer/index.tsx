@@ -1,12 +1,23 @@
 import Image from '@/components/Image';
-import React from 'react';
+
+import SignupForm from '../SignupForm';
 
 export default function Footer() {
   return (
-    <footer className='bg-teal-logo-400 grid h-57.75 grid-cols-3 items-center gap-43.5 p-12'>
-      <div className='justify-self-start'>hello</div>
-      <div className='justify-self-center'>now</div>
-      <div className='justify-self-end'>
+    <footer className='bg-teal-logo-400 flex h-57.75 items-center justify-between px-12'>
+      <div>
+        <SignupForm />
+      </div>
+
+      <div className='min-w-83.75 text-center'>
+        <div>© 2024 by FOREFRONT Charity</div>
+        <div>1178 Broadway #3107</div>
+        <div>New York, NY, 10001</div>
+        <div>contact@goforefront.org</div>
+        <div>US 501(c)(3) Public Charity, EIN 47-3373120</div>
+      </div>
+
+      <div>
         <Image
           src='/platinumTransparency.svg'
           alt='Platinum Transparency Logo'

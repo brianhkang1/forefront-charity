@@ -4,7 +4,6 @@ import {
   ChevronUpIcon,
 } from '@radix-ui/react-icons';
 import { Select as RadixSelect } from 'radix-ui';
-import React from 'react';
 
 interface Props {
   ariaLabel?: string;

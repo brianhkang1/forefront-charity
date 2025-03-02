@@ -4,9 +4,15 @@ import type { Metadata } from 'next';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Approach | FOREFRONT Charity',
+  title: 'Approach',
 };
 
 export default async function ApproachPage() {
-  return <>Approach page</>;
+  return (
+    <>
+      <div className='flex h-screen items-center justify-center'>
+        Approach page
+      </div>
+    </>
+  );
 }

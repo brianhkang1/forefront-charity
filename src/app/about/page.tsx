@@ -9,10 +9,11 @@ import { getGoogleDriveImages } from '../../lib/googleDrive';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'About Us | FOREFRONT Charity',
+  title: 'About',
 };
 
 export default async function AboutPage() {
+  // TODO: fetch all in parallel, not sequential
   const teamMemberImages = await getGoogleDriveImages(
     process.env.TEAM_MEMBERS_IMAGES_FOLDER_ID,
   );

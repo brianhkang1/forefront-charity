@@ -1,6 +1,5 @@
 import Image from '@/components/Image';
 import Link from 'next/link';
-import React from 'react';
 
 const LINKS = [
   { label: 'Home', href: '/' },

@@ -1,9 +1,8 @@
 'use client';
 
-import { downloadAnnualReport } from '@/action/serverActions';
 import Select from '@/components/Select';
+import { downloadGoogleDriveFile } from '@/lib/googleDrive';
 import { parseError } from '@/utils/error';
-import React from 'react';
 
 interface Props {
   annualReportOptions: {
@@ -16,7 +15,7 @@ interface Props {
 export default function SelectAnnualReport({ annualReportOptions }: Props) {
   const onSelectAnnualReport = async (fileId: string) => {
     try {
-      const fileBlob = await downloadAnnualReport(fileId);
+      const fileBlob = await downloadGoogleDriveFile(fileId);
 
       if (!!fileBlob) {
         const file = annualReportOptions.find((report) => {

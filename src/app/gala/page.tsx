@@ -4,14 +4,13 @@ import type { Metadata } from 'next';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Gala | FOREFRONT Charity',
+  title: 'Gala',
 };
 
 export default async function GalaPage() {
   return (
     <>
-      <div className='h-36' />
-      Gala page
+      <div className='flex h-screen items-center justify-center'>Gala page</div>
     </>
   );
 }

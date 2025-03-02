@@ -1,5 +1,4 @@
 import NextImage, { ImageProps } from 'next/image';
-import React from 'react';
 
 type Props = {
   children?: React.ReactNode;
