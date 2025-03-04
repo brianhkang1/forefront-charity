@@ -54,9 +54,7 @@ export const SelectItem = ({
 }: RadixSelect.SelectItemProps) => {
   return (
     <RadixSelect.Item
-      className={
-        'text-violet11 data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 relative flex h-[25px] items-center rounded-[3px] pr-[35px] pl-[25px] text-[13px] leading-none select-none data-[disabled]:pointer-events-none data-[highlighted]:outline-none'
-      }
+      className='text-violet11 data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 relative flex h-[25px] items-center rounded-[3px] pr-[35px] pl-[25px] text-[13px] leading-none select-none data-[disabled]:pointer-events-none data-[highlighted]:outline-none'
       {...props}
     >
       <RadixSelect.ItemText>{children}</RadixSelect.ItemText>

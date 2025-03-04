@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 export default function Title({
   children,
   className,
@@ -5,5 +7,7 @@ export default function Title({
   className?: string;
   children: React.ReactNode;
 }) {
-  return <div className={`text-6xl font-bold ${className}`}>{children}</div>;
+  return (
+    <div className={clsx('text-6xl font-bold', className)}>{children}</div>
+  );
 }

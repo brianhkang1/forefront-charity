@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import NextImage, { ImageProps } from 'next/image';
 
 type Props = {
@@ -20,7 +21,7 @@ export default function Image({
       <NextImage
         fill
         sizes='100%'
-        className={`object-cover ${className}`}
+        className={clsx('object-cover', className)}
         {...props}
       />
       {children}

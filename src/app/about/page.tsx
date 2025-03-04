@@ -1,5 +1,6 @@
 import Image from '@/components/Image';
 import Title from '@/components/Title';
+import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 
@@ -14,17 +15,37 @@ export const metadata: Metadata = {
 
 export default async function AboutPage() {
   // TODO: fetch all in parallel, not sequential
-  const teamMemberImages = await getGoogleDriveImages(
+  const teamMemberImagesData = getGoogleDriveImages(
     process.env.TEAM_MEMBERS_IMAGES_FOLDER_ID,
   );
 
-  const aboutPageImages = await getGoogleDriveImages(
+  const teamMemberBiosData = getGoogleSheetsData(
+    process.env.TEAM_MEMBERS_BIO_SHEETS_ID,
+  );
+
+  const aboutPageImagesData = getGoogleDriveImages(
     process.env.ABOUT_PAGE_IMAGES_FOLDER_ID,
+  );
+
+  const [teamMemberImages, teamMemberBios, aboutPageImages] = await Promise.all(
+    [teamMemberImagesData, teamMemberBiosData, aboutPageImagesData],
   );
 
   const heroImage = findImage(aboutPageImages, 'hero');
   const image1 = findImage(aboutPageImages, 'image 1');
   const mockBoardImages = teamMemberImages?.slice(0, 6);
+  const teamMemberImagesByName =
+    teamMemberImages
+      ?.filter((image): image is { id: string; url: string; name: string } => {
+        return !!image?.name && !!image?.url;
+      })
+      .reduce(
+        (prev, curr) => {
+          prev[curr.name] = curr;
+          return prev;
+        },
+        {} as Record<string, { id: string; url: string; name: string }>,
+      ) || {};
 
   return (
     <>
@@ -105,18 +126,25 @@ export default async function AboutPage() {
       <section>
         <h1 className='my-9 text-center'>OUR TEAM</h1>
         <div className='mx-auto flex max-w-264 flex-wrap justify-center gap-4'>
-          {teamMemberImages?.map((image) => (
-            <div className='w-[154px]' key={image?.name || ''}>
-              <Image
-                className='object-top'
-                src={image?.url || ''}
-                width='100%'
-                height={154}
-                alt={image?.name || ''}
-              />
-              <h3 className='mt-3 text-center break-words'>{image?.name}</h3>
-            </div>
-          ))}
+          {teamMemberBios?.map(([name, bio]) => {
+            const teamMember = teamMemberImagesByName[name];
+
+            return (
+              <div className='w-[154px]' key={teamMember.name}>
+                <Image
+                  className='object-top'
+                  src={teamMember.url}
+                  width='100%'
+                  height={154}
+                  alt={teamMember.name}
+                />
+                <h3 className='mt-3 text-center break-words'>
+                  {teamMember.name}
+                </h3>
+                <span className='hidden'>{bio}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

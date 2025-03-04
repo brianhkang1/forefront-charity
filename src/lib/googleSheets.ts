@@ -5,14 +5,16 @@ import 'server-only';
 
 import { GoogleSheetsService } from './googleService';
 
-export async function getSheetData() {
+export async function getGoogleSheetsData(spreadsheetId: string | undefined) {
+  if (!spreadsheetId) return;
+
   try {
     const response = await GoogleSheetsService.spreadsheets.values.get({
-      spreadsheetId: '',
-      range: 'Sheet1!A1:E10',
+      spreadsheetId,
+      range: 'Sheet1',
     });
 
-    return response.data.values;
+    return response?.data?.values;
   } catch (error) {
     console.error('Error fetching sheet: ', parseError(error).message);
   }
@@ -45,7 +47,7 @@ export async function postToGoogleSheets(
       return { success: true, message: 'Successfully posted data to Sheets' };
     }
   } catch (error) {
-    console.error('Error posting data to Sheets:', error);
+    console.error('Error posting data to Sheets:', parseError(error).message);
     return { success: false, message: 'Error posting data to Sheets' };
   }
 }

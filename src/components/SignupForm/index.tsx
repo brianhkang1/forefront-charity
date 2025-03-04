@@ -12,7 +12,7 @@ export default function SignupForm() {
   );
 
   //TODO: add success toast
-  console.log('hello state', state);
+  console.log('hello SignupForm state', state);
 
   return (
     <>
