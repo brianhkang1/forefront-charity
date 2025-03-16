@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  // TODO: fetch all in parallel, not sequential
   const teamMemberImagesData = getGoogleDriveImages(
     process.env.TEAM_MEMBERS_IMAGES_FOLDER_ID,
   );
@@ -49,20 +48,18 @@ export default async function AboutPage() {
 
   return (
     <>
-      {!!heroImage && (
-        <section>
-          <Image
-            width='100%'
-            height={947}
-            src={heroImage.url}
-            alt='About Page Hero Image'
-          >
-            <Title className='absolute top-36 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
-              UNITED IN COMPASSION
-            </Title>
-          </Image>
-        </section>
-      )}
+      <section>
+        <Image
+          width='100%'
+          height={947}
+          src={heroImage?.url || ''}
+          alt='About Page Hero Image'
+        >
+          <Title className='absolute top-36 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
+            UNITED IN COMPASSION
+          </Title>
+        </Image>
+      </section>
 
       <section>
         <Image

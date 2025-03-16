@@ -10,7 +10,7 @@ type Props = {
 
 export default function Image({
   children,
-  className = ' ',
+  className,
   width,
   height,
   containerStyle = {},
