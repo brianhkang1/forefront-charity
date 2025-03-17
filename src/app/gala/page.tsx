@@ -45,7 +45,7 @@ export default async function GalaPage() {
       <section>
         <Image
           width='100%'
-          height={743}
+          height={700}
           src={heroImage?.url || ''}
           alt='Gala Page Hero Image'
         >
@@ -85,7 +85,7 @@ export default async function GalaPage() {
             className='from-gold to-dark-gold h-[411px] w-[348px] rounded-md bg-gradient-to-r p-[3px]'
           >
             <div className='relative h-full w-full rounded bg-black px-[23px] pt-[15px] pb-[54px]'>
-              <div className='text-5xl font-bold'>{title}</div>
+              <div className='w-min text-4xl font-bold'>{title}</div>
 
               {/* line divider */}
               <div className='mt-[24px] mb-[30px] h-[1px] w-[236px] rounded-lg bg-white' />

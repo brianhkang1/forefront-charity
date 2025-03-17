@@ -2,15 +2,24 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
-import { Mulish } from 'next/font/google';
+import { Libre_Baskerville, Montserrat } from 'next/font/google';
 
 import './globals.css';
 
-// If loading a variable font, you don't need to specify the font weight
-const mulish = Mulish({
+const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-mulish',
+  weight: 'variable',
+  style: ['normal', 'italic'],
+  variable: '--font-montserrat',
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ['latin'],
+  display: 'swap',
+  style: ['normal', 'italic'],
+  weight: ['400', '700'],
+  variable: '--font-libre-baskerville',
 });
 
 export const metadata: Metadata = {
@@ -28,7 +37,11 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={clsx('text-forefront-text antialiased', mulish.variable)}
+      className={clsx(
+        'text-forefront-text antialiased',
+        montserrat.variable,
+        libreBaskerville.variable,
+      )}
     >
       <body>
         <Header />

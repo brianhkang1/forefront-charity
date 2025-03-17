@@ -6,7 +6,7 @@
   --font-*: initial;
   --default-font-*: initial;
   --default-mono-font-*: initial;
-  --default-font-family: var(--font-mulish);
+  --default-font-family: var(--font-montserrat);
 
   /* Overrides Tailwind default text-6xl values */
   --text-6xl: 4rem;
@@ -70,6 +70,7 @@
   }
 
   p {
+    font-family: var(--font-libre-baskerville);
     font-size: var(--text-base);
     line-height: var(--text-base--line-height);
     font-weight: var(--font-weight-normal);
