@@ -176,11 +176,13 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section>
+      <section className='mb-8'>
         <h1 className='my-9 text-center'>OUR TEAM</h1>
         <div className='mx-auto flex max-w-264 flex-wrap justify-center gap-4'>
-          {teamMemberBios?.map(([name, bio]) => {
-            const teamMember = teamMemberImagesByName[name];
+          {teamMemberBios?.map(([firstName, lastName, bio]) => {
+            const fullName = `${firstName} ${lastName}`;
+            const teamMember = teamMemberImagesByName[fullName];
+            if (!teamMember) return null;
 
             return (
               <div className='w-[154px]' key={teamMember.name}>
@@ -190,11 +192,15 @@ export default async function AboutPage() {
                   width='100%'
                   height={154}
                   alt={teamMember.name}
-                />
-                <h3 className='mt-3 text-center break-words'>
-                  {teamMember.name}
+                >
+                  <div className='absolute inset-0 h-full overflow-y-auto bg-white p-3 opacity-0 transition-opacity hover:opacity-90'>
+                    <p className='text-center text-xs font-bold'>{bio}</p>
+                  </div>
+                </Image>
+                <h3 className='mt-3 text-center leading-5 break-words'>
+                  <div>{firstName}</div>
+                  <div>{lastName}</div>
                 </h3>
-                <span className='hidden'>{bio}</span>
               </div>
             );
           })}
