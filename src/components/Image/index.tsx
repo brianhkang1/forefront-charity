@@ -6,6 +6,7 @@ type Props = {
   containerStyle?: Record<string, string | number>;
   width: string | number;
   height: string | number;
+  includeOverlay?: boolean;
 } & Omit<ImageProps, 'width' | 'height'>;
 
 export default function Image({
@@ -14,6 +15,7 @@ export default function Image({
   width,
   height,
   containerStyle = {},
+  includeOverlay,
   ...props
 }: Props) {
   return (
@@ -24,6 +26,9 @@ export default function Image({
         className={clsx('object-cover', className)}
         {...props}
       />
+      {includeOverlay && (
+        <div className='absolute inset-0 bg-radial from-transparent to-teal-900' />
+      )}
       {children}
     </div>
   );

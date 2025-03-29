@@ -1,3 +1,6 @@
+import Image from '@/components/Image';
+import { getGoogleDriveImages } from '@/lib/googleDrive';
+import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 
 // Default value, but explicitly set to ensure SSG
@@ -8,11 +11,21 @@ export const metadata: Metadata = {
 };
 
 export default async function ApproachPage() {
+  const approachPageImagesData = await getGoogleDriveImages(
+    process.env.APPROACH_PAGE_IMAGES_FOLDER_ID,
+  );
+
+  const heroImage = findImage(approachPageImagesData, 'hero');
+
   return (
-    <>
-      <div className='flex h-screen items-center justify-center'>
-        Approach page
-      </div>
-    </>
+    <section>
+      <Image
+        includeOverlay
+        width='100%'
+        height={1064}
+        src={heroImage?.url || ''}
+        alt='Approach Page Hero Image'
+      />
+    </section>
   );
 }

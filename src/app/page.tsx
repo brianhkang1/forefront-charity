@@ -1,5 +1,8 @@
 // import SelectAnnualReport from '@/components/SelectAnnualReport';
 // import { getGoogleDriveFiles } from '@/lib/googleDrive';
+import Image from '@/components/Image';
+import { getGoogleDriveImages } from '@/lib/googleDrive';
+import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 
 // Default value, but explicitly set to ensure SSG
@@ -10,6 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
+  const homePageImagesData = await getGoogleDriveImages(
+    process.env.HOME_PAGE_IMAGES_FOLDER_ID,
+  );
+
+  const heroImage = findImage(homePageImagesData, 'hero');
+
   // const annualReportsData = await getGoogleDriveFiles(
   //   process.env.ANNUAL_REPORTS_FILES_FOLDER_ID,
   // );
@@ -21,13 +30,22 @@ export default async function HomePage() {
   // }));
 
   return (
-    <>
-      <div className='flex h-screen items-center justify-center'>Home page</div>
-      {/* {!!annualReportOptions && (
+    <section>
+      <Image
+        includeOverlay
+        width='100%'
+        height={1064}
+        src={heroImage?.url || ''}
+        alt='Home Page Hero Image'
+      />
+    </section>
+  );
+}
+
+{
+  /* {!!annualReportOptions && (
         <div>
           <SelectAnnualReport annualReportOptions={annualReportOptions} />
         </div>
-      )} */}
-    </>
-  );
+      )} */
 }
