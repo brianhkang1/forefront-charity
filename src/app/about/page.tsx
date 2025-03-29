@@ -2,6 +2,7 @@ import Image from '@/components/Image';
 import Title from '@/components/Title';
 import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
+import Z_INDEX from '@/utils/zIndex';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 
@@ -85,7 +86,7 @@ export default async function AboutPage() {
           height={639}
         >
           <div className='flex h-full items-center justify-center gap-19.5'>
-            <div className='z-1 ml-16'>
+            <div className={clsx('ml-16', Z_INDEX.ARROW_BACKGROUND_TEXT)}>
               <h1 className='mb-3'>
                 <div>It all started with a</div>
                 <div>conversation...</div>
@@ -101,7 +102,7 @@ export default async function AboutPage() {
                 in the lives of those we serve.
               </p>
             </div>
-            <div className='z-1 [clip-path:polygon(0%_0%,100%_13%,100%_100%,0%_87%)]'>
+            <div className='[clip-path:polygon(0%_0%,100%_13%,100%_100%,0%_87%)]'>
               {!!image1 && (
                 <Image
                   src={image1.url}
