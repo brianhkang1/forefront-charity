@@ -4,6 +4,7 @@ import Title from '@/components/Title';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 const GOLD_CARDS_METADATA = [
   {
@@ -23,6 +24,7 @@ const GOLD_CARDS_METADATA = [
     description:
       "Can't attend? You can still make a difference! Consider making a donation to help further Forefront's work and create lasting change.",
     buttonLabel: 'Donate',
+    url: 'https://givebutter.com/c/FF10thgala',
   },
 ];
 
@@ -79,7 +81,7 @@ export default async function GalaPage() {
       </section>
 
       <section className='flex justify-center gap-18.75 pb-57 text-white'>
-        {GOLD_CARDS_METADATA.map(({ title, description, buttonLabel }) => (
+        {GOLD_CARDS_METADATA.map(({ title, description, buttonLabel, url }) => (
           <div
             key={title}
             className='from-gold to-dark-gold h-[411px] w-[348px] rounded-md bg-gradient-to-r p-[3px]'
@@ -92,7 +94,13 @@ export default async function GalaPage() {
 
               <div className='leading-[27px]'>{description}</div>
               <Button className='absolute bottom-[48px]' color='bg-dark-gold'>
-                {buttonLabel}
+                <Link
+                  href={url || ''}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                >
+                  {buttonLabel}
+                </Link>
               </Button>
             </div>
           </div>
