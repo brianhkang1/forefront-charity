@@ -20,12 +20,23 @@ export default function Header() {
   const textStyle = `text-${textColor}`;
 
   return (
-    <nav className={clsx('flex gap-12', textStyle)}>
-      {LINKS.map((link) => (
-        <Link key={link.label} href={link.href}>
-          <h2>{link.label}</h2>
-        </Link>
-      ))}
+    <nav className={clsx('flex items-center gap-12', textStyle)}>
+      {LINKS.map(({ label, href }) => {
+        const isActivePage = pathname === href;
+
+        return (
+          <Link
+            key={label}
+            href={href}
+            className={clsx(
+              'py-[8px]',
+              isActivePage && 'border-forefront-teal border-b-3',
+            )}
+          >
+            <h2>{label}</h2>
+          </Link>
+        );
+      })}
     </nav>
   );
 }
