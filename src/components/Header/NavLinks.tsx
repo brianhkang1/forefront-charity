@@ -20,7 +20,7 @@ export default function Header() {
   const textStyle = `text-${textColor}`;
 
   return (
-    <nav className={clsx('flex items-center gap-12', textStyle)}>
+    <nav className={clsx('flex flex-wrap items-center gap-12', textStyle)}>
       {LINKS.map(({ label, href }) => {
         const isActivePage = pathname === href;
 

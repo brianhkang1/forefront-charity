@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header
       className={clsx(
-        'absolute flex h-36 w-full items-center justify-between p-12',
+        'absolute flex h-36 w-full flex-wrap items-center justify-between p-12',
         Z_INDEX.HEADER,
       )}
     >

@@ -4,7 +4,7 @@ import SignupForm from '../SignupForm';
 
 export default function Footer() {
   return (
-    <footer className='bg-teal-logo-400 flex h-57.75 items-center justify-between px-12'>
+    <footer className='bg-teal-logo-400 flex min-h-57.75 flex-wrap items-center justify-between px-12'>
       <div>
         <SignupForm />
       </div>
