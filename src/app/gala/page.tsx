@@ -46,6 +46,7 @@ export default async function GalaPage() {
     <div className='bg-black'>
       <section>
         <Image
+          priority
           width='100%'
           height={700}
           src={heroImage?.url || ''}
@@ -71,12 +72,8 @@ export default async function GalaPage() {
         </Image>
 
         <div className='mb-12 flex justify-center gap-2'>
-          <Button size='large' color='bg-dark-gold'>
-            Buy Ticket
-          </Button>
-          <Button size='large' color='bg-dark-gold'>
-            Become a Sponsor
-          </Button>
+          <Button color='bg-dark-gold'>Buy Ticket</Button>
+          <Button color='bg-dark-gold'>Become a Sponsor</Button>
         </div>
       </section>
 

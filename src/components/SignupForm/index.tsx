@@ -6,13 +6,9 @@ import { postToGoogleSheets } from '@/lib/googleSheets';
 import { useActionState } from 'react';
 
 export default function SignupForm() {
-  const [state, formAction, isPending] = useActionState(
-    postToGoogleSheets,
-    null,
-  );
+  const [, formAction, isPending] = useActionState(postToGoogleSheets, null);
 
   //TODO: add success toast
-  console.log('hello SignupForm state', state);
 
   return (
     <>
@@ -44,8 +40,8 @@ export default function SignupForm() {
           required
         />
 
-        <Button type='submit' disabled={isPending}>
-          Join
+        <Button size='small' type='submit' disabled={isPending}>
+          Sign Up
         </Button>
       </form>
     </>

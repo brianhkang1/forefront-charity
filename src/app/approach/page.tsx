@@ -20,6 +20,7 @@ export default async function ApproachPage() {
   return (
     <section>
       <Image
+        priority
         includeOverlay
         width='100%'
         height={1064}

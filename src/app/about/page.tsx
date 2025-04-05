@@ -64,6 +64,7 @@ export default async function AboutPage() {
     <>
       <section>
         <Image
+          priority
           width='100%'
           height={947}
           src={heroImage?.url || ''}
