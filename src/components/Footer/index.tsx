@@ -4,7 +4,7 @@ import SignupForm from '../SignupForm';
 
 export default function Footer() {
   return (
-    <footer className='bg-teal-logo-400 flex min-h-57.75 flex-wrap items-center justify-between px-12'>
+    <footer className='flex min-h-57.75 flex-wrap items-center justify-between bg-teal-900 px-12 text-white'>
       <div>
         <SignupForm />
       </div>
@@ -25,6 +25,8 @@ export default function Footer() {
           height={108}
         />
       </div>
+
+      {/* TODO: Add social media icons and link */}
     </footer>
   );
 }
