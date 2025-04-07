@@ -20,7 +20,7 @@ export default function Input({
       </RadixLabel.Root>
       <input
         className={clsx(
-          'placeholder-gray inline-flex h-8 items-center justify-center rounded bg-white px-1 py-1.5 text-[14px]',
+          'placeholder-gray inline-flex h-8 items-center justify-center rounded bg-white px-1 py-1.5 text-[14px] text-black',
           width,
           className,
         )}

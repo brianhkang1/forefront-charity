@@ -15,29 +15,29 @@ export default function SignupForm() {
       <h3 className='mb-3'>Get Email Updates</h3>
       <form className='flex flex-wrap items-end gap-3' action={formAction}>
         <Input
+          required
           label='First Name'
           id='firstName'
           name='firstName'
           placeholder='First Name'
-          required
         />
 
         <Input
+          required
           label='Last Name'
           id='lastName'
           name='lastName'
           placeholder='Last Name'
-          required
         />
 
         <Input
+          required
           label='Email Address'
           type='email'
           id='email'
           name='email'
           placeholder='Enter your email'
           width='w-[209px]'
-          required
         />
 
         <Button size='small' type='submit' disabled={isPending}>
