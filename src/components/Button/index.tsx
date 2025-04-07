@@ -8,7 +8,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const BUTTON_SIZE_STYLES = {
-  small: 'mx-3 my-0.75',
+  small: 'mx-3 my-1',
   medium: 'mx-6 my-3',
 };
 
