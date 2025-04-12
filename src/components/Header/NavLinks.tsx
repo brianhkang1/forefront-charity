@@ -33,7 +33,7 @@ export default function Header() {
               isActivePage && 'border-forefront-teal border-b-3',
             )}
           >
-            <h2>{label}</h2>
+            <h3>{label}</h3>
           </Link>
         );
       })}

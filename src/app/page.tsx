@@ -2,7 +2,6 @@
 // import { getGoogleDriveFiles } from '@/lib/googleDrive';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
-import Title from '@/components/Title';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
@@ -114,11 +113,14 @@ export default async function HomePage() {
           src={heroImage?.url || ''}
           alt='Home Page Hero Image'
         >
-          <div className='absolute top-[40%] left-[6%] text-white'>
-            <Title className='mb-9'>
-              <div>I can be the change</div>
-              <div>my community needs.</div>
-            </Title>
+          <div className='absolute top-[35%] left-[6%] text-white'>
+            <h1 className='mb-9'>
+              <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[40px] font-normal'>
+                I dream of...
+              </div>
+              <div className='mb-[12px]'>helping my</div>
+              <div>whole village thrive</div>
+            </h1>
 
             <div className='flex gap-3'>
               <Button>Donate</Button>
@@ -129,41 +131,9 @@ export default async function HomePage() {
       </section>
 
       <div className='m-6 flex flex-col items-center gap-9'>
-        <section className='w-full'>
-          <Image
-            width='100%'
-            height={564}
-            src={PartnerImage}
-            alt='Local community landscape'
-            className='rounded-xl'
-          >
-            <h1 className='absolute top-[25%] left-1/2 -translate-x-1/2 transform text-center text-nowrap text-white'>
-              <div>
-                FOREFRONT Charity partners with local leaders to provide
-              </div>
-              <div>essential resources to unreached communities.</div>
-            </h1>
-          </Image>
-        </section>
-
-        <section className='w-full rounded-xl'>
-          <Image
-            width='100%'
-            height={564}
-            src={PotentialImage}
-            alt='Students at FOREFRONT School'
-            className='rounded-xl'
-          >
-            <h1 className='absolute top-[40%] left-[5%] text-nowrap'>
-              <div>Potential is everywhere.</div>
-              <div>Opportunity can be limited.</div>
-            </h1>
-          </Image>
-        </section>
-
         <section className='bg-teal-logo-200 flex w-full gap-3 rounded-xl p-6'>
           <div className='max-w-91.5'>
-            <h1 className='mb-6'>FOREFRONT bridges the gap.</h1>
+            <h2 className='mb-6'>FOREFRONT bridges the gap.</h2>
             <div className='mb-6 text-2xl'>
               Our four-pillar holistic approach is the foundation of thriving
               communities.
@@ -183,15 +153,46 @@ export default async function HomePage() {
                     className='rounded-xl'
                   >
                     <div className='absolute top-[24px] left-0 flex h-full w-full flex-col items-center text-center'>
-                      <h2>{title}</h2>
-                      <Title>{highlight}</Title>
-                      <h3>{description}</h3>
+                      <h4>{title}</h4>
+                      <div className='text-6xl font-bold'>{highlight}</div>
+                      <h4>{description}</h4>
                     </div>
                   </Image>
                 </div>
               ),
             )}
           </div>
+        </section>
+
+        <section className='w-full'>
+          <Image
+            width='100%'
+            height='70vh'
+            src={PartnerImage}
+            alt='Local community landscape'
+          >
+            <h2 className='absolute top-[25%] left-1/2 -translate-x-1/2 transform text-center text-nowrap'>
+              <div>
+                FOREFRONT Charity partners with local leaders to provide
+              </div>
+              <div>essential resources to unreached communities.</div>
+            </h2>
+          </Image>
+        </section>
+
+        <section className='w-full rounded-xl'>
+          <Image
+            width='100%'
+            height={564}
+            src={PotentialImage}
+            alt='Students at FOREFRONT School'
+            className='rounded-xl'
+          >
+            <h2 className='absolute top-[40%] left-[5%] text-nowrap'>
+              <div>Potential is everywhere.</div>
+              <div>Opportunity can be limited.</div>
+            </h2>
+          </Image>
         </section>
 
         <section className='w-full rounded-xl'>
@@ -203,10 +204,10 @@ export default async function HomePage() {
             className='rounded-xl'
           >
             <div className='absolute top-[15%] left-[5%] max-w-118.25'>
-              <h1>
+              <h2>
                 <div>Our Changemakers,</div>
                 <div>the catalysts for change.</div>
-              </h1>
+              </h2>
 
               <p className='mt-4'>
                 We partner with our Changemakers: local leaders who understand
@@ -218,10 +219,10 @@ export default async function HomePage() {
         </section>
 
         <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
-          <h1 className='mb-9 text-center'>
+          <h2 className='mb-9 text-center'>
             <div>Exponential impact.</div>
             <div>Made possible by our Changemakers.</div>
-          </h1>
+          </h2>
 
           <div className='flex gap-2'>
             {CHANGEMAKERS_CARDS_METADATA.map(
@@ -236,7 +237,7 @@ export default async function HomePage() {
                       alt={alt}
                     />
                   </div>
-                  <h2 className='mt-[24px] mb-[12px]'>{title}</h2>
+                  <h3 className='mt-[24px] mb-[12px]'>{title}</h3>
                   <p>{description}</p>
                 </div>
               ),
@@ -253,7 +254,7 @@ export default async function HomePage() {
             className='rounded-xl'
           >
             <div className='absolute top-[40%] right-[5%]'>
-              <h1>Change the world with us</h1>
+              <h2>Change the world with us</h2>
 
               <div className='mt-3 flex gap-2'>
                 <Button>Give</Button>

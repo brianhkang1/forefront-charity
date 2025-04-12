@@ -22,7 +22,8 @@ export default function Image({
     <div style={{ position: 'relative', width, height, ...containerStyle }}>
       <NextImage
         fill
-        sizes='100%'
+        draggable={false}
+        sizes='100vw'
         className={clsx('object-cover', className)}
         {...props}
       />

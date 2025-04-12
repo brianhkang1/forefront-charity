@@ -1,5 +1,4 @@
 import Image from '@/components/Image';
-import Title from '@/components/Title';
 import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
 import Z_INDEX from '@/utils/zIndex';
@@ -46,7 +45,7 @@ export default async function AboutPage() {
 
   const heroImage = findImage(aboutPageImages, 'hero');
   const image1 = findImage(aboutPageImages, 'image 1');
-  const mockBoardImages = teamMemberImages?.slice(0, 6);
+  // const mockBoardImages = teamMemberImages?.slice(0, 6);
   const teamMemberImagesByName =
     teamMemberImages
       ?.filter((image): image is { id: string; url: string; name: string } => {
@@ -70,9 +69,9 @@ export default async function AboutPage() {
           src={heroImage?.url || ''}
           alt='About Page Hero Image'
         >
-          <Title className='absolute top-36 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
+          <h1 className='absolute top-36 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
             UNITED IN COMPASSION
-          </Title>
+          </h1>
         </Image>
       </section>
 
@@ -88,10 +87,10 @@ export default async function AboutPage() {
         >
           <div className='flex h-full items-center justify-center gap-19.5'>
             <div className={clsx('ml-16', Z_INDEX.ARROW_BACKGROUND_TEXT)}>
-              <h1 className='mb-3'>
+              <h2 className='mb-3'>
                 <div>It all started with a</div>
                 <div>conversation...</div>
-              </h1>
+              </h2>
               <p className='max-w-144'>
                 Our journey began with a simple conversation during a
                 transformative trip to India. Founders Matt and Chanwook
@@ -118,7 +117,7 @@ export default async function AboutPage() {
       </section>
 
       <section className='mt-[-65px] h-172.5 bg-teal-800 px-9 text-white'>
-        <h2 className='pt-15 text-center'>How We Got Here</h2>
+        <h3 className='pt-15 text-center'>How We Got Here</h3>
 
         <div className='relative h-139 overflow-x-auto'>
           {/* white line */}
@@ -160,8 +159,8 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section>
-        <h1 className='my-9 text-center'>OUR BOARD</h1>
+      {/* <section>
+        <h2 className='my-9 text-center'>OUR BOARD</h2>
         <div className='mx-auto flex max-w-264 flex-wrap justify-center gap-4'>
           {mockBoardImages?.map((image) => (
             <div className='w-[154px]' key={image?.name || ''}>
@@ -172,14 +171,14 @@ export default async function AboutPage() {
                 height={154}
                 alt={image?.name || ''}
               />
-              <h3 className='mt-3 text-center break-words'>{image?.name}</h3>
+              <h4 className='mt-3 text-center break-words'>{image?.name}</h4>
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className='mb-8'>
-        <h1 className='my-9 text-center'>OUR TEAM</h1>
+        <h2 className='my-9 text-center'>OUR TEAM</h2>
         <div className='mx-auto flex max-w-264 flex-wrap justify-center gap-4'>
           {teamMemberBios?.map(([firstName, lastName, bio]) => {
             const fullName = `${firstName} ${lastName}`;
@@ -199,10 +198,10 @@ export default async function AboutPage() {
                     <p className='text-center text-xs font-bold'>{bio}</p>
                   </div>
                 </Image>
-                <h3 className='mt-3 text-center leading-5 break-words'>
+                <h4 className='mt-3 text-center leading-5 break-words'>
                   <div>{firstName}</div>
                   <div>{lastName}</div>
-                </h3>
+                </h4>
               </div>
             );
           })}

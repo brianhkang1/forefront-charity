@@ -52,18 +52,24 @@
 
 @layer base {
   h1 {
+    font-size: var(--text-6xl);
+    line-height: var(--text-6xl--line-height);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h2 {
     font-size: var(--text-4xl);
     line-height: var(--text-4xl--line-height);
     font-weight: var(--font-weight-bold);
   }
 
-  h2 {
+  h3 {
     font-size: var(--text-2xl);
     line-height: var(--text-2xl--line-height);
     font-weight: var(--font-weight-bold);
   }
 
-  h3 {
+  h4 {
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
     font-weight: var(--font-weight-bold);

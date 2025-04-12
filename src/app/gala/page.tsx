@@ -1,6 +1,5 @@
 import Button from '@/components/Button';
 import Image from '@/components/Image';
-import Title from '@/components/Title';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
@@ -58,14 +57,14 @@ export default async function GalaPage() {
           <div className='absolute bottom-48.75 left-1/2 -translate-x-1/2 transform text-4xl font-extralight whitespace-nowrap text-white'>
             FOREFRONT Charity 10th Anniversary Gala
           </div>
-          <Title className='absolute bottom-20.75 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
+          <h1 className='absolute bottom-20.75 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
             <span className='from-gold to-dark-gold bg-gradient-to-r bg-clip-text text-transparent'>
               TO ALL PARTS{' '}
             </span>
             <span className='from-gold to-dark-gold bg-gradient-to-r bg-clip-text text-transparent'>
               OF THE WORLD
             </span>
-          </Title>
+          </h1>
           <div className='absolute bottom-2 left-1/2 mb-4.75 -translate-x-1/2 transform text-4xl font-extralight whitespace-nowrap text-white'>
             Fall XX, XXXX <sup>.</sup> Lincoln Center
           </div>
