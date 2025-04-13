@@ -4,7 +4,9 @@ import Button from '@/components/Button';
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
+import clsx from 'clsx';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import ChangemakersImage from './assets/Changemakers.png';
 import PartnerImage from './assets/Partners.png';
@@ -17,29 +19,57 @@ import PotentialImage from './assets/Potential.png';
 // TODO: add image alts
 const PILLARS_CARDS_METADATA = [
   {
-    title: 'Clean Water',
+    key: 'Clean Water',
+    title: (
+      <>
+        <div>CLEAN</div>
+        <div>WATER</div>
+      </>
+    ),
     highlight: '87+',
+    highlightColor: 'text-forefront-water',
     description: 'Water Wells Built',
     src: PillarsWaterImage,
     alt: '',
   },
   {
-    title: 'Quality Education',
+    key: 'Quality Education',
+    title: (
+      <>
+        <div>QUALITY</div>
+        <div>EDUCATION</div>
+      </>
+    ),
     highlight: '235+',
+    highlightColor: 'text-forefront-education',
     description: 'Students Enrolled',
     src: PillarsEducationImage,
     alt: '',
   },
   {
-    title: 'Accessible Medical Care',
+    key: 'Accessible Medical Care',
+    title: (
+      <>
+        <div>ACCESSIBLE</div>
+        <div>MEDICAL CARE</div>
+      </>
+    ),
     highlight: '1300+',
+    highlightColor: 'text-forefront-medical',
     description: 'Patients Served',
     src: PillarsMedicalImage,
     alt: '',
   },
   {
-    title: 'Empowerment Opportunities',
+    key: 'Empowerment Opportunities',
+    title: (
+      <>
+        <div>EMPOWERMENT</div>
+        <div>OPPORTUNITIES</div>
+      </>
+    ),
     highlight: '175+',
+    highlightColor: 'text-forefront-empowerment',
     description: 'Changemakers Trained',
     src: PillarsEmpowermentImage,
     alt: '',
@@ -124,38 +154,62 @@ export default async function HomePage() {
 
             <div className='flex gap-3'>
               <Button>Donate</Button>
-              <Button color='bg-white'>Learn More</Button>
+              <Button color='bg-white'>
+                <Link href='/approach'>Learn More</Link>
+              </Button>
             </div>
           </div>
         </Image>
       </section>
 
-      <div className='m-6 flex flex-col items-center gap-9'>
-        <section className='bg-teal-logo-200 flex w-full gap-3 rounded-xl p-6'>
-          <div className='max-w-91.5'>
-            <h2 className='mb-6'>FOREFRONT bridges the gap.</h2>
+      <div className='m-6 flex flex-col items-center gap-6'>
+        <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
+          <div className='text-center'>
+            <h2 className='mb-3'>Our Approach for Lasting Change</h2>
             <div className='mb-6 text-2xl'>
               Our four-pillar holistic approach is the foundation of thriving
               communities.
             </div>
-            <Button color='bg-white'>Learn More</Button>
           </div>
 
-          <div className='flex w-full gap-2'>
+          <div className='flex w-full gap-2 px-[10vw]'>
             {PILLARS_CARDS_METADATA.map(
-              ({ title, highlight, description, src, alt }) => (
-                <div key={title} className='relative flex-1'>
+              ({
+                key,
+                title,
+                highlight,
+                highlightColor,
+                description,
+                src,
+                alt,
+              }) => (
+                <div key={key} className='relative flex-1'>
                   <Image
                     width='100%'
-                    height={360}
+                    height='50vh'
                     src={src}
                     alt={alt}
-                    className='rounded-xl'
+                    className='rounded-xl object-top'
                   >
-                    <div className='absolute top-[24px] left-0 flex h-full w-full flex-col items-center text-center'>
-                      <h4>{title}</h4>
-                      <div className='text-6xl font-bold'>{highlight}</div>
-                      <h4>{description}</h4>
+                    <div className='absolute top-0 left-0 flex w-full flex-col items-center'>
+                      <div className='relative w-full'>
+                        {/* blurry white background */}
+                        <div className='pointer-events-none absolute inset-0 z-0 mb-6 h-[125%] w-full rounded-t-xl bg-white/10 backdrop-blur-md [mask-image:linear-gradient(to_bottom,white_70%,transparent_100%)]' />
+
+                        {/* text */}
+                        <div className='relative z-1 pt-4 text-center'>
+                          <h3>{title}</h3>
+                          <div
+                            className={clsx(
+                              'my-1 text-6xl font-bold',
+                              highlightColor,
+                            )}
+                          >
+                            {highlight}
+                          </div>
+                          <div className='text-lg'>{description}</div>
+                        </div>
+                      </div>
                     </div>
                   </Image>
                 </div>
@@ -170,6 +224,7 @@ export default async function HomePage() {
             height='70vh'
             src={PartnerImage}
             alt='Local community landscape'
+            className='rounded-xl'
           >
             <h2 className='absolute top-[25%] left-1/2 -translate-x-1/2 transform text-center text-nowrap'>
               <div>
@@ -180,33 +235,18 @@ export default async function HomePage() {
           </Image>
         </section>
 
-        <section className='w-full rounded-xl'>
+        <section className='w-full'>
           <Image
             width='100%'
-            height={564}
-            src={PotentialImage}
-            alt='Students at FOREFRONT School'
-            className='rounded-xl'
-          >
-            <h2 className='absolute top-[40%] left-[5%] text-nowrap'>
-              <div>Potential is everywhere.</div>
-              <div>Opportunity can be limited.</div>
-            </h2>
-          </Image>
-        </section>
-
-        <section className='w-full rounded-xl'>
-          <Image
-            width='100%'
-            height={564}
+            height='70vh'
             src={ChangemakersImage}
             alt='Family in local community'
             className='rounded-xl'
           >
             <div className='absolute top-[15%] left-[5%] max-w-118.25'>
               <h2>
-                <div>Our Changemakers,</div>
-                <div>the catalysts for change.</div>
+                <div>Our Changemakers</div>
+                <div>The Catalysts for Change</div>
               </h2>
 
               <p className='mt-4'>
@@ -220,8 +260,8 @@ export default async function HomePage() {
 
         <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
           <h2 className='mb-9 text-center'>
-            <div>Exponential impact.</div>
-            <div>Made possible by our Changemakers.</div>
+            <div>Exponential Impact</div>
+            <div>Made Possible by Our Changemakers</div>
           </h2>
 
           <div className='flex gap-2'>
@@ -249,11 +289,11 @@ export default async function HomePage() {
           <Image
             width='100%'
             height={564}
-            src={PartnerImage}
+            src={PotentialImage}
             alt='Two FOREFRONT students smiling at camera'
             className='rounded-xl'
           >
-            <div className='absolute top-[40%] right-[5%]'>
+            <div className='absolute top-[40%] left-[5%] text-nowrap'>
               <h2>Change the world with us</h2>
 
               <div className='mt-3 flex gap-2'>

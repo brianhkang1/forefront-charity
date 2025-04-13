@@ -37,7 +37,8 @@
   --color-teal-logo-400: #7fcfcf;
 
   --color-forefront-water: #0082c8;
-  --color-forefront-education: #f4bb27;
+  /* --color-forefront-education: #f4bb27; */
+  --color-forefront-education: #bfa21e;
   --color-forefront-medical: #e45455;
   --color-forefront-empowerment: #8b5aa5;
 }
@@ -48,6 +49,29 @@
 */
 @theme inline {
   --color-forefront-teal: var(--color-teal-500);
+}
+
+@theme {
+  --animate-slide-down: slide-down 0.3s ease-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+
+  @keyframes slide-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 @layer base {
