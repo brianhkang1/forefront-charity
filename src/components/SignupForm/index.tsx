@@ -13,7 +13,10 @@ export default function SignupForm() {
   return (
     <>
       <h3 className='mb-3'>Get Email Updates</h3>
-      <form className='flex flex-wrap items-end gap-3' action={formAction}>
+      <form
+        className='flex flex-wrap items-end gap-3 not-md:mb-10 not-md:flex-col not-md:items-center not-md:gap-5'
+        action={formAction}
+      >
         <Input
           required
           label='First Name'
