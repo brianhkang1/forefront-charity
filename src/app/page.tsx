@@ -4,7 +4,6 @@ import Button from '@/components/Button';
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
-import clsx from 'clsx';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -27,23 +26,8 @@ const PILLARS_CARDS_METADATA = [
       </>
     ),
     highlight: '87+',
-    highlightColor: 'text-forefront-water',
     description: 'Water Wells Built',
     src: PillarsWaterImage,
-    alt: '',
-  },
-  {
-    key: 'Quality Education',
-    title: (
-      <>
-        <div>QUALITY</div>
-        <div>EDUCATION</div>
-      </>
-    ),
-    highlight: '235+',
-    highlightColor: 'text-forefront-education',
-    description: 'Students Enrolled',
-    src: PillarsEducationImage,
     alt: '',
   },
   {
@@ -55,9 +39,21 @@ const PILLARS_CARDS_METADATA = [
       </>
     ),
     highlight: '1300+',
-    highlightColor: 'text-forefront-medical',
     description: 'Patients Served',
     src: PillarsMedicalImage,
+    alt: '',
+  },
+  {
+    key: 'Quality Education',
+    title: (
+      <>
+        <div>QUALITY</div>
+        <div>EDUCATION</div>
+      </>
+    ),
+    highlight: '235+',
+    description: 'Students Enrolled',
+    src: PillarsEducationImage,
     alt: '',
   },
   {
@@ -69,7 +65,6 @@ const PILLARS_CARDS_METADATA = [
       </>
     ),
     highlight: '175+',
-    highlightColor: 'text-forefront-empowerment',
     description: 'Changemakers Trained',
     src: PillarsEmpowermentImage,
     alt: '',
@@ -142,8 +137,9 @@ export default async function HomePage() {
           height='95vh'
           src={heroImage?.url || ''}
           alt='Home Page Hero Image'
+          className='not-md:object-[80%_50%]'
         >
-          <div className='absolute top-[35%] left-[6%] text-white'>
+          <div className='absolute top-[35%] left-[6%] text-white not-md:top-[15%]'>
             <h1 className='mb-9'>
               <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[40px] font-normal'>
                 I dream of...
@@ -162,8 +158,8 @@ export default async function HomePage() {
         </Image>
       </section>
 
-      <div className='m-6 flex flex-col items-center gap-6'>
-        <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
+      <div className='m-12 flex flex-col items-center gap-9'>
+        <section className='w-full'>
           <div className='text-center'>
             <h2 className='mb-3'>Our Approach for Lasting Change</h2>
             <div className='mb-6 text-2xl'>
@@ -172,24 +168,16 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className='flex w-full gap-2 px-[10vw]'>
+          <div className='flex w-full gap-6 px-[10vw] not-md:flex-col not-md:px-0'>
             {PILLARS_CARDS_METADATA.map(
-              ({
-                key,
-                title,
-                highlight,
-                highlightColor,
-                description,
-                src,
-                alt,
-              }) => (
+              ({ key, title, highlight, description, src, alt }) => (
                 <div key={key} className='relative flex-1'>
                   <Image
                     width='100%'
                     height='50vh'
                     src={src}
                     alt={alt}
-                    className='rounded-xl object-top'
+                    className='rounded-xl shadow-[2px_3px_7px_4px_rgba(0,_0,_0,_0.2)] md:object-top'
                   >
                     <div className='absolute top-0 left-0 flex w-full flex-col items-center'>
                       <div className='relative w-full'>
@@ -199,12 +187,7 @@ export default async function HomePage() {
                         {/* text */}
                         <div className='relative z-1 pt-4 text-center'>
                           <h3>{title}</h3>
-                          <div
-                            className={clsx(
-                              'my-1 text-6xl font-bold',
-                              highlightColor,
-                            )}
-                          >
+                          <div className='my-1 text-6xl font-bold'>
                             {highlight}
                           </div>
                           <div className='text-lg'>{description}</div>
@@ -226,7 +209,7 @@ export default async function HomePage() {
             alt='Local community landscape'
             className='rounded-xl'
           >
-            <h2 className='absolute top-[25%] left-1/2 -translate-x-1/2 transform text-center text-nowrap'>
+            <h2 className='absolute top-[25%] left-1/2 -translate-x-1/2 transform text-center not-md:top-[10%] md:text-nowrap'>
               <div>
                 FOREFRONT Charity partners with local leaders to provide
               </div>
@@ -264,10 +247,13 @@ export default async function HomePage() {
             <div>Made Possible by Our Changemakers</div>
           </h2>
 
-          <div className='flex gap-2'>
+          <div className='flex gap-6 not-md:flex-col'>
             {CHANGEMAKERS_CARDS_METADATA.map(
               ({ title, description, src, alt }) => (
-                <div key={title} className='flex-1 rounded-xl bg-white p-6'>
+                <div
+                  key={title}
+                  className='flex-1 rounded-xl bg-white p-6 shadow-[2px_3px_7px_4px_rgba(0,_0,_0,_0.2)]'
+                >
                   <div className='aspect-square w-full'>
                     <Image
                       className='rounded-lg'
@@ -294,11 +280,11 @@ export default async function HomePage() {
             className='rounded-xl'
           >
             <div className='absolute top-[40%] left-[5%] text-nowrap'>
-              <h2>Change the world with us</h2>
+              <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
                 <Button>Give</Button>
-                <Button>Get Involved</Button>
+                <Button color='bg-white'>Get Involved</Button>
               </div>
             </div>
           </Image>

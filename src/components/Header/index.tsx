@@ -20,7 +20,7 @@ const LINKS = [
 
 export default function Header() {
   const pathname = usePathname();
-  const isMobile = useIsMobile();
+  const { isMobile, screenSizeUnknown } = useIsMobile();
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   useEffect(() => {
@@ -31,6 +31,7 @@ export default function Header() {
     LINKS.find((link) => link.href === pathname)?.textColor || 'black';
   const textStyle = `text-${textColor}`;
 
+  if (screenSizeUnknown) return null;
   if (isMobile) {
     return (
       <header className={clsx('sticky top-0 shadow-2xl', Z_INDEX.HEADER)}>
@@ -101,7 +102,7 @@ export default function Header() {
         />
       </Link>
 
-      <nav className={clsx('flex flex-wrap items-center gap-12', textStyle)}>
+      <nav className={clsx('flex flex-wrap items-center gap-5', textStyle)}>
         {LINKS.map(({ label, href }) => {
           const isActivePage = pathname === href;
 
@@ -110,7 +111,7 @@ export default function Header() {
               key={label}
               href={href}
               className={clsx(
-                'py-[8px]',
+                'px-[10px] py-[4px]',
                 isActivePage && 'border-forefront-teal border-b-3',
               )}
             >

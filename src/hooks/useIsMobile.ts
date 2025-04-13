@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export default function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 768px)');
@@ -15,5 +15,8 @@ export default function useIsMobile() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  return isMobile;
+  return {
+    isMobile,
+    screenSizeUnknown: isMobile === null,
+  };
 }

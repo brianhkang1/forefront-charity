@@ -15,7 +15,7 @@ const BUTTON_SIZE_STYLES = {
 const TEXT_COLOR = {
   'bg-forefront-teal': 'text-black',
   'bg-dark-gold': 'text-white',
-  'bg-white': 'text-teal-800',
+  'bg-white': 'text-black',
 };
 
 export default function Button({
@@ -37,7 +37,7 @@ export default function Button({
       )}
       {...props}
     >
-      <div className={BUTTON_SIZE_STYLES[size]}>{children}</div>
+      <span className={BUTTON_SIZE_STYLES[size]}>{children}</span>
     </button>
   );
 }
