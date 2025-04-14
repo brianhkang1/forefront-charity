@@ -53,11 +53,14 @@ export default async function GalaPage() {
         >
           {/* black overlay */}
           <div className='absolute bottom-0 left-0 h-3/4 w-full bg-gradient-to-t from-black to-transparent' />
+        </Image>
 
-          <div className='absolute bottom-48.75 left-1/2 -translate-x-1/2 transform text-4xl font-extralight whitespace-nowrap text-white'>
-            FOREFRONT Charity 10th Anniversary Gala
+        <div className='text-center not-md:mx-4'>
+          <div className='mb-3 text-4xl font-extralight text-white'>
+            FOREFRONT Charity&apos;s 10th Anniversary Gala
           </div>
-          <h1 className='absolute bottom-20.75 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
+
+          <h1 className='mb-3'>
             <span className='from-gold to-dark-gold bg-gradient-to-r bg-clip-text text-transparent'>
               TO ALL PARTS{' '}
             </span>
@@ -65,10 +68,13 @@ export default async function GalaPage() {
               OF THE WORLD
             </span>
           </h1>
-          <div className='absolute bottom-2 left-1/2 mb-4.75 -translate-x-1/2 transform text-4xl font-extralight whitespace-nowrap text-white'>
-            Fall XX, XXXX <sup>.</sup> Lincoln Center
+
+          <div className='mb-5 text-2xl font-extralight text-white'>
+            <div>October 18, 2025 at 5:00 PM ET</div>
+            <div>Stanley H. Kaplan Penthouse</div>
+            <div>165 West 65th Street, 10th Floor New York, NY 10023</div>
           </div>
-        </Image>
+        </div>
 
         <div className='mb-12 flex justify-center gap-2'>
           <Button color='bg-dark-gold'>Buy Ticket</Button>
@@ -76,7 +82,7 @@ export default async function GalaPage() {
         </div>
       </section>
 
-      <section className='flex justify-center gap-18.75 pb-57 text-white'>
+      <section className='flex items-center justify-center gap-18.75 pb-10 text-white not-md:flex-col not-md:gap-12'>
         {GOLD_CARDS_METADATA.map(({ title, description, buttonLabel, url }) => (
           <div
             key={title}
