@@ -80,7 +80,7 @@ export default async function AboutPage() {
           containerStyle={{
             marginTop: '-60px',
           }}
-          src='/about/arrowBackground.svg'
+          src='icons//about/arrowBackground.svg'
           alt='arrow background'
           width='100%'
           height={639}

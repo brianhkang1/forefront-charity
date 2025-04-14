@@ -43,7 +43,7 @@ export default function Header() {
             <Link href='/'>
               <Image
                 priority
-                src='/logo.svg'
+                src='/icons/logo.svg'
                 alt='Forefront logo'
                 width='14.3125rem'
                 height='2rem'
@@ -95,7 +95,7 @@ export default function Header() {
       <Link href='/'>
         <Image
           priority
-          src='/logo.svg'
+          src='/icons/logo.svg'
           alt='Forefront logo'
           width='21.4375rem'
           height='3rem'

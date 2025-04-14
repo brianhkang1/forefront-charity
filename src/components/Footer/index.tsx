@@ -19,7 +19,7 @@ export default function Footer() {
 
       <div>
         <Image
-          src='/platinumTransparency.svg'
+          src='/icons/platinumTransparency.svg'
           alt='Platinum Transparency Logo'
           width={108}
           height={108}

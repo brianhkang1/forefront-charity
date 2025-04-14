@@ -1,7 +1,6 @@
-// import SelectAnnualReport from '@/components/SelectAnnualReport';
-// import { getGoogleDriveFiles } from '@/lib/googleDrive';
 import Button from '@/components/Button';
 import Image from '@/components/Image';
+import SelectAnnualReport from '@/components/SelectAnnualReport';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
@@ -110,24 +109,6 @@ export default async function HomePage() {
 
   const heroImage = findImage(homePageImagesData, 'hero');
 
-  // const annualReportsData = await getGoogleDriveFiles(
-  //   process.env.ANNUAL_REPORTS_FILES_FOLDER_ID,
-  // );
-
-  // const annualReportOptions = annualReportsData?.map((report) => ({
-  //   value: report.id,
-  //   label: report.name,
-  //   mimeType: report.mimeType,
-  // }));
-
-  {
-    /* {!!annualReportOptions && (
-          <div>
-            <SelectAnnualReport annualReportOptions={annualReportOptions} />
-          </div>
-        )} */
-  }
-
   return (
     <>
       <section>
@@ -158,7 +139,7 @@ export default async function HomePage() {
         </Image>
       </section>
 
-      <div className='m-12 flex flex-col items-center gap-9'>
+      <div className='m-12 flex flex-col items-center gap-9 not-md:m-6'>
         <section className='w-full'>
           <div className='text-center'>
             <h2 className='mb-3'>Our Approach for Lasting Change</h2>
@@ -201,6 +182,34 @@ export default async function HomePage() {
           </div>
         </section>
 
+        <section className='bg-teal-logo-200 w-full rounded-xl px-[15vw] py-8 not-md:px-[5vw]'>
+          <h2 className='mb-4 not-md:mb-6 not-md:text-center'>
+            Proudly Platinum for Transparent Impact
+          </h2>
+
+          <div className='flex items-center gap-6 px-2 not-md:flex-col'>
+            <div>
+              <Image
+                src='/icons/platinumTransparency.svg'
+                alt='Platinum Transparency Logo'
+                width={156}
+                height={156}
+              />
+            </div>
+
+            <div>
+              <p className='mb-6 not-md:text-center'>
+                We are proud to have a Platinum Seal of Transparency from Candid
+                in 2024— because at Forefront Charity, transparency is at the
+                heart of everything we do. Learn more by reading our annual
+                reports.
+              </p>
+
+              <SelectAnnualReport />
+            </div>
+          </div>
+        </section>
+
         <section className='w-full'>
           <Image
             width='100%'
@@ -209,11 +218,11 @@ export default async function HomePage() {
             alt='Local community landscape'
             className='rounded-xl'
           >
-            <h2 className='absolute top-[25%] left-1/2 -translate-x-1/2 transform text-center not-md:top-[10%] md:text-nowrap'>
+            <h2 className='absolute top-[25%] left-1/2 w-[75vw] -translate-x-1/2 transform text-center not-md:top-[10%]'>
               <div>
                 FOREFRONT Charity partners with local leaders to provide
+                essential resources to unreached communities.
               </div>
-              <div>essential resources to unreached communities.</div>
             </h2>
           </Image>
         </section>
@@ -277,9 +286,9 @@ export default async function HomePage() {
             height={564}
             src={PotentialImage}
             alt='Two FOREFRONT students smiling at camera'
-            className='rounded-xl'
+            className='rounded-xl not-md:object-[53%_50%]'
           >
-            <div className='absolute top-[40%] left-[5%] text-nowrap'>
+            <div className='absolute top-[40%] left-[5%] not-md:top-[10%] not-md:left-0 not-md:flex not-md:flex-col not-md:items-center not-md:gap-3 not-md:px-[10vw] not-md:text-center'>
               <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
