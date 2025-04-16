@@ -46,8 +46,8 @@ export default async function GalaPage() {
       <section>
         <Image
           priority
-          width='100%'
-          height={700}
+          fillWidth='100%'
+          fillHeight={700}
           src={heroImage?.url || ''}
           alt='Gala Page Hero Image'
         >

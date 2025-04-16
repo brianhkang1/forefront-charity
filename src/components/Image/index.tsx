@@ -4,26 +4,42 @@ import NextImage, { ImageProps } from 'next/image';
 type Props = {
   children?: React.ReactNode;
   containerStyle?: Record<string, string | number>;
-  width: string | number;
-  height: string | number;
+  fillWidth?: string | number;
+  fillHeight?: string | number;
+  hideMobileContainer?: boolean;
+  hideDesktopContainer?: boolean;
   includeOverlay?: boolean;
-} & Omit<ImageProps, 'width' | 'height'>;
+} & ImageProps;
+// & Omit<ImageProps, 'width' | 'height'>;
 
 export default function Image({
   children,
   className,
-  width,
-  height,
+  fillWidth,
+  fillHeight,
   containerStyle = {},
   includeOverlay,
+  hideMobileContainer,
+  hideDesktopContainer,
   ...props
 }: Props) {
   return (
-    <div style={{ position: 'relative', width, height, ...containerStyle }}>
+    <div
+      style={{
+        position: 'relative',
+        width: fillWidth,
+        height: fillHeight,
+        ...containerStyle,
+      }}
+      className={clsx(
+        hideMobileContainer && 'md:hidden',
+        hideDesktopContainer && 'not-md:hidden',
+      )}
+    >
       <NextImage
-        fill
+        fill={!!fillWidth && !!fillHeight}
         draggable={false}
-        sizes='100vw'
+        sizes='100%'
         className={clsx('object-cover', className)}
         {...props}
       />

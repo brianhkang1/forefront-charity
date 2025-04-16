@@ -64,8 +64,8 @@ export default async function AboutPage() {
       <section>
         <Image
           priority
-          width='100%'
-          height={947}
+          fillWidth='100%'
+          fillHeight={947}
           src={heroImage?.url || ''}
           alt='About Page Hero Image'
         >
@@ -82,8 +82,8 @@ export default async function AboutPage() {
           }}
           src='icons//about/arrowBackground.svg'
           alt='arrow background'
-          width='100%'
-          height={639}
+          fillWidth='100%'
+          fillHeight={639}
         >
           <div className='flex h-full items-center justify-center gap-19.5'>
             <div className={clsx('ml-16', Z_INDEX.ARROW_BACKGROUND_TEXT)}>
@@ -107,8 +107,8 @@ export default async function AboutPage() {
                 <Image
                   src={image1.url}
                   alt={image1.name || ''}
-                  width={663}
-                  height={456}
+                  fillWidth={663}
+                  fillHeight={456}
                 />
               )}
             </div>
@@ -138,8 +138,8 @@ export default async function AboutPage() {
                 style={{ top: topPosition, left: leftPosition }}
               >
                 <Image
-                  width={160}
-                  height={185}
+                  fillWidth={160}
+                  fillHeight={185}
                   alt={`How we got here picture ${index + 1}`}
                   src={image1?.url || ''}
                   className='py-2'
@@ -190,8 +190,8 @@ export default async function AboutPage() {
                 <Image
                   className='object-top'
                   src={teamMember.url}
-                  width='100%'
-                  height={154}
+                  fillWidth='100%'
+                  fillHeight={154}
                   alt={teamMember.name}
                 >
                   <div className='absolute inset-0 h-full overflow-y-auto bg-white p-3 opacity-0 transition-opacity hover:opacity-90'>

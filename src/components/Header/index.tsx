@@ -45,8 +45,8 @@ export default function Header() {
                 priority
                 src='/icons/logo.svg'
                 alt='Forefront logo'
-                width='14.3125rem'
-                height='2rem'
+                fillWidth='14.3125rem'
+                fillHeight='2rem'
               />
             </Link>
 
@@ -97,8 +97,8 @@ export default function Header() {
           priority
           src='/icons/logo.svg'
           alt='Forefront logo'
-          width='21.4375rem'
-          height='3rem'
+          fillWidth='21.4375rem'
+          fillHeight='3rem'
         />
       </Link>
 

@@ -6,15 +6,15 @@ import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import CallToAction from './assets/CallToAction.png';
+import CallToActionMobile from './assets/CallToAction_Mobile.png';
 import ChangemakersImage from './assets/Changemakers.png';
 import PartnerImage from './assets/Partners.png';
 import PillarsEducationImage from './assets/Pillars_Education.png';
 import PillarsEmpowermentImage from './assets/Pillars_Empowerment.png';
 import PillarsMedicalImage from './assets/Pillars_Medical.png';
 import PillarsWaterImage from './assets/Pillars_Water.png';
-import PotentialImage from './assets/Potential.png';
 
-// TODO: add image alts
 const PILLARS_CARDS_METADATA = [
   {
     key: 'Clean Water',
@@ -27,7 +27,7 @@ const PILLARS_CARDS_METADATA = [
     highlight: '87+',
     description: 'Water Wells Built',
     src: PillarsWaterImage,
-    alt: '',
+    alt: 'Clean water cup held by two hands',
   },
   {
     key: 'Accessible Medical Care',
@@ -40,7 +40,7 @@ const PILLARS_CARDS_METADATA = [
     highlight: '1300+',
     description: 'Patients Served',
     src: PillarsMedicalImage,
-    alt: '',
+    alt: 'Patient being treated',
   },
   {
     key: 'Quality Education',
@@ -53,7 +53,7 @@ const PILLARS_CARDS_METADATA = [
     highlight: '235+',
     description: 'Students Enrolled',
     src: PillarsEducationImage,
-    alt: '',
+    alt: 'Two young students smiling',
   },
   {
     key: 'Empowerment Opportunities',
@@ -66,7 +66,7 @@ const PILLARS_CARDS_METADATA = [
     highlight: '175+',
     description: 'Changemakers Trained',
     src: PillarsEmpowermentImage,
-    alt: '',
+    alt: 'Female individual standing out in a crowd',
   },
 ];
 
@@ -107,20 +107,23 @@ export default async function HomePage() {
     process.env.HOME_PAGE_IMAGES_FOLDER_ID,
   );
 
-  const heroImage = findImage(homePageImagesData, 'hero');
+  const heroDesktopImage = findImage(homePageImagesData, 'hero_desktop');
+  const heroMobileImage = findImage(homePageImagesData, 'hero_mobile');
 
   return (
     <>
       <section>
+        {/* Desktop Hero Image */}
         <Image
           priority
-          width='100%'
-          height='95vh'
-          src={heroImage?.url || ''}
+          hideDesktopContainer
+          fillWidth='100%'
+          fillHeight='95vh'
+          src={heroDesktopImage?.url || ''}
           alt='Home Page Hero Image'
-          className='not-md:object-[80%_50%]'
+          className='block not-md:hidden'
         >
-          <div className='absolute top-[35%] left-[6%] text-white not-md:top-[15%]'>
+          <div className='absolute top-[35%] left-[6%] block text-white not-md:top-[15%] not-md:hidden'>
             <h1 className='mb-9'>
               <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[40px] font-normal'>
                 I dream of...
@@ -130,7 +133,38 @@ export default async function HomePage() {
             </h1>
 
             <div className='flex gap-3'>
-              <Button>Donate</Button>
+              <Button>[L] Donate</Button>
+              <Button color='bg-white'>
+                <Link href='/approach'>Learn More</Link>
+              </Button>
+            </div>
+          </div>
+        </Image>
+
+        {/* Mobile Hero Image */}
+        <Image
+          priority
+          hideMobileContainer
+          fillWidth='100%'
+          fillHeight='70vh'
+          src={heroMobileImage?.url || ''}
+          alt='Home Page Hero Image'
+          className='hidden not-md:block'
+        >
+          {/* black overlay */}
+          <div className='absolute bottom-0 left-0 hidden h-1/2 w-full bg-gradient-to-t from-black to-transparent not-md:block' />
+
+          <div className='absolute bottom-[8%] left-[6%] hidden text-white not-md:block'>
+            <h1 className='mb-9'>
+              <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[24px] font-normal'>
+                I dream of...
+              </div>
+              <div className='mb-[12px]'>helping my</div>
+              <div>whole village thrive</div>
+            </h1>
+
+            <div className='flex gap-3'>
+              <Button>[L] Donate</Button>
               <Button color='bg-white'>
                 <Link href='/approach'>Learn More</Link>
               </Button>
@@ -139,7 +173,7 @@ export default async function HomePage() {
         </Image>
       </section>
 
-      <div className='m-12 flex flex-col items-center gap-9 not-md:m-6'>
+      <div className='m-12 flex flex-col items-center gap-9 not-md:m-6 not-md:gap-6'>
         <section className='w-full'>
           <div className='text-center'>
             <h2 className='mb-3'>Our Approach for Lasting Change</h2>
@@ -154,11 +188,11 @@ export default async function HomePage() {
               ({ key, title, highlight, description, src, alt }) => (
                 <div key={key} className='relative flex-1'>
                   <Image
-                    width='100%'
-                    height='50vh'
+                    fillWidth='100%'
+                    fillHeight='50vh'
                     src={src}
                     alt={alt}
-                    className='rounded-xl shadow-[2px_3px_7px_4px_rgba(0,_0,_0,_0.2)] md:object-top'
+                    className='rounded-xl shadow-[2px_5px_7px_4px_rgba(0,_0,_0,_0.4)] md:object-top'
                   >
                     <div className='absolute top-0 left-0 flex w-full flex-col items-center'>
                       <div className='relative w-full'>
@@ -166,9 +200,9 @@ export default async function HomePage() {
                         <div className='pointer-events-none absolute inset-0 z-0 mb-6 h-[125%] w-full rounded-t-xl bg-white/10 backdrop-blur-md [mask-image:linear-gradient(to_bottom,white_70%,transparent_100%)]' />
 
                         {/* text */}
-                        <div className='relative z-1 pt-4 text-center'>
+                        <div className='relative z-1 pt-[7%] text-center'>
                           <h3>{title}</h3>
-                          <div className='my-1 text-6xl font-bold'>
+                          <div className='my-1 text-6xl font-bold not-md:text-5xl'>
                             {highlight}
                           </div>
                           <div className='text-lg'>{description}</div>
@@ -182,22 +216,22 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className='bg-teal-logo-200 w-full rounded-xl px-[15vw] py-8 not-md:px-[5vw]'>
-          <h2 className='mb-4 not-md:mb-6 not-md:text-center'>
+        <section className='bg-teal-logo-200 w-full rounded-xl py-8'>
+          <h2 className='mb-4 text-center not-md:mb-6'>
             Proudly Platinum for Transparent Impact
           </h2>
 
-          <div className='flex items-center gap-6 px-2 not-md:flex-col'>
+          <div className='flex items-center justify-center gap-6 px-2 not-md:flex-col'>
             <div>
               <Image
                 src='/icons/platinumTransparency.svg'
                 alt='Platinum Transparency Logo'
-                width={156}
-                height={156}
+                fillWidth={156}
+                fillHeight={156}
               />
             </div>
 
-            <div>
+            <div className='max-w-xl not-md:mx-6'>
               <p className='mb-6 not-md:text-center'>
                 We are proud to have a Platinum Seal of Transparency from Candid
                 in 2024— because at Forefront Charity, transparency is at the
@@ -210,38 +244,34 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className='w-full'>
+        <section className='relative w-full'>
           <Image
-            width='100%'
-            height='70vh'
             src={PartnerImage}
             alt='Local community landscape'
-            className='rounded-xl'
+            className='w-full rounded-xl not-md:aspect-square md:h-[70vh]'
           >
-            <h2 className='absolute top-[25%] left-1/2 w-[75vw] -translate-x-1/2 transform text-center not-md:top-[10%]'>
-              <div>
+            <div className='absolute top-[25%] left-0 flex w-full justify-center not-md:top-[10%]'>
+              <h2 className='max-w-[80%] text-center not-md:max-w-[90%] 2xl:max-w-[60%]'>
                 FOREFRONT Charity partners with local leaders to provide
                 essential resources to unreached communities.
-              </div>
-            </h2>
+              </h2>
+            </div>
           </Image>
         </section>
 
         <section className='w-full'>
           <Image
-            width='100%'
-            height='70vh'
             src={ChangemakersImage}
             alt='Family in local community'
-            className='rounded-xl'
+            className='w-full rounded-xl not-md:aspect-square not-md:object-top md:h-[70vh]'
           >
-            <div className='absolute top-[15%] left-[5%] max-w-118.25'>
+            <div className='absolute top-[15%] left-[5%] max-w-118.25 not-md:top-[5%]'>
               <h2>
                 <div>Our Changemakers</div>
                 <div>The Catalysts for Change</div>
               </h2>
 
-              <p className='mt-4'>
+              <p className='mt-4 not-md:max-w-[70%] not-md:text-sm'>
                 We partner with our Changemakers: local leaders who understand
                 and know their communities’ needs. This approach drives
                 long-term, sustainable change.
@@ -267,8 +297,8 @@ export default async function HomePage() {
                     <Image
                       className='rounded-lg'
                       src={src}
-                      width='100%'
-                      height='100%'
+                      fillWidth='100%'
+                      fillHeight='100%'
                       alt={alt}
                     />
                   </div>
@@ -281,19 +311,35 @@ export default async function HomePage() {
         </section>
 
         <section className='w-full rounded-xl'>
+          {/* Desktop Image */}
           <Image
-            width='100%'
-            height={564}
-            src={PotentialImage}
+            src={CallToAction}
             alt='Two FOREFRONT students smiling at camera'
-            className='rounded-xl not-md:object-[53%_50%]'
+            className='block h-[70vh] w-full rounded-xl not-md:hidden'
           >
-            <div className='absolute top-[40%] left-[5%] not-md:top-[10%] not-md:left-0 not-md:flex not-md:flex-col not-md:items-center not-md:gap-3 not-md:px-[10vw] not-md:text-center'>
+            <div className='absolute top-[40%] left-[5%] not-md:hidden'>
               <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
-                <Button>Give</Button>
-                <Button color='bg-white'>Get Involved</Button>
+                <Button>[L] Give</Button>
+                <Button color='bg-white'>[L] Get Involved</Button>
+              </div>
+            </div>
+          </Image>
+
+          {/* Mobile Image */}
+          <Image
+            hideMobileContainer
+            src={CallToActionMobile}
+            alt='Two FOREFRONT students smiling at camera'
+            className='hidden aspect-square w-full rounded-xl not-md:block'
+          >
+            <div className='absolute top-[30%] left-0 hidden px-[5vw] not-md:block'>
+              <h2>Change the World with Us</h2>
+
+              <div className='mt-3 flex gap-2'>
+                <Button>[L] Give</Button>
+                <Button color='bg-white'>[L] Get Involved</Button>
               </div>
             </div>
           </Image>

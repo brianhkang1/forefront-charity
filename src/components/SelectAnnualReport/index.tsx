@@ -29,7 +29,7 @@ export default function SelectAnnualReport() {
   };
 
   return (
-    <div className='flex gap-4 not-md:flex-col'>
+    <div className='flex gap-4 not-md:flex-col not-md:justify-center not-md:px-8'>
       <Select
         ariaLabel='Select Annual Reports'
         placeholder='Select Annual Reports'

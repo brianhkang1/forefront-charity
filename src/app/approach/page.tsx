@@ -22,8 +22,8 @@ export default async function ApproachPage() {
       <Image
         priority
         includeOverlay
-        width='100%'
-        height={1064}
+        fillWidth='100%'
+        fillHeight={1064}
         src={heroImage?.url || ''}
         alt='Approach Page Hero Image'
       />
