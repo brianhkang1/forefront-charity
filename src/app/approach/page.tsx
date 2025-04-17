@@ -21,11 +21,10 @@ export default async function ApproachPage() {
     <section>
       <Image
         priority
-        includeOverlay
         fillWidth='100%'
-        fillHeight={1064}
+        fillHeight='100vh'
         src={heroImage?.url || ''}
-        alt='Approach Page Hero Image'
+        alt='Woman walking away with jar on her head'
       />
     </section>
   );

@@ -2,7 +2,6 @@ import Image from '@/components/Image';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
 import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
-import Z_INDEX from '@/utils/zIndex';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 

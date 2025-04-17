@@ -2,7 +2,6 @@
 
 import Image from '@/components/Image';
 import useIsMobile from '@/hooks/useIsMobile';
-import Z_INDEX from '@/utils/zIndex';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 const LINKS = [
   { label: 'Home', href: '/', textColor: 'white' },
-  { label: 'Approach', href: '/approach', textColor: 'white' },
+  { label: 'Approach', href: '/approach', textColor: 'black' },
   { label: 'About', href: '/about', textColor: 'black' },
   { label: 'Gala', href: '/gala', textColor: 'white' },
   { label: 'Donate', href: '' },
@@ -34,7 +33,7 @@ export default function Header() {
   if (screenSizeUnknown) return null;
   if (isMobile) {
     return (
-      <header className={clsx('sticky top-0 shadow-2xl', Z_INDEX.HEADER)}>
+      <header className={'sticky top-0 z-1 shadow-2xl'}>
         <Collapsible.Root
           open={mobileMenuIsOpen}
           onOpenChange={setMobileMenuIsOpen}
@@ -87,10 +86,9 @@ export default function Header() {
 
   return (
     <header
-      className={clsx(
-        'absolute flex h-36 w-full flex-wrap items-center justify-between p-12',
-        Z_INDEX.HEADER,
-      )}
+      className={
+        'absolute z-1 flex h-36 w-full flex-wrap items-center justify-between p-12'
+      }
     >
       <Link href='/'>
         <Image
