@@ -23,7 +23,8 @@ export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   useEffect(() => {
-    setMobileMenuIsOpen(false); // reset open state when route changes
+    // reset open state when route changes
+    setMobileMenuIsOpen(false);
   }, [pathname]);
 
   const textColor =
