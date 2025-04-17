@@ -5,16 +5,16 @@ import { useState } from 'react';
 
 import Button from '../Button';
 
-const DEFAULT_OPTION = '/documents/annualReport2023.pdf';
+const DEFAULT_OPTION = '/documents/Annual_Report_2023.pdf';
 
 const ANNUAL_REPORT_OPTIONS = [
-  { label: 'Annual Report 2023', value: '/documents/annualReport2023.pdf' },
-  { label: 'Annual Report 2022', value: '/documents/annualReport2022.pdf' },
-  { label: 'Annual Report 2021', value: '/documents/annualReport2021.pdf' },
-  { label: 'Annual Report 2020', value: '/documents/annualReport2020.pdf' },
-  { label: 'Annual Report 2019', value: '/documents/annualReport2019.pdf' },
-  { label: 'Annual Report 2018', value: '/documents/annualReport2018.pdf' },
-  { label: 'Annual Report 2017', value: '/documents/annualReport2017.pdf' },
+  { label: 'Annual Report 2023', value: '/documents/Annual_Report_2023.pdf' },
+  { label: 'Annual Report 2022', value: '/documents/Annual_Report_2022.pdf' },
+  { label: 'Annual Report 2021', value: '/documents/Annual_Report_2021.pdf' },
+  { label: 'Annual Report 2020', value: '/documents/Annual_Report_2020.pdf' },
+  { label: 'Annual Report 2019', value: '/documents/Annual_Report_2019.pdf' },
+  { label: 'Annual Report 2018', value: '/documents/Annual_Report_2018.pdf' },
+  { label: 'Annual Report 2017', value: '/documents/Annual_Report_2017.pdf' },
 ];
 
 export default function SelectAnnualReport() {

@@ -11,7 +11,7 @@ const GOLD_CARDS_METADATA = [
     description:
       "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT Charity's mission.",
     buttonLabel: 'Bid',
-    url: './documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
+    url: '/documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
   },
   {
     title: 'Auction Items',
