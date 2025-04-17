@@ -6,8 +6,8 @@ type Props = {
   containerStyle?: Record<string, string | number>;
   fillWidth?: string | number;
   fillHeight?: string | number;
-  hideMobileContainer?: boolean;
-  hideDesktopContainer?: boolean;
+  hideContainerWhenDesktop?: boolean;
+  hideContainerWhenMobile?: boolean;
   includeOverlay?: boolean;
 } & ImageProps;
 // & Omit<ImageProps, 'width' | 'height'>;
@@ -19,8 +19,8 @@ export default function Image({
   fillHeight,
   containerStyle = {},
   includeOverlay,
-  hideMobileContainer,
-  hideDesktopContainer,
+  hideContainerWhenDesktop,
+  hideContainerWhenMobile,
   ...props
 }: Props) {
   return (
@@ -32,8 +32,8 @@ export default function Image({
         ...containerStyle,
       }}
       className={clsx(
-        hideMobileContainer && 'md:hidden',
-        hideDesktopContainer && 'not-md:hidden',
+        hideContainerWhenDesktop && 'md:hidden',
+        hideContainerWhenMobile && 'not-md:hidden',
       )}
     >
       <NextImage

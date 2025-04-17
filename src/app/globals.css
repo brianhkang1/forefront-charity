@@ -41,20 +41,11 @@
   --color-forefront-education: #bfa21e;
   --color-forefront-medical: #e45455;
   --color-forefront-empowerment: #8b5aa5;
-}
 
-/* 
-  Use @theme inline when defining colors that reference other colors. 
-  Source: https://tailwindcss.com/docs/colors#referencing-other-variables 
-*/
-@theme inline {
-  --color-forefront-teal: var(--color-teal-500);
-}
-
-@theme {
   --animate-slide-down: slide-down 0.3s ease-out;
   --animate-slide-up: slide-up 0.3s ease-out;
 
+  /* animations */
   @keyframes slide-down {
     from {
       height: 0;
@@ -72,6 +63,14 @@
       height: 0;
     }
   }
+}
+
+/* 
+  Use @theme inline when defining colors that reference other colors. 
+  Source: https://tailwindcss.com/docs/colors#referencing-other-variables 
+*/
+@theme inline {
+  --color-forefront-teal: var(--color-teal-500);
 }
 
 @layer base {
@@ -130,5 +129,21 @@
       line-height: var(--text-md--line-height);
       font-weight: var(--font-weight-bold);
     }
+  }
+}
+
+@utility desktop {
+  display: block;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+@utility mobile {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
   }
 }

@@ -24,7 +24,7 @@ const libreBaskerville = Libre_Baskerville({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | FOREFRONT Charity',
+    template: '%s - FOREFRONT Charity',
     default: 'FOREFRONT Charity',
   },
 };

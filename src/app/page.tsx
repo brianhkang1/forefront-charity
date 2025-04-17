@@ -99,7 +99,7 @@ const CHANGEMAKERS_CARDS_METADATA = [
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Home - FOREFRONT Charity',
 };
 
 export default async function HomePage() {
@@ -116,14 +116,14 @@ export default async function HomePage() {
         {/* Desktop Hero Image */}
         <Image
           priority
-          hideDesktopContainer
+          hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='95vh'
           src={heroDesktopImage?.url || ''}
           alt='Home Page Hero Image'
-          className='block not-md:hidden'
+          className='desktop'
         >
-          <div className='absolute top-[35%] left-[6%] block text-white not-md:top-[15%] not-md:hidden'>
+          <div className='desktop absolute top-[35%] left-[6%] text-white not-md:top-[15%]'>
             <h1 className='mb-9'>
               <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[40px] font-normal'>
                 I dream of...
@@ -144,17 +144,17 @@ export default async function HomePage() {
         {/* Mobile Hero Image */}
         <Image
           priority
-          hideMobileContainer
+          hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='70vh'
           src={heroMobileImage?.url || ''}
           alt='Home Page Hero Image'
-          className='hidden not-md:block'
+          className='mobile'
         >
           {/* black overlay */}
-          <div className='absolute bottom-0 left-0 hidden h-1/2 w-full bg-gradient-to-t from-black to-transparent not-md:block' />
+          <div className='mobile absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent' />
 
-          <div className='absolute bottom-[8%] left-[6%] hidden text-white not-md:block'>
+          <div className='mobile absolute bottom-[8%] left-[6%] text-white'>
             <h1 className='mb-9'>
               <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[24px] font-normal'>
                 I dream of...
@@ -313,11 +313,12 @@ export default async function HomePage() {
         <section className='w-full rounded-xl'>
           {/* Desktop Image */}
           <Image
+            hideContainerWhenMobile
             src={CallToAction}
             alt='Two FOREFRONT students smiling at camera'
-            className='block h-[70vh] w-full rounded-xl not-md:hidden'
+            className='desktop h-[70vh] w-full rounded-xl'
           >
-            <div className='absolute top-[40%] left-[5%] not-md:hidden'>
+            <div className='desktop absolute top-[40%] left-[5%]'>
               <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
@@ -329,12 +330,12 @@ export default async function HomePage() {
 
           {/* Mobile Image */}
           <Image
-            hideMobileContainer
+            hideContainerWhenDesktop
             src={CallToActionMobile}
             alt='Two FOREFRONT students smiling at camera'
-            className='hidden aspect-square w-full rounded-xl not-md:block'
+            className='mobile aspect-square w-full rounded-xl'
           >
-            <div className='absolute top-[30%] left-0 hidden px-[5vw] not-md:block'>
+            <div className='mobile absolute top-[30%] left-0 px-[5vw]'>
               <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
