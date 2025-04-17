@@ -45,7 +45,7 @@ export default async function AboutPage() {
   );
 
   const heroImage = findImage(aboutPageImages, 'hero');
-  const image1 = findImage(aboutPageImages, 'image 1');
+  const matthewOh = teamMemberImages?.[0];
   // const mockBoardImages = teamMemberImages?.slice(0, 6);
   const teamMemberImagesByName =
     teamMemberImages
@@ -66,7 +66,7 @@ export default async function AboutPage() {
         <Image
           priority
           fillWidth='100%'
-          fillHeight={947}
+          fillHeight='110vh'
           src={heroImage?.url || ''}
           alt='About Page Hero Image'
         >
@@ -118,12 +118,13 @@ export default async function AboutPage() {
             </div>
 
             <div className='flex-1'>
-              {!!image1 && (
+              {!!matthewOh && (
                 <Image
-                  src={teamMemberImages?.[0]?.url || ''}
-                  alt={teamMemberImages?.[0]?.name || ''}
+                  src={matthewOh.url}
+                  alt={matthewOh.name || ''}
                   fillWidth='100%'
                   fillHeight={700}
+                  className='2xl:object-[50%_35%]'
                 />
               )}
             </div>
@@ -171,10 +172,10 @@ export default async function AboutPage() {
         {/* Mobile view image */}
         <div className='mobile mt-[-110px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
           <div>
-            {!!image1 && (
+            {!!matthewOh && (
               <Image
-                src={teamMemberImages?.[0]?.url || ''}
-                alt={teamMemberImages?.[0]?.name || ''}
+                src={matthewOh.url}
+                alt={matthewOh?.name || ''}
                 fillWidth='100%'
                 fillHeight={700}
               />
@@ -183,17 +184,12 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className='mt-[-90px] bg-teal-800 px-[5vw] text-white [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+      <section className='relative mt-[-90px] w-full items-center bg-teal-800 text-white [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
         <h3 className='pt-14 text-center'>How We Got Here</h3>
 
-        <div className='relative h-[300px] overflow-x-auto'>
+        <div className='relative mx-auto h-[300px] w-full max-w-[1440px] overflow-x-auto'>
           {/* white line */}
-          <div
-            className='absolute top-[130px] left-0 h-[2px] w-full bg-white'
-            style={{
-              minWidth: 1440,
-            }}
-          />
+          <div className='absolute top-[130px] left-0 h-[2px] w-[1440px] bg-white' />
 
           {HOW_WE_GOT_HERE.map(({ title, description }, index) => {
             const isEven = index % 2 === 0;
