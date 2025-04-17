@@ -1,4 +1,5 @@
 import Image from '@/components/Image';
+import SelectAnnualReport from '@/components/SelectAnnualReport';
 import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
 import Z_INDEX from '@/utils/zIndex';
@@ -69,64 +70,135 @@ export default async function AboutPage() {
           src={heroImage?.url || ''}
           alt='About Page Hero Image'
         >
-          <h1 className='absolute top-36 left-1/2 -translate-x-1/2 transform whitespace-nowrap'>
+          <h1 className='absolute top-36 left-1/2 -translate-x-1/2 transform text-center'>
             UNITED IN COMPASSION
           </h1>
         </Image>
       </section>
 
-      <section>
-        <Image
-          containerStyle={{
-            marginTop: '-60px',
-          }}
-          src='icons//about/arrowBackground.svg'
-          alt='arrow background'
-          fillWidth='100%'
-          fillHeight={639}
-        >
-          <div className='flex h-full items-center justify-center gap-19.5'>
-            <div className={clsx('ml-16', Z_INDEX.ARROW_BACKGROUND_TEXT)}>
-              <h2 className='mb-3'>
-                <div>It all started with a</div>
-                <div>conversation...</div>
-              </h2>
-              <p className='max-w-144'>
-                Our journey began with a simple conversation during a
-                transformative trip to India. Founders Matt and Chanwook
-                discovered the power of friendship and shared ideas that sparked
-                a vision. Inspired by the resilience of local communities, they
-                established Forefront to provide essential resources like clean
-                water, medical care, education, and empowerment. Together with
-                local changemakers, we are dedicated to making a lasting impact
-                in the lives of those we serve.
-              </p>
+      <section className='mt-[-100px] w-full not-md:mt-[-110px]'>
+        {/* Desktop view */}
+        <div className='desktop h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+          <div className='flex items-center'>
+            <div className='flex-1'>
+              <h2 className='mt-6 mb-3 text-center'>How It All Began</h2>
+              <div className='max-h-[500px] overflow-y-auto'>
+                <p className='mx-[32px] mb-3'>
+                  In 2012, I went to India on a mission trip and witnessed
+                  children walking 10 hours a day to collect water and women
+                  using livestock waste for sanitary napkins. It was clear that
+                  I had to do something about these dire needs. Year after year,
+                  I was committed to going back to India and finding a lasting
+                  solution for these communities. That is how we came to our
+                  mission: partnering with local leaders to provide essential
+                  resources to unreached communities no matter their background
+                  or circumstances.
+                </p>
+                <p className='mx-[32px] mb-3'>
+                  Our impact is built on four pillars: clean water that improves
+                  health, accessible medical care that addresses preventable
+                  diseases, quality education that unlocks potential, and
+                  empowerment opportunities that create pathways for sustainable
+                  community growth.
+                </p>
+                <p className='mx-[32px] mb-3'>
+                  Since 2015, FOREFRONT Charity has been transforming and
+                  bringing hope to unreached communities. What started as a
+                  personal calling to do something has grown into my life’s
+                  dedication driven by faith, compassion, and belief that
+                  everyone deserves access to essential resources. FOREFRONT
+                  Charity seeks to partner with more local leaders to create
+                  sustainable change one life and one story at a time. This is a
+                  journey that keeps unfolding with new hope at every step.
+                </p>
+                <p className='mx-[32px]'>
+                  -Matthew Oh, Founder and CEO of FOREFRONT Charity
+                </p>
+              </div>
             </div>
-            <div className='[clip-path:polygon(0%_0%,100%_13%,100%_100%,0%_87%)]'>
+
+            <div className='flex-1'>
               {!!image1 && (
                 <Image
-                  src={image1.url}
-                  alt={image1.name || ''}
-                  fillWidth={663}
-                  fillHeight={456}
+                  src={teamMemberImages?.[0]?.url || ''}
+                  alt={teamMemberImages?.[0]?.name || ''}
+                  fillWidth='100%'
+                  fillHeight={700}
                 />
               )}
             </div>
           </div>
-        </Image>
+        </div>
+
+        {/* Mobile view text */}
+        <div className='mobile bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+          <div className='flex flex-col items-center'>
+            <h2 className='mb-3 pt-16 text-center'>How It All Began</h2>
+
+            <p className='mx-[32px] mb-3'>
+              In 2012, I went to India on a mission trip and witnessed children
+              walking 10 hours a day to collect water and women using livestock
+              waste for sanitary napkins. It was clear that I had to do
+              something about these dire needs. Year after year, I was committed
+              to going back to India and finding a lasting solution for these
+              communities. That is how we came to our mission: partnering with
+              local leaders to provide essential resources to unreached
+              communities no matter their background or circumstances.
+            </p>
+            <p className='mx-[32px] mb-3'>
+              Our impact is built on four pillars: clean water that improves
+              health, accessible medical care that addresses preventable
+              diseases, quality education that unlocks potential, and
+              empowerment opportunities that create pathways for sustainable
+              community growth.
+            </p>
+            <p className='mx-[32px] mb-3'>
+              Since 2015, FOREFRONT Charity has been transforming and bringing
+              hope to unreached communities. What started as a personal calling
+              to do something has grown into my life’s dedication driven by
+              faith, compassion, and belief that everyone deserves access to
+              essential resources. FOREFRONT Charity seeks to partner with more
+              local leaders to create sustainable change one life and one story
+              at a time. This is a journey that keeps unfolding with new hope at
+              every step.
+            </p>
+            <p className='mx-[32px] mb-[120px]'>
+              -Matthew Oh, Founder and CEO of FOREFRONT Charity
+            </p>
+          </div>
+        </div>
+
+        {/* Mobile view image */}
+        <div className='mobile mt-[-110px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+          <div>
+            {!!image1 && (
+              <Image
+                src={teamMemberImages?.[0]?.url || ''}
+                alt={teamMemberImages?.[0]?.name || ''}
+                fillWidth='100%'
+                fillHeight={700}
+              />
+            )}
+          </div>
+        </div>
       </section>
 
-      <section className='mt-[-65px] h-172.5 bg-teal-800 px-9 text-white'>
-        <h3 className='pt-15 text-center'>How We Got Here</h3>
+      <section className='mt-[-90px] bg-teal-800 px-[5vw] text-white [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+        <h3 className='pt-14 text-center'>How We Got Here</h3>
 
-        <div className='relative h-139 overflow-x-auto'>
+        <div className='relative h-[300px] overflow-x-auto'>
           {/* white line */}
-          <div className='absolute top-1/2 left-0 h-[2px] w-full bg-white' />
+          <div
+            className='absolute top-[130px] left-0 h-[2px] w-full bg-white'
+            style={{
+              minWidth: 1440,
+            }}
+          />
 
           {HOW_WE_GOT_HERE.map(({ title, description }, index) => {
             const isEven = index % 2 === 0;
             const leftPosition = 160 * index;
-            const topPosition = isEven ? 9 : 274;
+            const topPosition = isEven ? 45 : 126;
 
             return (
               <div
@@ -137,14 +209,6 @@ export default async function AboutPage() {
                 )}
                 style={{ top: topPosition, left: leftPosition }}
               >
-                <Image
-                  fillWidth={160}
-                  fillHeight={185}
-                  alt={`How we got here picture ${index + 1}`}
-                  src={image1?.url || ''}
-                  className='py-2'
-                />
-
                 <div className='min-h-[32px] text-center text-xs font-bold'>
                   {description}
                 </div>
@@ -157,6 +221,9 @@ export default async function AboutPage() {
             );
           })}
         </div>
+
+        {/* space filler */}
+        <div className='h-[60px]' />
       </section>
 
       {/* <section>
@@ -179,7 +246,7 @@ export default async function AboutPage() {
 
       <section className='mb-8'>
         <h2 className='my-9 text-center'>OUR TEAM</h2>
-        <div className='mx-auto flex max-w-264 flex-wrap justify-center gap-4'>
+        <div className='mx-auto flex max-w-264 flex-wrap justify-center gap-4 not-md:mx-[16px]'>
           {teamMemberBios?.map(([firstName, lastName, bio]) => {
             const fullName = `${firstName} ${lastName}`;
             const teamMember = teamMemberImagesByName[fullName];
@@ -205,6 +272,34 @@ export default async function AboutPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className='bg-teal-logo-200 w-full py-8'>
+        <h2 className='mb-4 text-center not-md:mb-[24px] not-md:px-[16px]'>
+          Proudly Platinum for Transparent Impact
+        </h2>
+
+        <div className='flex items-center justify-center gap-6 px-2 not-md:flex-col'>
+          <div>
+            <Image
+              src='/icons/platinumTransparency.svg'
+              alt='Platinum Transparency Logo'
+              fillWidth={156}
+              fillHeight={156}
+            />
+          </div>
+
+          <div className='max-w-xl not-md:mx-6'>
+            <p className='mb-6 not-md:text-center'>
+              We are proud to have a Platinum Seal of Transparency from Candid
+              in 2024— because at Forefront Charity, transparency is at the
+              heart of everything we do. Learn more by reading our annual
+              reports.
+            </p>
+
+            <SelectAnnualReport />
+          </div>
         </div>
       </section>
     </>
