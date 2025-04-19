@@ -15,7 +15,7 @@ import PillarsEmpowermentImage from './assets/Pillars_Empowerment.png';
 import PillarsMedicalImage from './assets/Pillars_Medical.png';
 import PillarsWaterImage from './assets/Pillars_Water.png';
 
-const PILLARS_CARDS_METADATA = [
+const FOUR_PILLARS_CARDS = [
   {
     key: 'Clean Water',
     title: (
@@ -71,7 +71,7 @@ const PILLARS_CARDS_METADATA = [
 ];
 
 // TODO: add image alts
-const CHANGEMAKERS_CARDS_METADATA = [
+const CHANGEMAKERS_CARDS = [
   {
     title: 'A Brighter Future',
     description:
@@ -183,13 +183,13 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className='flex w-full gap-6 px-[10vw] not-md:flex-col not-md:px-0'>
-            {PILLARS_CARDS_METADATA.map(
+          <div className='flex flex-wrap justify-center gap-[24px]'>
+            {FOUR_PILLARS_CARDS.map(
               ({ key, title, highlight, description, src, alt }) => (
-                <div key={key} className='relative flex-1'>
+                <div key={key} className='relative'>
                   <Image
-                    fillWidth='100%'
-                    fillHeight='50vh'
+                    fillWidth={245}
+                    fillHeight={360}
                     src={src}
                     alt={alt}
                     className='rounded-xl shadow-[2px_5px_7px_4px_rgba(0,_0,_0,_0.4)] md:object-top'
@@ -200,7 +200,7 @@ export default async function HomePage() {
                         <div className='pointer-events-none absolute inset-0 z-0 mb-6 h-[125%] w-full rounded-t-xl bg-white/10 backdrop-blur-md [mask-image:linear-gradient(to_bottom,white_70%,transparent_100%)]' />
 
                         {/* text */}
-                        <div className='relative z-1 pt-[7%] text-center'>
+                        <div className='relative pt-[7%] text-center'>
                           <h3>{title}</h3>
                           <div className='my-1 text-6xl font-bold not-md:text-5xl'>
                             {highlight}
@@ -234,7 +234,7 @@ export default async function HomePage() {
             <div className='max-w-xl not-md:mx-6'>
               <p className='mb-6 not-md:text-center'>
                 We are proud to have a Platinum Seal of Transparency from Candid
-                in 2024— because at Forefront Charity, transparency is at the
+                every year— because at Forefront Charity, transparency is at the
                 heart of everything we do. Learn more by reading our annual
                 reports.
               </p>
@@ -287,26 +287,24 @@ export default async function HomePage() {
           </h2>
 
           <div className='flex gap-6 not-md:flex-col'>
-            {CHANGEMAKERS_CARDS_METADATA.map(
-              ({ title, description, src, alt }) => (
-                <div
-                  key={title}
-                  className='flex-1 rounded-xl bg-white p-6 shadow-[2px_3px_7px_4px_rgba(0,_0,_0,_0.2)]'
-                >
-                  <div className='aspect-square w-full'>
-                    <Image
-                      className='rounded-lg'
-                      src={src}
-                      fillWidth='100%'
-                      fillHeight='100%'
-                      alt={alt}
-                    />
-                  </div>
-                  <h3 className='mt-[24px] mb-[12px]'>{title}</h3>
-                  <p>{description}</p>
+            {CHANGEMAKERS_CARDS.map(({ title, description, src, alt }) => (
+              <div
+                key={title}
+                className='flex-1 rounded-xl bg-white p-6 shadow-[2px_3px_7px_4px_rgba(0,_0,_0,_0.2)]'
+              >
+                <div className='aspect-square w-full'>
+                  <Image
+                    className='rounded-lg'
+                    src={src}
+                    fillWidth='100%'
+                    fillHeight='100%'
+                    alt={alt}
+                  />
                 </div>
-              ),
-            )}
+                <h3 className='mt-[24px] mb-[12px]'>{title}</h3>
+                <p>{description}</p>
+              </div>
+            ))}
           </div>
         </section>
 

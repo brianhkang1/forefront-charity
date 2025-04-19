@@ -10,7 +10,7 @@ const GOLD_CARDS_METADATA = [
     title: 'Sponsorship Packages',
     description:
       "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT Charity's mission.",
-    buttonLabel: 'Bid',
+    buttonLabel: 'Sponsor',
     url: '/documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
   },
   {
@@ -70,7 +70,7 @@ export default async function GalaPage() {
 
         <div className='text-center not-md:mx-4'>
           <div className='mb-3 text-4xl font-extralight text-white'>
-            FOREFRONT Charity&apos;s 10 Year Annual Gala
+            FOREFRONT Charity&apos;s 10th Year Annual Gala
           </div>
 
           <h1 className='mb-3'>
