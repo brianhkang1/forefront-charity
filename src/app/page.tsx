@@ -331,7 +331,7 @@ export default async function HomePage() {
             hideContainerWhenDesktop
             src={CallToActionMobile}
             alt='Two FOREFRONT students smiling at camera'
-            className='mobile aspect-square w-full rounded-xl'
+            className='mobile aspect-square h-[50vh] rounded-xl'
           >
             <div className='mobile absolute top-[30%] left-0 px-[5vw]'>
               <h2>Change the World with Us</h2>

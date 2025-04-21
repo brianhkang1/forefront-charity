@@ -271,79 +271,81 @@ export default async function ApproachPage() {
       </section>
 
       <section className='flex flex-col items-center'>
-        <h3 className='mb-[24px] max-w-[1060px] text-center'>
+        <h3 className='mb-[24px] max-w-[1024px] text-center'>
           We are focused on reaching all parts of the world because we believe
           in a world where everyone has the essential resources to reach their
           full potential
         </h3>
 
-        <div className='grid w-[1060px] grid-cols-3 gap-[24px] not-md:overflow-x-hidden'>
-          {/* Column 1 */}
-          <div className='flex flex-wrap gap-[24px]'>
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={332}
-              fillHeight={156}
-              className='rounded-xl'
-            />
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={156}
-              fillHeight={156}
-              className='rounded-xl'
-            />
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={156}
-              fillHeight={156}
-              className='rounded-xl'
-            />
-          </div>
+        <div className='max-w-[100vw] overflow-x-hidden'>
+          <div className='grid w-[1024px] grid-cols-3 justify-center gap-[16px]'>
+            {/* Column 1 */}
+            <div className='flex flex-wrap gap-[16px]'>
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={332}
+                fillHeight={156}
+                className='rounded-xl'
+              />
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={156}
+                fillHeight={156}
+                className='rounded-xl'
+              />
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={156}
+                fillHeight={156}
+                className='rounded-xl'
+              />
+            </div>
 
-          {/* Column 2 */}
-          <div className='flex flex-wrap gap-[24px]'>
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={156}
-              fillHeight={336}
-              className='rounded-xl'
-            />
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={156}
-              fillHeight={336}
-              className='rounded-xl'
-            />
-          </div>
+            {/* Column 2 */}
+            <div className='flex flex-wrap gap-[16px]'>
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={156}
+                fillHeight={336}
+                className='rounded-xl'
+              />
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={156}
+                fillHeight={336}
+                className='rounded-xl'
+              />
+            </div>
 
-          {/* Column 3 */}
-          <div className='flex flex-wrap gap-[24px]'>
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={156}
-              fillHeight={156}
-              className='aspect-square rounded-xl'
-            />
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={156}
-              fillHeight={156}
-              className='aspect-square rounded-xl'
-            />
-            <Image
-              src={CallToAction}
-              alt=''
-              fillWidth={332}
-              fillHeight={156}
-              className='aspect-[3/2] rounded-xl'
-            />
+            {/* Column 3 */}
+            <div className='flex flex-wrap gap-[16px]'>
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={156}
+                fillHeight={156}
+                className='aspect-square rounded-xl'
+              />
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={156}
+                fillHeight={156}
+                className='aspect-square rounded-xl'
+              />
+              <Image
+                src={CallToAction}
+                alt=''
+                fillWidth={332}
+                fillHeight={156}
+                className='aspect-[3/2] rounded-xl'
+              />
+            </div>
           </div>
         </div>
       </section>
