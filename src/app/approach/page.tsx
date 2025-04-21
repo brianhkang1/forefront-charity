@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import CallToAction from './assets/Call_To_Action.png';
 import OurVision from './assets/Our_Vision.png';
 import Ripple from './assets/Ripple.png';
+import RippleMobile from './assets/Ripple_Mobile.png';
 
 // Default value, but explicitly set to ensure SSG
 export const revalidate = false;
@@ -86,14 +87,17 @@ export default async function ApproachPage() {
   return (
     <>
       <section>
+        {/* Desktop Hero Image */}
         <Image
           priority
+          hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='100vh'
           src={heroImage?.url || ''}
           alt='Woman walking away with jar on her head'
+          className='desktop'
         >
-          <div className='absolute top-[40%] left-[50%]'>
+          <div className='desktop absolute top-[40%] left-[50%]'>
             <h1 className='mb-[16px]'>
               <div>From Unreached</div>
               <div>to Unstoppable</div>
@@ -105,10 +109,30 @@ export default async function ApproachPage() {
             </h3>
           </div>
         </Image>
+
+        {/* Mobile Hero Image */}
+        <Image
+          priority
+          hideContainerWhenDesktop
+          fillWidth='100%'
+          fillHeight='80vh'
+          src={heroImage?.url || ''}
+          alt='Woman walking away with jar on her head'
+          className='mobile object-[20%_50%]'
+        >
+          <div className='mobile absolute top-[10%] left-[30%]'>
+            <h1 className='mb-[16px]'>From Unreached to Unstoppable</h1>
+
+            <h3>
+              FOREFRONT Charity&apos;s approach is to partner with communities
+              to ignite a ripple effect of lasting change.
+            </h3>
+          </div>
+        </Image>
       </section>
 
-      <section className='flex'>
-        <div className='z-1 flex-1 justify-self-end bg-teal-800 py-[24px] pr-[48px] pl-[10vw] text-white [clip-path:polygon(0%_0%,95%_0%,100%_50%,95%_100%,0%_100%)]'>
+      <section className='flex not-md:flex-col'>
+        <div className='z-1 flex-1 bg-teal-800 py-[24px] pr-[48px] pl-[10vw] text-white not-md:[clip-path:polygon(0%_0%,100%_0%,100%_95%,50%_100%,0%_95%)] md:justify-self-end md:[clip-path:polygon(0%_0%,95%_0%,100%_50%,95%_100%,0%_100%)]'>
           <h3 className='mb-[16px]'>
             When essentials are out of reach, potential is left behind
           </h3>
@@ -130,8 +154,8 @@ export default async function ApproachPage() {
           </div>
         </div>
 
-        <div className='ml-[-40px] flex-1 bg-teal-100 py-[24px] pr-[10vw] pl-[64px]'>
-          <h3 className='mb-[16px]'>
+        <div className='flex-1 bg-teal-100 py-[24px] pr-[10vw] pl-[64px] not-md:mt-[-40px] md:ml-[-40px]'>
+          <h3 className='mb-[16px] not-md:mt-[48px]'>
             A mission rooted in hope and transformation
           </h3>
           <div>
@@ -154,9 +178,9 @@ export default async function ApproachPage() {
         </div>
       </section>
 
-      <section className='mb-[48px] flex flex-col items-center'>
+      <section className='mb-[48px] flex flex-col items-center not-md:m-[48px]'>
         <div className='max-w-[1060px]'>
-          <h2 className='mt-[48px] mb-[12px]'>
+          <h2 className='mb-[12px] md:mt-[48px]'>
             How We Create Lasting Change: Our Four-Pillar Approach
           </h2>
           <div className='mb-[24px]'>
@@ -164,7 +188,7 @@ export default async function ApproachPage() {
             essential resources they need to thrive.
           </div>
 
-          <div className='grid grid-cols-2 gap-[24px]'>
+          <div className='grid gap-[24px] md:grid-cols-2'>
             {FOUR_PILLARS.map(({ backgroundColor, title, description }) => (
               <div
                 key={title}
@@ -178,9 +202,9 @@ export default async function ApproachPage() {
         </div>
       </section>
 
-      <section className='bg-teal-800 pl-[10vw] text-white'>
-        <div className='flex'>
-          <div className='flex max-w-[412px] flex-col justify-center'>
+      <section className='bg-teal-800 text-white md:pl-[10vw]'>
+        <div className='flex not-md:flex-col-reverse'>
+          <div className='flex flex-col justify-center not-md:mx-[24px] not-md:mt-[24px] md:max-w-[412px]'>
             <h2 className='mb-[12px]'>
               Exponential Impact: A Ripple Effect of Change
             </h2>
@@ -204,11 +228,24 @@ export default async function ApproachPage() {
             </div>
           </div>
 
+          {/* Desktop Image */}
           <Image
+            hideContainerWhenMobile
             src={Ripple}
             alt='Multiple Changemakers creating a ripple effect'
             fillWidth={900}
             fillHeight={700}
+            className='desktop'
+          />
+
+          {/* Mobile Image */}
+          <Image
+            hideContainerWhenDesktop
+            src={RippleMobile}
+            alt='Multiple Changemakers creating a ripple effect'
+            fillWidth='100%'
+            fillHeight='55vh'
+            className='mobile'
           />
         </div>
       </section>
@@ -240,7 +277,7 @@ export default async function ApproachPage() {
           full potential
         </h3>
 
-        <div className='grid max-w-[1060px] grid-cols-3 gap-[24px]'>
+        <div className='grid w-[1060px] grid-cols-3 gap-[24px] not-md:overflow-x-hidden'>
           {/* Column 1 */}
           <div className='flex flex-wrap gap-[24px]'>
             <Image
@@ -311,13 +348,13 @@ export default async function ApproachPage() {
         </div>
       </section>
 
-      <section className='mx-[48px] my-[24px]'>
+      <section className='mx-[48px] my-[24px] not-md:mx-[24px]'>
         <Image
           src={CallToAction}
           alt='Students playing at FOREFRONT School'
           className='h-[70vh] w-full rounded-xl object-[50%_55%]'
         >
-          <div className='desktop absolute top-[40%] left-[5%]'>
+          <div className='absolute top-[40%] left-[5%]'>
             <h2>Change the World with Us</h2>
 
             <div className='mt-3 flex gap-2'>

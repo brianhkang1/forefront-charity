@@ -34,7 +34,7 @@ export default function Header() {
   if (screenSizeUnknown) return null;
   if (isMobile) {
     return (
-      <header className={'sticky top-0 z-1 shadow-2xl'}>
+      <header className={'sticky top-0 z-2 shadow-2xl'}>
         <Collapsible.Root
           open={mobileMenuIsOpen}
           onOpenChange={setMobileMenuIsOpen}
@@ -88,7 +88,7 @@ export default function Header() {
   return (
     <header
       className={
-        'absolute z-1 flex h-36 w-full flex-wrap items-center justify-between p-12'
+        'absolute z-2 flex h-36 w-full flex-wrap items-center justify-between p-12'
       }
     >
       <Link href='/'>
