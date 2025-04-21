@@ -7,6 +7,13 @@ import type { Metadata } from 'next';
 
 import { getGoogleDriveImages } from '../../lib/googleDrive';
 
+// Default value, but explicitly set to ensure SSG
+export const revalidate = false;
+
+export const metadata: Metadata = {
+  title: 'About',
+};
+
 const HOW_WE_GOT_HERE = [
   { title: 2015, description: 'First Well in Pallapatla, India' },
   { title: 2016, description: 'Launched Handwashing Initiative' },
@@ -18,13 +25,6 @@ const HOW_WE_GOT_HERE = [
   { title: 2022, description: 'Launched FOREFRONT Fearless' },
   { title: 2023, description: 'Launched newborn care' },
 ];
-
-// Default value, but explicitly set to ensure SSG
-export const revalidate = false;
-
-export const metadata: Metadata = {
-  title: 'About',
-};
 
 export default async function AboutPage() {
   const teamMemberImagesData = getGoogleDriveImages(

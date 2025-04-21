@@ -37,10 +37,14 @@
   --color-teal-logo-400: #7fcfcf;
 
   --color-forefront-water: #0082c8;
+  --color-forefront-water-background: #c2e1f2;
+  --color-forefront-medical: #e45455;
+  --color-forefront-medical-background: #f9d6d6;
   /* --color-forefront-education: #f4bb27; */
   --color-forefront-education: #bfa21e;
-  --color-forefront-medical: #e45455;
+  --color-forefront-education-background: #fcefcb;
   --color-forefront-empowerment: #8b5aa5;
+  --color-forefront-empowerment-background: #e1d7e9;
 
   --animate-slide-down: slide-down 0.3s ease-out;
   --animate-slide-up: slide-up 0.3s ease-out;

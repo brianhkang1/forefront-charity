@@ -15,6 +15,13 @@ import PillarsEmpowermentImage from './assets/Pillars_Empowerment.png';
 import PillarsMedicalImage from './assets/Pillars_Medical.png';
 import PillarsWaterImage from './assets/Pillars_Water.png';
 
+// Default value, but explicitly set to ensure SSG
+export const revalidate = false;
+
+export const metadata: Metadata = {
+  title: 'Home - FOREFRONT Charity',
+};
+
 const FOUR_PILLARS_CARDS = [
   {
     key: 'Clean Water',
@@ -94,13 +101,6 @@ const CHANGEMAKERS_CARDS = [
     alt: '',
   },
 ];
-
-// Default value, but explicitly set to ensure SSG
-export const revalidate = false;
-
-export const metadata: Metadata = {
-  title: 'Home - FOREFRONT Charity',
-};
 
 export default async function HomePage() {
   const homePageImagesData = await getGoogleDriveImages(
@@ -308,7 +308,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className='w-full rounded-xl'>
+        <section>
           {/* Desktop Image */}
           <Image
             hideContainerWhenMobile

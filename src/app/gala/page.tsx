@@ -5,7 +5,14 @@ import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const GOLD_CARDS_METADATA = [
+// Default value, but explicitly set to ensure SSG
+export const revalidate = false;
+
+export const metadata: Metadata = {
+  title: 'Gala',
+};
+
+const GOLD_CARDS = [
   {
     title: 'Sponsorship Packages',
     description:
@@ -28,13 +35,6 @@ const GOLD_CARDS_METADATA = [
     url: 'https://givebutter.com/c/FF10thgala',
   },
 ];
-
-// Default value, but explicitly set to ensure SSG
-export const revalidate = false;
-
-export const metadata: Metadata = {
-  title: 'Gala',
-};
 
 export default async function GalaPage() {
   const galaPageImagesData = await getGoogleDriveImages(
@@ -96,7 +96,7 @@ export default async function GalaPage() {
       </section>
 
       <section className='flex items-center justify-center gap-6 pb-10 text-white not-md:flex-col not-md:gap-12'>
-        {GOLD_CARDS_METADATA.map(({ title, description, buttonLabel, url }) => (
+        {GOLD_CARDS.map(({ title, description, buttonLabel, url }) => (
           <div
             key={title}
             className='from-gold to-dark-gold h-[360px] w-[340px] rounded-md bg-gradient-to-r p-[3px]'
