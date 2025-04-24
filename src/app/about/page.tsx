@@ -272,7 +272,7 @@ export default async function AboutPage() {
 
       <section className='bg-teal-logo-200 w-full py-8'>
         <h2 className='mb-4 text-center not-md:mb-[24px] not-md:px-[16px]'>
-          Proudly Platinum for Transparent Impact
+          See Your Impact: Read our Annual Reports
         </h2>
 
         <div className='flex items-center justify-center gap-6 px-2 not-md:flex-col'>
@@ -287,10 +287,10 @@ export default async function AboutPage() {
 
           <div className='max-w-xl not-md:mx-6'>
             <p className='mb-6 not-md:text-center'>
-              We are proud to have a Platinum Seal of Transparency from Candid
-              in 2024— because at Forefront Charity, transparency is at the
-              heart of everything we do. Learn more by reading our annual
-              reports.
+              Forefront Charity earned Candid’s 2024 Platinum Seal of
+              Transparency, a recognition of our commitment to openness and
+              accountability. Dive into our annual reports to see how your
+              support is creating real, lasting change.
             </p>
 
             <SelectAnnualReport />

@@ -108,7 +108,6 @@
   }
 
   p {
-    font-family: var(--font-libre-baskerville);
     font-size: var(--text-base);
     line-height: var(--text-base--line-height);
     font-weight: var(--font-weight-normal);

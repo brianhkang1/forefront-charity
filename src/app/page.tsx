@@ -3,6 +3,7 @@ import Image from '@/components/Image';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
+import clsx from 'clsx';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -31,10 +32,11 @@ const FOUR_PILLARS_CARDS = [
         <div>WATER</div>
       </>
     ),
-    highlight: '87+',
+    highlight: '89+',
     description: 'Water Wells Built',
     src: PillarsWaterImage,
     alt: 'Clean water cup held by two hands',
+    borderColor: 'border-forefront-water',
   },
   {
     key: 'Accessible Medical Care',
@@ -48,6 +50,7 @@ const FOUR_PILLARS_CARDS = [
     description: 'Patients Served',
     src: PillarsMedicalImage,
     alt: 'Patient being treated',
+    borderColor: 'border-forefront-medical',
   },
   {
     key: 'Quality Education',
@@ -61,6 +64,7 @@ const FOUR_PILLARS_CARDS = [
     description: 'Students Enrolled',
     src: PillarsEducationImage,
     alt: 'Two young students smiling',
+    borderColor: 'border-forefront-education',
   },
   {
     key: 'Empowerment Opportunities',
@@ -74,6 +78,7 @@ const FOUR_PILLARS_CARDS = [
     description: 'Changemakers Trained',
     src: PillarsEmpowermentImage,
     alt: 'Female individual standing out in a crowd',
+    borderColor: 'border-forefront-empowerment',
   },
 ];
 
@@ -82,21 +87,21 @@ const CHANGEMAKERS_CARDS = [
   {
     title: 'A Brighter Future',
     description:
-      'Siri grew up in a remote village with contaminated water and limited resources. She dreamed of helping others but faced financial and environmental obstacles. FOREFRONT Charity provided clean water and funded her education. Today, Siri is a nurse, a mother, and a symbol of how clean water and opportunity can transform a life.',
+      'I grew up in a village where clean water was scarce and opportunities were few. But I always dreamed of helping others. FOREFRONT Charity brought clean water to our community and supported my education. Today, I’m proud to give back as a caregiver, a parent, and a reminder that a little opportunity can change everything.',
     src: PillarsWaterImage,
     alt: '',
   },
   {
     title: 'Paying It Forward',
     description:
-      '[NAME] was deeply moved by when FOREFRONT Charity built his village a water well. Inspired by the Changemakers’ leadership, he is now a volunteer, scouting new locations that are in need of clean water. His dedication is a powerful reminder of the ripple effect of hope and service.',
+      'When FOREFRONT built a well in my village, it changed my life. Inspired by their example, I now volunteer to help bring clean water to other communities. It’s my way of paying it forward and spreading the same hope I once received.',
     src: PillarsEducationImage,
     alt: '',
   },
   {
     title: 'Igniting Young Minds',
     description:
-      'Mr. Nagrashu, once an engineer and now a passionate educator, joined FOREFRONT’s school and built a thriving general knowledge program. Under his guidance, the grade 5 and 6 students competed—and won—against university-level peers at a major general knowledge competition. His story is a testament to the impact an individual can make.',
+      'After years as an engineer, I became a teacher through FOREFRONT’s education program. I helped launch a general knowledge class where our students rose to the top—competing against university-level peers and winning. It’s amazing what students can achieve when given the chance.',
     src: PillarsMedicalImage,
     alt: '',
   },
@@ -125,7 +130,7 @@ export default async function HomePage() {
         >
           <div className='desktop absolute top-[35%] left-[6%] text-white not-md:top-[15%]'>
             <h1 className='mb-9'>
-              <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[40px] font-normal'>
+              <div className='mb-[16px] text-[40px] font-normal italic'>
                 I dream of...
               </div>
               <div className='mb-[12px]'>helping my</div>
@@ -156,7 +161,7 @@ export default async function HomePage() {
 
           <div className='mobile absolute bottom-[8%] left-[6%] text-white'>
             <h1 className='mb-9'>
-              <div className='f mb-[16px] font-(family-name:--font-libre-baskerville) text-[24px] font-normal'>
+              <div className='mb-[16px] text-[24px] font-normal italic'>
                 I dream of...
               </div>
               <div className='mb-[12px]'>helping my</div>
@@ -185,14 +190,25 @@ export default async function HomePage() {
 
           <div className='flex flex-wrap justify-center gap-[24px]'>
             {FOUR_PILLARS_CARDS.map(
-              ({ key, title, highlight, description, src, alt }) => (
+              ({
+                key,
+                title,
+                highlight,
+                description,
+                src,
+                alt,
+                borderColor,
+              }) => (
                 <div key={key} className='relative'>
                   <Image
                     fillWidth={245}
                     fillHeight={360}
                     src={src}
                     alt={alt}
-                    className='rounded-xl shadow-[2px_5px_7px_4px_rgba(0,_0,_0,_0.4)] md:object-top'
+                    className={clsx(
+                      'rounded-xl border-4 shadow-[1px_1px_3px_2px_rgba(0,_0,_0,_0.2)] md:object-top',
+                      borderColor,
+                    )}
                   >
                     <div className='absolute top-0 left-0 flex w-full flex-col items-center'>
                       <div className='relative w-full'>
@@ -267,8 +283,8 @@ export default async function HomePage() {
           >
             <div className='absolute top-[15%] left-[5%] max-w-118.25 not-md:top-[5%]'>
               <h2>
-                <div>Our Changemakers</div>
-                <div>The Catalysts for Change</div>
+                <div>Our Changemakers.</div>
+                <div>The Catalysts for Change.</div>
               </h2>
 
               <p className='mt-4 not-md:max-w-[70%] not-md:text-sm'>

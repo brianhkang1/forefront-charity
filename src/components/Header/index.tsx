@@ -34,6 +34,7 @@ export default function Header() {
   if (screenSizeUnknown) return null;
   if (isMobile) {
     return (
+      // <header className={'absolute top-0 z-2 w-full'}>
       <header className={'sticky top-0 z-2 shadow-2xl'}>
         <Collapsible.Root
           open={mobileMenuIsOpen}

@@ -131,8 +131,8 @@ export default async function ApproachPage() {
         </Image>
       </section>
 
-      <section className='flex not-md:flex-col'>
-        <div className='z-1 flex-1 bg-teal-800 py-[24px] pr-[48px] pl-[10vw] text-white not-md:[clip-path:polygon(0%_0%,100%_0%,100%_95%,50%_100%,0%_95%)] md:justify-self-end md:[clip-path:polygon(0%_0%,95%_0%,100%_50%,95%_100%,0%_100%)]'>
+      <section className='flex not-lg:flex-col'>
+        <div className='z-1 flex-1 bg-teal-800 py-[24px] pr-[48px] pl-[10vw] text-white not-lg:[clip-path:polygon(0%_0%,100%_0%,100%_95%,50%_100%,0%_95%)] lg:justify-self-end lg:[clip-path:polygon(0%_0%,95%_0%,100%_50%,95%_100%,0%_100%)]'>
           <h3 className='mb-[16px]'>
             When essentials are out of reach, potential is left behind
           </h3>
@@ -141,12 +141,12 @@ export default async function ApproachPage() {
               Around the world, lack of essential resources holds entire
               communities back, especially in unreached areas.
             </div>
-            <div className='mb-[24px]'>
+            {/* <div className='mb-[24px]'>
               Women and children walk over ten hours a day to collect water -
               water that is not even safe to drink. There are no local schools,
               leaving children without the opportunity to learn. Preventable
               diseases impact communities without access to medical care.
-            </div>
+            </div> */}
             <div className='mb-[24px]'>
               When basic life necessities are not met, potential remains
               untapped.
@@ -154,8 +154,8 @@ export default async function ApproachPage() {
           </div>
         </div>
 
-        <div className='flex-1 bg-teal-100 py-[24px] pr-[10vw] pl-[64px] not-md:mt-[-40px] md:ml-[-40px]'>
-          <h3 className='mb-[16px] not-md:mt-[48px]'>
+        <div className='flex-1 bg-teal-100 py-[24px] pr-[10vw] pl-[94px] not-lg:mt-[-40px] lg:ml-[-70px]'>
+          <h3 className='mb-[16px] not-lg:mt-[48px]'>
             A mission rooted in hope and transformation
           </h3>
           <div>
@@ -164,15 +164,13 @@ export default async function ApproachPage() {
               transformation.
             </div>
             <div className='mb-[24px]'>
-              Our mission is simple yet powerful: FOREFRONT Charity partners
-              with local leaders to provide essential resources to unreached
-              communities.
+              Our mission: FOREFRONT Charity partners with local leaders to
+              provide essential resources to unreached communities.
             </div>
             <div className='mb-[24px]'>
-              By building deep relationships and co-creating solutions, we help
-              unlock the potential already within these communities. Together,
-              we plant the seeds for lasting impact—led by those who know their
-              communities best.
+              {/* By building deep relationships and co-creating solutions, we help
+              unlock the potential already within these communities. Together, we plant the seeds for lasting impact—led
+              by those who know their communities best.  */}
             </div>
           </div>
         </div>
@@ -222,9 +220,8 @@ export default async function ApproachPage() {
               beyond—hoping to help their own communities.
             </div>
             <div className='mb-[24px]'>
-              Through culturally responsive solutions, long-term relationship
-              building, and leadership training, we ensure communities can take
-              ownership of their futures.
+              They create a ripple effect of lasting, self-sustaining change,
+              inspiring transformation in neighboring communities.
             </div>
           </div>
 
