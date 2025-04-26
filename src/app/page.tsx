@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import DonationDialog from '@/components/DonationDialog';
 import Image from '@/components/Image';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
@@ -9,7 +10,9 @@ import Link from 'next/link';
 
 import CallToAction from './assets/CallToAction.png';
 import CallToActionMobile from './assets/CallToAction_Mobile.png';
-import ChangemakersImage from './assets/Changemakers.png';
+import ChangeMakerImage from './assets/Changemaker.png';
+import ExponentialImpactImage from './assets/ExponentialImpact.png';
+import OurChangemakersImage from './assets/OurChangemakers.png';
 import PartnerImage from './assets/Partners.png';
 import PillarsEducationImage from './assets/Pillars_Education.png';
 import PillarsEmpowermentImage from './assets/Pillars_Empowerment.png';
@@ -83,29 +86,29 @@ const FOUR_PILLARS_CARDS = [
 ];
 
 // TODO: add image alts
-const CHANGEMAKERS_CARDS = [
-  {
-    title: 'A Brighter Future',
-    description:
-      'I grew up in a village where clean water was scarce and opportunities were few. But I always dreamed of helping others. FOREFRONT Charity brought clean water to our community and supported my education. Today, I’m proud to give back as a caregiver, a parent, and a reminder that a little opportunity can change everything.',
-    src: PillarsWaterImage,
-    alt: '',
-  },
-  {
-    title: 'Paying It Forward',
-    description:
-      'When FOREFRONT built a well in my village, it changed my life. Inspired by their example, I now volunteer to help bring clean water to other communities. It’s my way of paying it forward and spreading the same hope I once received.',
-    src: PillarsEducationImage,
-    alt: '',
-  },
-  {
-    title: 'Igniting Young Minds',
-    description:
-      'After years as an engineer, I became a teacher through FOREFRONT’s education program. I helped launch a general knowledge class where our students rose to the top—competing against university-level peers and winning. It’s amazing what students can achieve when given the chance.',
-    src: PillarsMedicalImage,
-    alt: '',
-  },
-];
+// const CHANGEMAKERS_CARDS = [
+//   {
+//     title: 'A Brighter Future',
+//     description:
+//       'I grew up in a village where clean water was scarce and opportunities were few. But I always dreamed of helping others. FOREFRONT Charity brought clean water to our community and supported my education. Today, I’m proud to give back as a caregiver, a parent, and a reminder that a little opportunity can change everything.',
+//     src: PillarsWaterImage,
+//     alt: '',
+//   },
+//   {
+//     title: 'Paying It Forward',
+//     description:
+//       'When FOREFRONT built a well in my village, it changed my life. Inspired by their example, I now volunteer to help bring clean water to other communities. It’s my way of paying it forward and spreading the same hope I once received.',
+//     src: PillarsEducationImage,
+//     alt: '',
+//   },
+//   {
+//     title: 'Igniting Young Minds',
+//     description:
+//       'After years as an engineer, I became a teacher through FOREFRONT’s education program. I helped launch a general knowledge class where our students rose to the top—competing against university-level peers and winning. It’s amazing what students can achieve when given the chance.',
+//     src: PillarsMedicalImage,
+//     alt: '',
+//   },
+// ];
 
 export default async function HomePage() {
   const homePageImagesData = await getGoogleDriveImages(
@@ -138,7 +141,8 @@ export default async function HomePage() {
             </h1>
 
             <div className='flex gap-3'>
-              <Button>[L] Donate</Button>
+              <DonationDialog />
+
               <Button color='bg-white'>
                 <Link href='/approach'>Learn More</Link>
               </Button>
@@ -169,7 +173,8 @@ export default async function HomePage() {
             </h1>
 
             <div className='flex gap-3'>
-              <Button>[L] Donate</Button>
+              <DonationDialog />
+
               <Button color='bg-white'>
                 <Link href='/approach'>Learn More</Link>
               </Button>
@@ -266,7 +271,7 @@ export default async function HomePage() {
             alt='Local community landscape'
             className='w-full rounded-xl not-md:aspect-square md:h-[70vh]'
           >
-            <div className='absolute top-[25%] left-0 flex w-full justify-center not-md:top-[10%]'>
+            <div className='absolute top-[16%] left-0 flex w-full justify-center not-md:top-[10%]'>
               <h2 className='max-w-[80%] text-center not-md:max-w-[90%] 2xl:max-w-[60%]'>
                 FOREFRONT Charity partners with local leaders to provide
                 essential resources to unreached communities.
@@ -277,7 +282,7 @@ export default async function HomePage() {
 
         <section className='w-full'>
           <Image
-            src={ChangemakersImage}
+            src={OurChangemakersImage}
             alt='Family in local community'
             className='w-full rounded-xl not-md:aspect-square not-md:object-top md:h-[70vh]'
           >
@@ -287,16 +292,20 @@ export default async function HomePage() {
                 <div>The Catalysts for Change.</div>
               </h2>
 
-              <p className='mt-4 not-md:max-w-[70%] not-md:text-sm'>
+              <p className='mt-4 mb-4 not-md:max-w-[70%] not-md:text-sm'>
                 We partner with our Changemakers: local leaders who understand
                 and know their communities’ needs. This approach drives
                 long-term, sustainable change.
               </p>
+
+              <Button>
+                <Link href='/approach'>Learn More</Link>
+              </Button>
             </div>
           </Image>
         </section>
 
-        <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
+        {/* <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
           <h2 className='mb-9 text-center'>
             <div>Exponential Impact</div>
             <div>Made Possible by Our Changemakers</div>
@@ -322,6 +331,46 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
+        </section> */}
+
+        <section className='bg-teal-logo-200 flex w-full justify-center gap-6 rounded-xl p-4'>
+          <div className='rounded-xl bg-white p-3'>
+            <Image
+              src={ChangeMakerImage}
+              alt='Changemaker smiling'
+              className='h-[40vh] w-[40vh] rounded-lg'
+            />
+          </div>
+
+          <div className='flex max-w-2xl flex-col justify-center'>
+            <h2 className='mb-3'>
+              <div>Living the Mission.</div>
+              <div>Changing the Next Generation.</div>
+            </h2>
+
+            <p>
+              Dev grew up without access to education and is unable to read.
+              Determined to make a change for his children’s generation, Dev
+              became a Changemaker with FOREFRONT, particularly investing his
+              time into FOREFRONT School —bringing literacy, opportunity, and
+              transformation to the next generation.
+            </p>
+          </div>
+        </section>
+
+        <section className='w-full'>
+          <Image
+            src={ExponentialImpactImage}
+            alt='Students in front of FOREFRONT School'
+            className='h-[70vh] w-full rounded-xl'
+          >
+            <div className='absolute top-[5%] left-0 flex w-full justify-center not-md:top-[10%]'>
+              <h2 className='max-w-[80%] text-center not-md:max-w-[90%] 2xl:max-w-[60%]'>
+                <div>Exponential Impact.</div>
+                <div>Made Possible by our Changemakers.</div>
+              </h2>
+            </div>
+          </Image>
         </section>
 
         <section>
@@ -336,8 +385,13 @@ export default async function HomePage() {
               <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
-                <Button>[L] Give</Button>
-                <Button color='bg-white'>[L] Get Involved</Button>
+                <DonationDialog />
+
+                <Button color='bg-white'>
+                  <Link href='mailto:contact@goforefront.org'>
+                    Get Involved
+                  </Link>
+                </Button>
               </div>
             </div>
           </Image>
@@ -353,8 +407,13 @@ export default async function HomePage() {
               <h2>Change the World with Us</h2>
 
               <div className='mt-3 flex gap-2'>
-                <Button>[L] Give</Button>
-                <Button color='bg-white'>[L] Get Involved</Button>
+                <DonationDialog />
+
+                <Button color='bg-white'>
+                  <Link href='mailto:contact@goforefront.org'>
+                    Get Involved
+                  </Link>
+                </Button>
               </div>
             </div>
           </Image>

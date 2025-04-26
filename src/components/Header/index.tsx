@@ -9,12 +9,13 @@ import { usePathname } from 'next/navigation';
 import { Collapsible } from 'radix-ui';
 import { useEffect, useState } from 'react';
 
+import DonationDialog from '../DonationDialog';
+
 const LINKS = [
   { label: 'Home', href: '/', textColor: 'white' },
   { label: 'Approach', href: '/approach', textColor: 'black' },
   { label: 'About', href: '/about', textColor: 'black' },
   { label: 'Gala', href: '/gala', textColor: 'white' },
-  { label: 'Donate', href: '' },
 ];
 
 export default function Header() {
@@ -79,6 +80,8 @@ export default function Header() {
                   </Link>
                 );
               })}
+
+              <DonationDialog />
             </nav>
           </Collapsible.Content>
         </Collapsible.Root>
@@ -119,6 +122,8 @@ export default function Header() {
             </Link>
           );
         })}
+
+        <DonationDialog />
       </nav>
     </header>
   );

@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import Script from 'next/script';
 
 import './globals.css';
 
@@ -31,6 +32,11 @@ export default function RootLayout({
       lang='en'
       className={clsx('text-forefront-text antialiased', montserrat.variable)}
     >
+      <Script
+        src='https://widgets.givebutter.com/latest.umd.cjs?acct=PxZ0zWSrlOm5hxLl&p=other'
+        strategy='afterInteractive'
+      />
+
       <body>
         <Header />
         <main>{children}</main>
