@@ -6,7 +6,7 @@ import SignupForm from '../SignupForm';
 export default function Footer() {
   return (
     <footer className='flex min-h-[230px] flex-wrap items-center justify-center bg-teal-900 px-12 text-white not-xl:py-8 not-xl:text-center'>
-      <div className='flex h-full w-[min(80rem,80vw)] flex-wrap items-center justify-between not-xl:flex-col'>
+      <div className='flex h-full w-full max-w-[1280px] flex-wrap items-center justify-between not-xl:flex-col'>
         <div>
           <SignupForm />
           <div className='mt-4 flex items-center gap-2 not-xl:-mt-4 not-xl:mb-4 not-xl:justify-center'>
