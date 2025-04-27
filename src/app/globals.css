@@ -47,27 +47,27 @@
   --color-forefront-empowerment: #8b5aa5;
   --color-forefront-empowerment-background: #e1d7e9;
 
-  --animate-slide-down: slide-down 0.3s ease-out;
-  --animate-slide-up: slide-up 0.3s ease-out;
   --animate-dialog-overlay-show: dialog-overlay-show 0.2s ease-out;
   --animate-dialog-content-show: dialog-content-show 0.2s ease-out;
+  --animate-slide-rtl: slide-rtl 300ms ease-out forwards;
+  --animate-slide-ltr: slide-ltr 300ms ease-in forwards;
 
   /* animations */
-  @keyframes slide-down {
-    from {
-      height: 0;
+  @keyframes slide-rtl {
+    0% {
+      transform: translateX(100%);
     }
-    to {
-      height: var(--radix-collapsible-content-height);
+    100% {
+      transform: translateX(0);
     }
   }
 
-  @keyframes slide-up {
-    from {
-      height: var(--radix-collapsible-content-height);
+  @keyframes slide-ltr {
+    0% {
+      transform: translateX(0);
     }
-    to {
-      height: 0;
+    100% {
+      transform: translateX(100%);
     }
   }
 

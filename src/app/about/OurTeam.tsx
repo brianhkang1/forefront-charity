@@ -91,7 +91,7 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
 
               <Dialog.Close asChild>
                 <button
-                  className='hover:bg-forefront-teal/20 not-md:10 absolute top-7 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black hover:cursor-pointer hover:border-1 hover:border-teal-700 hover:text-teal-700 focus:outline-none'
+                  className='hover:bg-forefront-teal/20 absolute top-7 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black not-md:right-10 hover:cursor-pointer hover:text-teal-700 focus:outline-none'
                   aria-label='Close'
                 >
                   <Cross2Icon width='1.5rem' height='1.5rem' />

@@ -5,11 +5,15 @@ import { Dialog, VisuallyHidden } from 'radix-ui';
 
 import Button from '../Button';
 
-export default function DonationDialog() {
+interface Props {
+  buttonSize?: 'small' | 'medium';
+}
+
+export default function DonationDialog({ buttonSize }: Props) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>Donate</Button>
+        <Button size={buttonSize}>Donate</Button>
       </Dialog.Trigger>
 
       <Dialog.Portal>
@@ -28,7 +32,7 @@ export default function DonationDialog() {
 
           <Dialog.Close asChild>
             <button
-              className='hover:bg-forefront-teal/20 absolute top-6 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black hover:cursor-pointer hover:border-1 hover:border-teal-700 hover:text-teal-700 focus:outline-none'
+              className='hover:bg-forefront-teal/20 absolute top-6 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black hover:cursor-pointer hover:text-teal-700 focus:outline-none'
               aria-label='Close'
             >
               <Cross2Icon width='1.5rem' height='1.5rem' />
