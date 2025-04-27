@@ -28,7 +28,7 @@ export default function DonationDialog() {
 
           <Dialog.Close asChild>
             <button
-              className='hover:bg-forefront-teal/20 absolute top-6 right-9 inline-flex size-8 cursor-pointer appearance-none items-center justify-center rounded-full text-black hover:border-1 hover:border-teal-700 hover:text-teal-700 focus:outline-none'
+              className='hover:bg-forefront-teal/20 absolute top-6 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black hover:cursor-pointer hover:border-1 hover:border-teal-700 hover:text-teal-700 focus:outline-none'
               aria-label='Close'
             >
               <Cross2Icon width='1.5rem' height='1.5rem' />
