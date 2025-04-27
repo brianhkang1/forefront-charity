@@ -14,7 +14,7 @@ export default function SignupForm() {
     <>
       <h3 className='mb-3'>Get Email Updates</h3>
       <form
-        className='flex flex-wrap items-end gap-3 not-md:mb-10 not-md:flex-col not-md:items-center not-md:gap-5'
+        className='flex flex-wrap items-end gap-3 not-xl:mb-10 not-xl:flex-col not-xl:items-center not-xl:gap-5'
         action={formAction}
       >
         <Input

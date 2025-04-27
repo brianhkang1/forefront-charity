@@ -10,5 +10,8 @@
       "files": "tests/**",
       "extends": "plugin:playwright/recommended" // https://github.com/playwright-community/eslint-plugin-playwright#readme
     }
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off"
+  }
 }

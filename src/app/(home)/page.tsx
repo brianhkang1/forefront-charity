@@ -127,6 +127,7 @@ export default async function HomePage() {
         <LivingTheMission />
         <ExponentialImpact />
         <ChangeTheWorld />
+
         {/* <section className='bg-teal-logo-200 w-full rounded-xl p-6'>
           <div className='flex gap-6 not-md:flex-col'>
             {CHANGEMAKERS_CARDS.map(({ title, description, src, alt }) => (

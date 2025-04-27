@@ -1,12 +1,9 @@
-import Button from '@/components/Button';
-import DonationDialog from '@/components/DonationDialog';
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
-// import dynamic from 'next/dynamic';
-import Link from 'next/link';
 
+// import dynamic from 'next/dynamic';
 import ChangeTheWorld from './ChangeTheWorld';
 import ExponentialImpact from './ExponentialImpact';
 import FourPillars from './FourPillars';
