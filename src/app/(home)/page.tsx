@@ -69,10 +69,10 @@ export default async function HomePage() {
         >
           <div className='desktop absolute top-[35%] left-[6%] text-white not-md:top-[15%]'>
             <h1 className='mb-9'>
-              <div className='mb-[16px] text-[40px] font-normal italic'>
+              <div className='mb-4 text-[40px] font-normal italic'>
                 I dream of...
               </div>
-              <div className='mb-[12px]'>helping my</div>
+              <div className='mb-3'>helping my</div>
               <div>whole village thrive</div>
             </h1>
 

@@ -67,7 +67,6 @@ export default function SignupForm() {
           {state === 'error' ? (
             <>
               <Dialog.Title className='mt-3 mb-1 text-2xl'>Oh no!</Dialog.Title>
-
               <div>Something went wrong. Please try again later.</div>
             </>
           ) : (
