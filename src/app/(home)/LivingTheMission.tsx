@@ -1,5 +1,3 @@
-'use client';
-
 import Image from '@/components/Image';
 
 import ChangeMakerImage from './assets/Changemaker.png';

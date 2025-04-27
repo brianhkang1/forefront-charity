@@ -1,5 +1,3 @@
-'use client';
-
 import Button from '@/components/Button';
 import DonationDialog from '@/components/DonationDialog';
 import Image from '@/components/Image';

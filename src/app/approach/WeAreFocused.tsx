@@ -1,5 +1,3 @@
-'use client';
-
 import Image from '@/components/Image';
 
 import Gallery1Image from './assets/Gallery1.png';

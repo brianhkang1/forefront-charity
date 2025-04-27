@@ -1,16 +1,8 @@
 import Image from '@/components/Image';
 
-interface Props {
-  matthewOh:
-    | {
-        id: string;
-        name: string | null | undefined;
-        url: string;
-      }
-    | undefined;
-}
+import MatthewOhImage from './assets/Matthew_Oh.jpg';
 
-export default function HowItBegan({ matthewOh }: Props) {
+export default function HowItBegan() {
   return (
     <section className='mt-[-100px] w-full not-md:mt-[-110px]'>
       {/* Desktop view */}
@@ -54,15 +46,13 @@ export default function HowItBegan({ matthewOh }: Props) {
           </div>
 
           <div className='flex-1'>
-            {!!matthewOh && (
-              <Image
-                src={matthewOh.url}
-                alt={matthewOh.name || ''}
-                fillWidth='100%'
-                fillHeight={700}
-                className='2xl:object-[50%_35%]'
-              />
-            )}
+            <Image
+              src={MatthewOhImage}
+              alt={'Portrait of Matthew Oh'}
+              fillWidth='100%'
+              fillHeight={700}
+              className='2xl:object-[50%_35%]'
+            />
           </div>
         </div>
       </div>
@@ -107,14 +97,12 @@ export default function HowItBegan({ matthewOh }: Props) {
       {/* Mobile view image */}
       <div className='mobile mt-[-110px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
         <div>
-          {!!matthewOh && (
-            <Image
-              src={matthewOh.url}
-              alt={matthewOh?.name || ''}
-              fillWidth='100%'
-              fillHeight={700}
-            />
-          )}
+          <Image
+            src={MatthewOhImage}
+            alt={'Portrait of Matthew Oh'}
+            fillWidth='100%'
+            fillHeight={700}
+          />
         </div>
       </div>
     </section>

@@ -3,11 +3,15 @@ import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 
-import { getGoogleDriveImages } from '../../lib/googleDrive';
+import {
+  getGoogleDriveFiles,
+  getGoogleDriveImages,
+} from '../../lib/googleDrive';
 import AnnualReports from './AnnualReports';
 import HowItBegan from './HowItBegan';
 import HowWeGotHere from './HowWeGotHere';
 import OurTeam from './OurTeam';
+import { TeamMemberImageMetadata } from './types';
 
 // Default value, but explicitly set to ensure SSG
 export const revalidate = false;
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const teamMemberImagesData = getGoogleDriveImages(
+  const teamMembersMetadata = getGoogleDriveFiles(
     process.env.TEAM_MEMBERS_IMAGES_FOLDER_ID,
   );
 
@@ -29,25 +33,26 @@ export default async function AboutPage() {
     process.env.ABOUT_PAGE_IMAGES_FOLDER_ID,
   );
 
-  const [teamMemberImages, teamMemberBios, aboutPageImages] = await Promise.all(
-    [teamMemberImagesData, teamMemberBiosData, aboutPageImagesData],
-  );
+  const [teamMembers, teamMemberBios, aboutPageImages] = await Promise.all([
+    teamMembersMetadata,
+    teamMemberBiosData,
+    aboutPageImagesData,
+  ]);
 
   const heroImage = findImage(aboutPageImages, 'hero');
 
-  const teamMemberImagesByName =
-    teamMemberImages
-      ?.filter((image): image is { id: string; url: string; name: string } => {
-        return !!image?.name && !!image?.url;
+  const teamMembersByName =
+    teamMembers
+      ?.filter((image): image is TeamMemberImageMetadata => {
+        return !!image?.name && !!image?.mimeType;
       })
       .reduce(
         (prev, curr) => {
           prev[curr.name] = curr;
           return prev;
         },
-        {} as Record<string, { id: string; url: string; name: string }>,
+        {} as Record<string, TeamMemberImageMetadata>,
       ) || {};
-  const matthewOh = teamMemberImagesByName?.['Matthew Oh'];
 
   return (
     <>
@@ -65,11 +70,11 @@ export default async function AboutPage() {
         </Image>
       </section>
 
-      <HowItBegan matthewOh={matthewOh} />
+      <HowItBegan />
       <HowWeGotHere />
       <OurTeam
         teamMemberBios={teamMemberBios}
-        teamMemberImagesByName={teamMemberImagesByName}
+        teamMembersByName={teamMembersByName}
       />
       <AnnualReports />
 

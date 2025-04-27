@@ -1,5 +1,3 @@
-'use client';
-
 import Image from '@/components/Image';
 
 import PartnerImage from './assets/Partners.png';

@@ -5,22 +5,14 @@ import { Cross2Icon } from '@radix-ui/react-icons';
 import { Dialog } from 'radix-ui';
 import { useState } from 'react';
 
+import { TeamMemberImageMetadata } from './types';
+
 interface Props {
   teamMemberBios: any[][] | null | undefined;
-  teamMemberImagesByName: Record<
-    string,
-    {
-      id: string;
-      url: string;
-      name: string;
-    }
-  >;
+  teamMembersByName: Record<string, TeamMemberImageMetadata>;
 }
 
-export default function OurTeam({
-  teamMemberBios,
-  teamMemberImagesByName,
-}: Props) {
+export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
   const [selected, setSelected] = useState<{
     name: string;
     bio: string;
@@ -45,14 +37,15 @@ export default function OurTeam({
         <Dialog.Root onOpenChange={handleOpenChange}>
           {teamMemberBios?.map(([firstName, lastName, bio]) => {
             const fullName = `${firstName} ${lastName}`;
-            const teamMember = teamMemberImagesByName[fullName];
+            const teamMember = teamMembersByName[fullName];
             if (!teamMember) return null;
 
+            const src = `/api/image-proxy?id=${teamMember.id}&mimeType=${teamMember.mimeType}`;
             return (
               <div className='w-[154px]' key={teamMember.name}>
                 <Image
                   className='object-top'
-                  src={teamMember.url}
+                  src={src}
                   fillWidth='100%'
                   fillHeight={154}
                   alt={teamMember.name}
@@ -61,9 +54,7 @@ export default function OurTeam({
                 <Dialog.Trigger key={teamMember.name} asChild>
                   <div
                     className='mt-1 cursor-pointer text-center leading-5 break-words underline underline-offset-5'
-                    onClick={() =>
-                      handleClickMember(teamMember.name, bio, teamMember.url)
-                    }
+                    onClick={() => handleClickMember(teamMember.name, bio, src)}
                   >
                     {teamMember.name}
                   </div>

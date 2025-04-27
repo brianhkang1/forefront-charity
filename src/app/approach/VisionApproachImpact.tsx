@@ -1,5 +1,3 @@
-'use client';
-
 export default function VisionApproachImpact() {
   return (
     <section className='bg-teal-900 p-6 text-white'>

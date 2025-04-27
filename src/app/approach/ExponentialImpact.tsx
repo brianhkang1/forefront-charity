@@ -1,5 +1,3 @@
-'use client';
-
 import Image from '@/components/Image';
 
 import RippleImage from './assets/Ripple.png';
