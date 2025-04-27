@@ -18,7 +18,7 @@ export default function DonationDialog({ buttonSize }: Props) {
 
       <Dialog.Portal>
         <Dialog.Overlay className='data-[state=open]:animate-dialog-overlay-show fixed inset-0 z-3 bg-black/75' />
-        <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-1/2 left-1/2 z-4 max-h-[70vh] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-md focus:outline-none'>
+        <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-1/2 left-1/2 z-4 max-h-[70vh] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-md not-md:max-w-[90vw] focus:outline-none'>
           <VisuallyHidden.Root>
             <Dialog.Title>Givebutter Donation Widget</Dialog.Title>
           </VisuallyHidden.Root>

@@ -66,9 +66,9 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
 
           <Dialog.Portal>
             <Dialog.Overlay className='data-[state=open]:animate-dialog-overlay-show fixed inset-0 z-3 bg-black/75' />
-            <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-[40%] left-1/2 z-4 max-h-[70vh] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-md focus:outline-none'>
+            <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-[40%] left-1/2 z-4 max-h-[70vh] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-md not-md:max-w-[90vw] focus:outline-none'>
               <div className='scrollbar-forefront max-h-[90vh] overflow-y-auto rounded-2xl'>
-                <div className='flex flex-col items-center space-y-4 rounded-xl bg-white p-6'>
+                <div className='flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6'>
                   {selected?.url && (
                     <>
                       <Image
@@ -91,7 +91,7 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
 
               <Dialog.Close asChild>
                 <button
-                  className='hover:bg-forefront-teal/20 absolute top-7 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black not-md:right-10 hover:cursor-pointer hover:text-teal-700 focus:outline-none'
+                  className='hover:bg-forefront-teal/20 absolute top-7 right-9 inline-flex size-8 appearance-none items-center justify-center rounded-full text-black not-md:right-7 hover:cursor-pointer hover:text-teal-700 focus:outline-none'
                   aria-label='Close'
                 >
                   <Cross2Icon width='1.5rem' height='1.5rem' />
