@@ -30,7 +30,10 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={clsx('text-forefront-text antialiased', montserrat.variable)}
+      className={clsx(
+        'text-forefront-text scrollbar-forefront antialiased',
+        montserrat.variable,
+      )}
     >
       <Script
         src='https://widgets.givebutter.com/latest.umd.cjs?acct=PxZ0zWSrlOm5hxLl&p=other'

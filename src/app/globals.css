@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin 'tailwind-scrollbar';
 
 @theme {
   /* Removes Tailwind default color palette and font */
@@ -176,4 +177,8 @@
   @media (max-width: 767px) {
     display: block;
   }
+}
+
+@utility scrollbar-forefront {
+  @apply scrollbar scrollbar-thumb-teal-700 scrollbar-track-transparent;
 }

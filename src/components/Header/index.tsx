@@ -41,7 +41,7 @@ export default function Header() {
           open={mobileMenuIsOpen}
           onOpenChange={setMobileMenuIsOpen}
         >
-          <div className='flex w-full items-center justify-between bg-white p-6'>
+          <div className='flex w-full items-center justify-between bg-white px-6 py-4'>
             <Link href='/'>
               <Image
                 priority
@@ -67,7 +67,7 @@ export default function Header() {
                     key={label}
                     href={href}
                     className={clsx(
-                      'active:bg-forefront-teal w-full border-t border-t-black py-[8px] text-center active:text-white',
+                      'active:bg-forefront-teal w-full py-[8px] text-center active:text-white',
                     )}
                   >
                     <div
