@@ -21,7 +21,7 @@ export async function getGoogleSheetsData(spreadsheetId: string | undefined) {
 }
 
 export async function postToGoogleSheets(
-  prevState: { success: boolean; message: string } | null | undefined,
+  prevState: string | null | undefined,
   formData: FormData,
 ) {
   try {
@@ -44,10 +44,12 @@ export async function postToGoogleSheets(
         },
       });
 
-      return { success: true, message: 'Successfully posted data to Sheets' };
+      return 'success';
     }
+
+    return 'Form not validated';
   } catch (error) {
     console.error('Error posting data to Sheets:', parseError(error).message);
-    return { success: false, message: 'Error posting data to Sheets' };
+    return 'error';
   }
 }
