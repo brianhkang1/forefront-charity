@@ -8,7 +8,7 @@ import CallToActionMobile from './assets/CallToAction_Mobile.png';
 
 export default function ChangeTheWorld() {
   return (
-    <section>
+    <section className='w-full'>
       {/* Desktop Image */}
       <Image
         hideContainerWhenMobile
@@ -16,9 +16,9 @@ export default function ChangeTheWorld() {
         alt='Two FOREFRONT students smiling at camera'
         className='desktop h-[70vh] w-full rounded-xl'
       >
-        <div className='desktop absolute top-[28%] left-[5%]'>
+        <div className='desktop absolute top-[20%] left-[5%]'>
           <h2 className='mb-2'>Change the World with Us</h2>
-          <div className='max-w-xl'>
+          <div className='max-w-md'>
             Our mission is stronger with people you. Your passion, story, and
             skills add to the impact we can make together, and every action
             moves us closer to fulfilling our mission.
@@ -39,17 +39,17 @@ export default function ChangeTheWorld() {
         hideContainerWhenDesktop
         src={CallToActionMobile}
         alt='Two FOREFRONT students smiling at camera'
-        className='mobile aspect-square h-[50vh] rounded-xl object-[10%_50%]'
+        className='mobile h-[70vh] w-full rounded-xl object-[60%_50%]'
       >
         <div className='mobile absolute top-[5%] left-0 px-[5vw]'>
           <h2 className='mb-2'>Change the World with Us</h2>
-          <div className='max-w-lg'>
+          <div className='not-sm:max-w-3xs not-md:max-w-sm'>
             Our mission is stronger with people you. Your passion, story, and
             skills add to the impact we can make together, and every action
             moves us closer to fulfilling our mission.
           </div>
 
-          <div className='mt-3 flex gap-2'>
+          <div className='mt-3 flex w-40 flex-col gap-2'>
             <DonationDialog />
 
             <Button color='bg-white'>

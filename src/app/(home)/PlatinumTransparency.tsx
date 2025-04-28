@@ -10,12 +10,18 @@ export default function PlatinumTransparency() {
 
       <div className='flex items-center justify-center gap-6 px-2 not-md:flex-col'>
         <div>
-          <Image
-            src='/icons/platinumTransparency.svg'
-            alt='Platinum Transparency Logo'
-            fillWidth={156}
-            fillHeight={156}
-          />
+          <a
+            href='https://www.guidestar.org/profile/47-3373120'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Image
+              src='/icons/platinumTransparency.svg'
+              alt='Platinum Transparency Logo'
+              fillWidth={156}
+              fillHeight={156}
+            />
+          </a>
         </div>
 
         <div className='max-w-xl not-md:mx-[min(24px,2%)]'>

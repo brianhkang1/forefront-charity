@@ -61,12 +61,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <Image
-            src='/icons/platinumTransparency.svg'
-            alt='Platinum Transparency Logo'
-            width={108}
-            height={108}
-          />
+          <a
+            href='https://www.guidestar.org/profile/47-3373120'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Image
+              src='/icons/platinumTransparency.svg'
+              alt='Platinum Transparency Logo'
+              width={108}
+              height={108}
+            />
+          </a>
         </div>
       </div>
     </footer>
