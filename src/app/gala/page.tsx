@@ -70,20 +70,20 @@ export default async function GalaPage() {
         <div className='mb-12 flex justify-center gap-2'>
           <Button color='bg-dark-gold'>
             <Link
-              href='https://forefrontcharity.regfox.com/forefront-charitys-10th-annual-gala#reserve-tickets'
+              href='https://forefrontcharity.regfox.com/forefront-charitys-10th-annual-gala#tickets'
               rel='noopener noreferrer'
               target='_blank'
             >
-              [L] Buy Ticket
+              Buy Ticket
             </Link>
           </Button>
           <Button color='bg-dark-gold'>
             <Link
-              href='https://forefrontcharity.regfox.com/forefront-charitys-10th-annual-gala#reserve-tickets'
+              href='https://forefrontcharity.regfox.com/forefront-charitys-10th-annual-gala#sponsorship-package'
               rel='noopener noreferrer'
               target='_blank'
             >
-              [L] Become a Sponsor
+              Become a Sponsor
             </Link>
           </Button>
         </div>
