@@ -18,7 +18,7 @@ import PlatinumTransparency from './PlatinumTransparency';
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Home - FOREFRONT Charity',
+  title: 'Home',
 };
 
 // TODO: add image alts
