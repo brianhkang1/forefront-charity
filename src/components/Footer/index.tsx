@@ -37,15 +37,15 @@ export default function Footer() {
             </a>
 
             <a
-              href={'https://x.com/goforefront'}
+              href={'https://facebook.com/goforefront'}
               target='_blank'
               rel='noopener noreferrer'
             >
               <Image
-                src='/icons/twitter-x-logo.svg'
+                src='/icons/facebook-logo.png'
                 alt='Platinum Transparency Logo'
-                fillWidth={13}
-                fillHeight={13}
+                fillWidth='1rem'
+                fillHeight='1rem'
                 className='cursor-pointer'
               />
             </a>
