@@ -56,14 +56,19 @@ export default function SignupForm() {
           width='w-[209px]'
         />
 
-        <Button size='small' type='submit' disabled={isPending}>
+        <Button
+          size='small'
+          type='submit'
+          disabled={isPending}
+          loading={isPending}
+        >
           Sign Up
         </Button>
       </form>
 
       <Dialog.Portal>
         <Dialog.Overlay className='data-[state=open]:animate-dialog-overlay-show fixed inset-0 z-3 bg-black/75' />
-        <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-1/2 left-1/2 z-4 max-h-[70vh] w-[min(480px,80vw)] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-md not-md:max-w-[90vw] focus:outline-none'>
+        <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-[45%] left-1/2 z-4 max-h-[70vh] w-[min(480px,80vw)] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-md not-md:max-w-[90vw] focus:outline-none'>
           {state === 'error' ? (
             <>
               <Dialog.Title className='mt-3 mb-1 text-2xl'>Oh no!</Dialog.Title>

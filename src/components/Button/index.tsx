@@ -2,9 +2,12 @@
 
 import clsx from 'clsx';
 
+import Loading from '../Loading';
+
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium';
   color?: 'bg-forefront-teal' | 'bg-white' | 'bg-dark-gold';
+  loading?: boolean;
 }
 
 const BUTTON_SIZE_STYLES = {
@@ -23,6 +26,7 @@ export default function Button({
   size = 'medium',
   color = 'bg-forefront-teal',
   className,
+  loading,
   ...props
 }: Props) {
   const textColor = TEXT_COLOR[color];
@@ -30,14 +34,22 @@ export default function Button({
   return (
     <button
       className={clsx(
-        'disabled:bg-gray flex cursor-pointer items-center justify-center rounded disabled:cursor-not-allowed',
+        'disabled:bg-gray cursor-pointer rounded disabled:cursor-not-allowed',
         color,
         textColor,
         className,
       )}
       {...props}
     >
-      <span className={BUTTON_SIZE_STYLES[size]}>{children}</span>
+      <div
+        className={clsx(
+          'flex items-center justify-center gap-2',
+          BUTTON_SIZE_STYLES[size],
+        )}
+      >
+        {children}
+        {loading && <Loading />}
+      </div>
     </button>
   );
 }
