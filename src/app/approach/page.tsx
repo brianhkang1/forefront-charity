@@ -3,29 +3,12 @@ import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 
-// import dynamic from 'next/dynamic';
 import ChangeTheWorld from './ChangeTheWorld';
 import ExponentialImpact from './ExponentialImpact';
 import FourPillars from './FourPillars';
 import OurVision from './OurVision';
 import VisionApproachImpact from './VisionApproachImpact';
 import WeAreFocused from './WeAreFocused';
-
-// const VisionApproachImpact = dynamic(() => import('./VisionApproachImpact'), {
-//   ssr: false,
-// });
-// const FourPillars = dynamic(() => import('./FourPillars'), {
-//   ssr: false,
-// });
-// const ExponentialImpact = dynamic(() => import('./ExponentialImpact'), {
-//   ssr: false,
-// });
-// const OurVision = dynamic(() => import('./OurVision'), {
-//   ssr: false,
-// });
-// const WeAreFocused = dynamic(() => import('./WeAreFocused'), {
-//   ssr: false,
-// });
 
 // Default value, but explicitly set to ensure SSG
 export const revalidate = false;

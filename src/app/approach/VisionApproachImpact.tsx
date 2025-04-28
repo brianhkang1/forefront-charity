@@ -1,3 +1,5 @@
+import { YouTubeEmbed } from '@next/third-parties/google';
+
 export default function VisionApproachImpact() {
   return (
     <section className='bg-teal-900 p-6 text-white'>
@@ -7,14 +9,10 @@ export default function VisionApproachImpact() {
         comprehensive solution.
       </div>
 
-      <div className='w-full'>
-        <iframe
-          title='Vision. Approach. Impact.'
-          className='h-[75vh] w-full rounded-xl'
-          src='https://www.youtube.com/embed/VVfv3N4yLyM'
-          allow='fullscreen; accelerometer; encrypted-media; gyroscope; picture-in-picture'
-        />
-      </div>
+      <YouTubeEmbed
+        videoid='VVfv3N4yLyM'
+        style='height:75vh; width:100%; max-width:100%; border-radius:12px;'
+      />
     </section>
   );
 }
