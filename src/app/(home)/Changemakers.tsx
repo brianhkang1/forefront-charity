@@ -10,7 +10,7 @@ export default function Changemakers() {
       <Image
         src={OurChangemakersImage}
         alt='Family in local community'
-        className='w-full rounded-xl not-md:aspect-square not-md:object-top md:h-[70vh]'
+        className='h-[70vh] w-full rounded-xl not-md:object-top'
       >
         <div className='absolute top-[15%] left-[5%] max-w-118.25 not-md:top-[5%]'>
           <h2>

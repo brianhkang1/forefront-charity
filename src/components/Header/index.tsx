@@ -75,8 +75,8 @@ export default function Header() {
               priority
               src='/icons/logo.svg'
               alt='Forefront logo'
-              fillWidth='14.3125rem'
-              fillHeight='2rem'
+              fillWidth='10.71875rem'
+              fillHeight='1.6rem'
             />
           </Link>
 

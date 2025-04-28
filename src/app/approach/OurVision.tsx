@@ -4,7 +4,8 @@ import OurVisionImage from '../(home)/assets/ExponentialImpact.png';
 
 export default function OurVision() {
   return (
-    <section className='p-12 not-md:p-6'>
+    //negative margin-top b/c the picture has white space at top, making the margin look bigger
+    <section className='-mt-6 p-12 not-md:p-6'>
       <Image
         src={OurVisionImage}
         fillWidth='100%'

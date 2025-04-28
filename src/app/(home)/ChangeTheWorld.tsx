@@ -41,7 +41,7 @@ export default function ChangeTheWorld() {
         alt='Two FOREFRONT students smiling at camera'
         className='mobile aspect-square h-[50vh] rounded-xl object-[10%_50%]'
       >
-        <div className='mobile absolute top-[20%] left-0 px-[5vw]'>
+        <div className='mobile absolute top-[5%] left-0 px-[5vw]'>
           <h2 className='mb-2'>Change the World with Us</h2>
           <div className='max-w-lg'>
             Our mission is stronger with people you. Your passion, story, and

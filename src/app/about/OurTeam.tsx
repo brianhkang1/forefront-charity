@@ -68,13 +68,13 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
             <Dialog.Overlay className='data-[state=open]:animate-dialog-overlay-show fixed inset-0 z-3 bg-black/75' />
             <Dialog.Content className='data-[state=open]:animate-dialog-content-show fixed top-[40%] left-1/2 z-4 max-h-[70vh] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-md not-md:max-w-[90vw] focus:outline-none'>
               <div className='scrollbar-forefront max-h-[90vh] overflow-y-auto rounded-2xl'>
-                <div className='flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6'>
+                <div className='flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6 not-md:p-3'>
                   {selected?.url && (
                     <>
                       <Image
                         className='rounded-lg object-top'
                         src={selected?.url || ''}
-                        fillWidth={440}
+                        fillWidth='100%'
                         fillHeight={440}
                         alt={selected?.name || ''}
                       />

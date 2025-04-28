@@ -8,7 +8,7 @@ export default function Partnership() {
       <Image
         src={PartnerImage}
         alt='Local community landscape'
-        className='w-full rounded-xl not-md:aspect-square md:h-[70vh]'
+        className='h-[70vh] w-full rounded-xl'
       >
         <div className='absolute top-[16%] left-0 flex w-full justify-center not-md:top-[10%]'>
           <h2 className='max-w-[80%] text-center not-md:max-w-[90%] 2xl:max-w-[60%]'>

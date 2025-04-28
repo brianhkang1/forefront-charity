@@ -89,7 +89,7 @@ export default async function ApproachPage() {
           <h3 className='mb-4'>A mission rooted in hope and transformation</h3>
           <div>
             <div className='mb-6 not-lg:mb-0'>
-              We partner with local leaders—our Changemakers—to bring lasting
+              We partner with local leaders— our Changemakers— to bring lasting
               transformation. Our mission: FOREFRONT Charity partners with local
               leaders to provide essential resources to unreached communities.
             </div>

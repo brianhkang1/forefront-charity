@@ -4,7 +4,7 @@ import MatthewOhImage from './assets/Matthew_Oh.jpg';
 
 export default function HowItBegan() {
   return (
-    <section className='mt-[-100px] w-full not-md:mt-[-110px]'>
+    <section className='mt-[-100px] w-full not-md:mt-[-120px]'>
       {/* Desktop view */}
       <div className='desktop h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
         <div className='flex items-center'>
@@ -91,7 +91,7 @@ export default function HowItBegan() {
             time. This is a journey that keeps unfolding with new hope at every
             step.
           </p>
-          <div className='mx-8 mr-auto mb-[120px]'>
+          <div className='mx-8 mr-auto mb-[130px]'>
             <div>Matthew Oh,</div>
             <div className='italic'>Founder and CEO of FOREFRONT Charity</div>
           </div>
@@ -99,7 +99,7 @@ export default function HowItBegan() {
       </div>
 
       {/* Mobile view image */}
-      <div className='mobile mt-[-110px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+      <div className='mobile mt-[-125px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
         <div>
           <Image
             src={MatthewOhImage}

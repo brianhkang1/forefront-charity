@@ -18,7 +18,7 @@ export default function PlatinumTransparency() {
           />
         </div>
 
-        <div className='max-w-xl not-md:mx-6'>
+        <div className='max-w-xl not-md:mx-[min(24px,2%)]'>
           <p className='mb-6 not-md:text-center'>
             We are proud to have a Platinum Seal of Transparency from Candid
             every year because at FOREFRONT Charity, transparency is at the
