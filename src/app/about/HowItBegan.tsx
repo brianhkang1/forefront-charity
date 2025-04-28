@@ -29,7 +29,7 @@ export default function HowItBegan() {
                 empowerment opportunities that create pathways for sustainable
                 community growth.
               </p>
-              <p className='mx-[32px] mb-3'>
+              <p className='mx-8 mb-3'>
                 Since 2015, FOREFRONT Charity has been transforming and bringing
                 hope to unreached communities. What started as a personal
                 calling to do something has grown into my life’s dedication
@@ -39,9 +39,12 @@ export default function HowItBegan() {
                 life and one story at a time. This is a journey that keeps
                 unfolding with new hope at every step.
               </p>
-              <p className='mx-[32px]'>
-                -Matthew Oh, Founder and CEO of FOREFRONT Charity
-              </p>
+              <div className='mx-8'>
+                <div>Matthew Oh,</div>
+                <div className='italic'>
+                  Founder and CEO of FOREFRONT Charity
+                </div>
+              </div>
             </div>
           </div>
 
@@ -60,9 +63,9 @@ export default function HowItBegan() {
       {/* Mobile view text */}
       <div className='mobile bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
         <div className='flex flex-col items-center'>
-          <h2 className='mb-3 pt-16 text-center'>How It All Began</h2>
+          <h2 className='mb-3 pt-24 text-center'>How It All Began</h2>
 
-          <p className='mx-[32px] mb-3'>
+          <p className='mx-8 mb-3'>
             In 2012, I went to India on a mission trip and witnessed children
             walking 10 hours a day to collect water and women using livestock
             waste for sanitary napkins. It was clear that I had to do something
@@ -72,13 +75,13 @@ export default function HowItBegan() {
             provide essential resources to unreached communities no matter their
             background or circumstances.
           </p>
-          <p className='mx-[32px] mb-3'>
+          <p className='mx-8 mb-3'>
             Our impact is built on four pillars: clean water that improves
             health, accessible medical care that addresses preventable diseases,
             quality education that unlocks potential, and empowerment
             opportunities that create pathways for sustainable community growth.
           </p>
-          <p className='mx-[32px] mb-3'>
+          <p className='mx-8 mb-3'>
             Since 2015, FOREFRONT Charity has been transforming and bringing
             hope to unreached communities. What started as a personal calling to
             do something has grown into my life’s dedication driven by faith,
@@ -88,9 +91,10 @@ export default function HowItBegan() {
             time. This is a journey that keeps unfolding with new hope at every
             step.
           </p>
-          <p className='mx-[32px] mb-[120px]'>
-            -Matthew Oh, Founder and CEO of FOREFRONT Charity
-          </p>
+          <div className='mx-8 mr-auto mb-[120px]'>
+            <div>Matthew Oh,</div>
+            <div className='italic'>Founder and CEO of FOREFRONT Charity</div>
+          </div>
         </div>
       </div>
 

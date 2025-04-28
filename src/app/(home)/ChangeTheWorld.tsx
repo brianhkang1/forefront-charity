@@ -16,8 +16,13 @@ export default function ChangeTheWorld() {
         alt='Two FOREFRONT students smiling at camera'
         className='desktop h-[70vh] w-full rounded-xl'
       >
-        <div className='desktop absolute top-[40%] left-[5%]'>
-          <h2>Change the World with Us</h2>
+        <div className='desktop absolute top-[28%] left-[5%]'>
+          <h2 className='mb-2'>Change the World with Us</h2>
+          <div className='max-w-xl'>
+            Our mission is stronger with people you. Your passion, story, and
+            skills add to the impact we can make together, and every action
+            moves us closer to fulfilling our mission.
+          </div>
 
           <div className='mt-3 flex gap-2'>
             <DonationDialog />
@@ -34,10 +39,15 @@ export default function ChangeTheWorld() {
         hideContainerWhenDesktop
         src={CallToActionMobile}
         alt='Two FOREFRONT students smiling at camera'
-        className='mobile aspect-square h-[50vh] rounded-xl'
+        className='mobile aspect-square h-[50vh] rounded-xl object-[10%_50%]'
       >
-        <div className='mobile absolute top-[30%] left-0 px-[5vw]'>
-          <h2>Change the World with Us</h2>
+        <div className='mobile absolute top-[20%] left-0 px-[5vw]'>
+          <h2 className='mb-2'>Change the World with Us</h2>
+          <div className='max-w-lg'>
+            Our mission is stronger with people you. Your passion, story, and
+            skills add to the impact we can make together, and every action
+            moves us closer to fulfilling our mission.
+          </div>
 
           <div className='mt-3 flex gap-2'>
             <DonationDialog />

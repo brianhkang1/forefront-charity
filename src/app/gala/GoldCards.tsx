@@ -6,7 +6,7 @@ const GOLD_CARDS = [
     title: 'Sponsorship Packages',
     description:
       "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
-    buttonLabel: 'Sponsor',
+    buttonLabel: 'Learn More',
     url: '/documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
   },
   {
@@ -17,7 +17,7 @@ const GOLD_CARDS = [
     buttonLabel: 'Auction items coming soon - check back later!',
   },
   {
-    title: "Can't Attend?",
+    title: 'Give',
     description:
       "Can't attend? You can still make a difference! Consider making a donation to help further FOREFRONT Charity's work and create lasting change.",
     buttonLabel: 'Donate',
@@ -34,7 +34,7 @@ export default function LivingTheMission() {
           className='from-gold to-dark-gold h-[360px] w-[340px] rounded-md bg-gradient-to-r p-[3px]'
         >
           <div className='relative h-full w-full rounded bg-black px-[23px] pt-[15px] pb-[54px]'>
-            <div className='w-min text-4xl font-bold'>{title}</div>
+            <div className='min-h-[80px] w-min text-4xl font-bold'>{title}</div>
 
             {/* line divider */}
             <div className='bg-gold mt-[16px] mb-[16px] h-[1px] w-full rounded-lg' />

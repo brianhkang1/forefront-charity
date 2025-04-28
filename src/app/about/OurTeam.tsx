@@ -72,7 +72,7 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
                   {selected?.url && (
                     <>
                       <Image
-                        className='object-top'
+                        className='rounded-lg object-top'
                         src={selected?.url || ''}
                         fillWidth={440}
                         fillHeight={440}
@@ -83,7 +83,9 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
                         {selected?.name}
                       </Dialog.Title>
 
-                      <div className='max-w-[500px]'>{selected?.bio}</div>
+                      <div className='max-w-[500px] text-center'>
+                        {selected?.bio}
+                      </div>
                     </>
                   )}
                 </div>

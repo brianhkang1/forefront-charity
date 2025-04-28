@@ -18,7 +18,7 @@ const FOUR_PILLARS = [
         We build water wells directly in villages, ensuring everyone has access
         to life&apos;s most basic needs. As of 2025, we have built{' '}
         <span className='bg-forefront-water/50 px-1 font-bold'>
-          87+ water wells
+          89+ water wells
         </span>
         , providing clean water for{' '}
         <span className='bg-forefront-water/50 px-1 font-bold'>
@@ -38,7 +38,7 @@ const FOUR_PILLARS = [
         We provide public health workshops, helping people live healthier lives.
         We have served over{' '}
         <span className='bg-forefront-medical/50 px-1 font-bold'>
-          1,300 patients in 29 villages.
+          1,300+ patients in 29 villages.
         </span>
       </div>
     ),
@@ -70,7 +70,7 @@ const FOUR_PILLARS = [
         We create pathways that build long-term community growth. We have
         trained{' '}
         <span className='bg-forefront-empowerment/50 px-1 font-bold'>
-          38 Changemakers, impacting 98,000+ people.
+          175+ Changemakers, impacting 98,000+ people.
         </span>
       </div>
     ),

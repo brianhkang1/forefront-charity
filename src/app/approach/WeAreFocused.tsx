@@ -18,7 +18,7 @@ export default function WeAreFocused() {
         potential
       </h3>
 
-      <div className='max-w-[100vw] overflow-x-hidden'>
+      <div className='scrollbar-forefront max-w-[100vw] overflow-x-auto'>
         <div className='grid w-[1024px] grid-cols-3 justify-center gap-[16px]'>
           {/* Column 1 */}
           <div className='flex flex-wrap gap-[16px]'>

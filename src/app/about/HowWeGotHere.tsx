@@ -15,9 +15,9 @@ const HOW_WE_GOT_HERE = [
 export default function HowWeGotHere() {
   return (
     <section className='relative mt-[-90px] w-full items-center bg-teal-800 text-white [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
-      <h3 className='pt-14 text-center'>How We Got Here</h3>
+      <h2 className='pt-14 text-center'>How We Got Here</h2>
 
-      <div className='scrollbar-forefront relative mx-auto h-[300px] w-full max-w-[1440px] overflow-x-auto'>
+      <div className='scrollbar-forefront relative mx-auto h-[260px] w-full max-w-[1440px] overflow-x-auto'>
         {/* white line */}
         <div className='absolute top-[130px] left-0 h-[2px] w-[1440px] bg-white' />
 
@@ -49,7 +49,7 @@ export default function HowWeGotHere() {
       </div>
 
       {/* space filler */}
-      <div className='h-[60px]' />
+      <div className='h-[60px] not-md:h-[20px]' />
     </section>
   );
 }

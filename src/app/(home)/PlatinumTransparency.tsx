@@ -21,7 +21,7 @@ export default function PlatinumTransparency() {
         <div className='max-w-xl not-md:mx-6'>
           <p className='mb-6 not-md:text-center'>
             We are proud to have a Platinum Seal of Transparency from Candid
-            every year— because at Forefront Charity, transparency is at the
+            every year because at FOREFRONT Charity, transparency is at the
             heart of everything we do. Learn more by reading our annual reports.
           </p>
 

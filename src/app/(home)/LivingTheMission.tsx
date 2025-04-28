@@ -23,7 +23,7 @@ export default function LivingTheMission() {
           Dev grew up without access to education and is unable to read.
           Determined to make a change for his children’s generation, Dev became
           a Changemaker with FOREFRONT, particularly investing his time into
-          FOREFRONT School —bringing literacy, opportunity, and transformation
+          FOREFRONT School— bringing literacy, opportunity, and transformation
           to the next generation.
         </p>
       </div>

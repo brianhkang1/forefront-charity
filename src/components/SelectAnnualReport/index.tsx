@@ -39,7 +39,7 @@ export default function SelectAnnualReport() {
       />
 
       <Button size='small' disabled={!selectedReport} onClick={handleDownload}>
-        Download
+        View Report
       </Button>
     </div>
   );
