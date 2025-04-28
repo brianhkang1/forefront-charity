@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { Analytics } from '@vercel/analytics/next';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
