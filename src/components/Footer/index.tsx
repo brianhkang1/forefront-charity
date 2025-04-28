@@ -44,8 +44,8 @@ export default function Footer() {
               <Image
                 src='/icons/facebook-logo.png'
                 alt='Platinum Transparency Logo'
-                fillWidth='1rem'
-                fillHeight='1rem'
+                fillWidth={14}
+                fillHeight={14}
                 className='cursor-pointer'
               />
             </a>
