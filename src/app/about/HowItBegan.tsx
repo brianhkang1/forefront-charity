@@ -10,7 +10,7 @@ export default function HowItBegan() {
         <div className='flex items-center'>
           <div className='flex-1'>
             <h2 className='mt-6 mb-3 text-center'>How It All Began</h2>
-            <div className='max-h-[500px] overflow-y-auto'>
+            <div className='overflow-y-auto'>
               <p className='mx-[32px] mb-3'>
                 In 2012, I went to India on a mission trip and witnessed
                 children walking 10 hours a day to collect water and women using
