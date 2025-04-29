@@ -12,7 +12,7 @@ export default function Changemakers() {
         alt='Family in local community'
         className='h-[70vh] w-full rounded-xl not-md:object-top'
       >
-        <div className='absolute top-[15%] left-[5%] max-w-118.25 not-md:top-[5%]'>
+        <div className='absolute top-[15%] left-[5%] max-w-[500px] not-md:top-[5%]'>
           <h2>
             <div>Our Changemakers.</div>
             <div>The Catalysts for Change.</div>

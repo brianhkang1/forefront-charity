@@ -39,7 +39,8 @@ export default async function AboutPage() {
     aboutPageImagesData,
   ]);
 
-  const heroImage = findImage(aboutPageImages, 'hero');
+  const heroDesktopImage = findImage(aboutPageImages, 'hero_desktop');
+  const heroMobileImage = findImage(aboutPageImages, 'hero_mobile');
 
   const teamMembersByName =
     teamMembers
@@ -57,14 +58,32 @@ export default async function AboutPage() {
   return (
     <>
       <section>
+        {/* Desktop Hero Image */}
         <Image
           priority
+          hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='120vh'
-          src={heroImage?.url || ''}
+          src={heroDesktopImage?.url || ''}
           alt='About Page Hero Image'
+          className='desktop'
         >
-          <h1 className='absolute top-[18%] left-1/2 -translate-x-1/2 transform text-center lg:min-w-4xl'>
+          <h1 className='desktop absolute top-[18%] left-1/2 -translate-x-1/2 transform text-center lg:min-w-4xl'>
+            UNITED IN COMPASSION
+          </h1>
+        </Image>
+
+        {/* Mobile Hero Image */}
+        <Image
+          priority
+          hideContainerWhenDesktop
+          fillWidth='100%'
+          fillHeight='60vh'
+          src={heroMobileImage?.url || ''}
+          alt='About Page Hero Image'
+          className='mobile'
+        >
+          <h1 className='mobile absolute top-[18%] left-1/2 -translate-x-1/2 transform text-center lg:min-w-4xl'>
             UNITED IN COMPASSION
           </h1>
         </Image>

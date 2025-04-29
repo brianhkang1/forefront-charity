@@ -4,13 +4,14 @@ import MatthewOhImage from './assets/Matthew_Oh.jpg';
 
 export default function HowItBegan() {
   return (
-    <section className='mt-[-100px] w-full not-md:mt-[-120px]'>
+    <section className='mt-[-100px] w-full not-md:mt-[-130px]'>
       {/* Desktop view */}
-      <div className='desktop h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
-        <div className='flex items-center'>
-          <div className='flex-1'>
-            <h2 className='mt-6 mb-3 text-center'>How It All Began</h2>
-            <div className='overflow-y-auto'>
+      <div className='desktop h-[850px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+        <div className='relative grid grid-cols-2'>
+          <div className='mt-[20%]'>
+            <h2 className='mb-3 text-center'>How It All Began</h2>
+
+            <div className='scrollbar-forefront h-[550px] max-h-[700px] overflow-y-auto'>
               <p className='mx-[32px] mb-3'>
                 In 2012, I went to India on a mission trip and witnessed
                 children walking 10 hours a day to collect water and women using
@@ -48,13 +49,13 @@ export default function HowItBegan() {
             </div>
           </div>
 
-          <div className='flex-1'>
+          <div>
             <Image
               src={MatthewOhImage}
               alt={'Portrait of Matthew Oh'}
               fillWidth='100%'
-              fillHeight={700}
-              className='2xl:object-[50%_35%]'
+              fillHeight='110%'
+              className='2xl:object-top'
             />
           </div>
         </div>
@@ -99,7 +100,7 @@ export default function HowItBegan() {
       </div>
 
       {/* Mobile view image */}
-      <div className='mobile mt-[-125px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
+      <div className='mobile mt-[-130px] h-[740px] bg-teal-100 [clip-path:polygon(50%_0%,0_10%,0_100%,50%_90%,100%_100%,100%_10%)]'>
         <div>
           <Image
             src={MatthewOhImage}

@@ -19,8 +19,8 @@ export default function ChangeTheWorld() {
         <div className='desktop absolute top-[20%] left-[5%]'>
           <h2 className='mb-2'>Change the World with Us</h2>
           <div className='max-w-md'>
-            Our mission is stronger with people you. Your passion, story, and
-            skills add to the impact we can make together, and every action
+            Our mission is stronger with people like you. Your passion, story,
+            and skills add to the impact we can make together, and every action
             moves us closer to fulfilling our mission.
           </div>
 
@@ -41,7 +41,7 @@ export default function ChangeTheWorld() {
         alt='Two FOREFRONT students smiling at camera'
         className='mobile h-[70vh] w-full rounded-xl object-[60%_50%]'
       >
-        <div className='mobile absolute top-[5%] left-0 px-[5vw]'>
+        <div className='mobile absolute top-[5%] left-0 px-[5%]'>
           <h2 className='mb-2'>Change the World with Us</h2>
           <div className='not-sm:max-w-3xs not-md:max-w-sm'>
             Our mission is stronger with people you. Your passion, story, and

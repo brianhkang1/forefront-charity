@@ -36,6 +36,7 @@ export default function SignupForm() {
           id='firstName'
           name='firstName'
           placeholder='First Name'
+          className='not-xl:text-center'
         />
 
         <Input
@@ -44,6 +45,7 @@ export default function SignupForm() {
           id='lastName'
           name='lastName'
           placeholder='Last Name'
+          className='not-xl:text-center'
         />
 
         <Input
@@ -54,6 +56,7 @@ export default function SignupForm() {
           name='email'
           placeholder='Enter your email'
           width='w-[209px]'
+          className='not-xl:text-center'
         />
 
         <Button
