@@ -15,7 +15,7 @@ const FOUR_PILLARS_CARDS = [
         <div>WATER</div>
       </>
     ),
-    highlight: '89+',
+    highlight: '90+',
     description: 'Water Wells Built',
     src: PillarsWaterImage,
     alt: 'Clean water cup held by two hands',
