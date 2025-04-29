@@ -10,7 +10,7 @@ export default function VisionApproachImpact() {
       </div>
 
       <YouTubeEmbed
-        videoid='VVfv3N4yLyM'
+        videoid='2kJ7ECG87xY'
         style='height:75vh; width:100%; max-width:100%; border-radius:12px;'
       />
     </section>
