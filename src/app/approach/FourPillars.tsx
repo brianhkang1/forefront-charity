@@ -18,7 +18,7 @@ const FOUR_PILLARS = [
         We build water wells directly in villages, ensuring everyone has access
         to life&apos;s most basic needs. As of 2025, we have built{' '}
         <span className='bg-forefront-water/50 px-1 font-bold'>
-          89+ water wells
+          90+ water wells
         </span>
         , providing clean water for{' '}
         <span className='bg-forefront-water/50 px-1 font-bold'>
