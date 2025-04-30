@@ -38,6 +38,8 @@ export default function Header() {
         <Link href='/'>
           <Image
             priority
+            loading='eager'
+            unoptimized
             src='/icons/logo.svg'
             alt='Forefront logo'
             fillWidth='21.4375rem'
@@ -73,6 +75,8 @@ export default function Header() {
           <Link href='/'>
             <Image
               priority
+              loading='eager'
+              unoptimized
               src='/icons/logo.svg'
               alt='Forefront logo'
               fillWidth='10.71875rem'

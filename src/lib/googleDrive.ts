@@ -56,7 +56,7 @@ export async function getGoogleDriveImages(folderId: string | undefined) {
         return {
           id: file.id,
           name: file.name,
-          url: `data:image/jpeg;base64,${base64}`,
+          url: `data:image/png;base64,${base64}`,
         };
       }),
     );
