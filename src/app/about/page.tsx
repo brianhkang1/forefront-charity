@@ -61,6 +61,8 @@ export default async function AboutPage() {
         {/* Desktop Hero Image */}
         <Image
           priority
+          loading='eager'
+          unoptimized
           hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='120vh'
@@ -76,6 +78,8 @@ export default async function AboutPage() {
         {/* Mobile Hero Image */}
         <Image
           priority
+          loading='eager'
+          unoptimized
           hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='60vh'

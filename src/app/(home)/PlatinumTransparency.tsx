@@ -16,6 +16,7 @@ export default function PlatinumTransparency() {
             rel='noopener noreferrer'
           >
             <Image
+              unoptimized
               src='/icons/platinumTransparency.svg'
               alt='Platinum Transparency Logo'
               fillWidth={156}

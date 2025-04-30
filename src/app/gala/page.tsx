@@ -27,6 +27,8 @@ export default async function GalaPage() {
         {/* Desktop Hero Image */}
         <Image
           priority
+          loading='eager'
+          unoptimized
           hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='82vh'
@@ -38,6 +40,8 @@ export default async function GalaPage() {
         {/* Mobile Hero Image */}
         <Image
           priority
+          loading='eager'
+          unoptimized
           hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='50vh'

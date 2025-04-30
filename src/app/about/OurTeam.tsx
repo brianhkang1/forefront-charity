@@ -44,7 +44,6 @@ export default function OurTeam({ teamMemberBios, teamMembersByName }: Props) {
             return (
               <div className='w-[154px]' key={teamMember.name}>
                 <Image
-                  priority
                   className='object-top'
                   src={src}
                   fillWidth='100%'

@@ -30,6 +30,8 @@ export default async function ApproachPage() {
         {/* Desktop Hero Image */}
         <Image
           priority
+          loading='eager'
+          unoptimized
           hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='100vh'
@@ -53,6 +55,8 @@ export default async function ApproachPage() {
         {/* Mobile Hero Image */}
         <Image
           priority
+          loading='eager'
+          unoptimized
           hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='80vh'
