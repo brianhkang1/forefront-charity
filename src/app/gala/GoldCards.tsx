@@ -5,14 +5,15 @@ const GOLD_CARDS = [
   {
     title: 'Sponsorship Packages',
     description:
-      "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
+      "Join us for an unforgettable evening in support of FOREFRONT Charity's work. Secure your tickets today and be part of a night filled with inspiration, impact, and celebration!",
+
     buttonLabel: 'Learn More',
     url: '/documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
   },
   {
     title: 'Auction Items',
     description:
-      "Join us for an unforgettable evening in support of FOREFRONT Charity's work. Secure your tickets today and be part of a night filled with inspiration, impact, and celebration!",
+      "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
     // buttonLabel: 'Purchase',
     buttonLabel: 'Auction items coming soon - check back later!',
   },
