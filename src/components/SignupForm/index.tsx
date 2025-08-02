@@ -3,7 +3,9 @@
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { postToGoogleSheets } from '@/lib/googleSheets';
+import { EVENT_NAME, PATHNAME_TO_PAGE, SECTION } from '@/utils/trackEvent';
 import { Cross2Icon } from '@radix-ui/react-icons';
+import { usePathname } from 'next/navigation';
 import { Dialog } from 'radix-ui';
 import { useActionState, useEffect, useState } from 'react';
 
@@ -16,6 +18,10 @@ export default function SignupForm() {
     postToGoogleSheets,
     null,
   );
+  const pathname = usePathname();
+
+  const currentPage =
+    PATHNAME_TO_PAGE[pathname as keyof typeof PATHNAME_TO_PAGE];
 
   useEffect(() => {
     if (state === 'success' || state === 'error') {
@@ -64,6 +70,11 @@ export default function SignupForm() {
           type='submit'
           disabled={isPending}
           loading={isPending}
+          trackEventParams={{
+            name: EVENT_NAME.SIGN_UP_BUTTON_CLICK,
+            page: currentPage,
+            section: SECTION.FOOTER,
+          }}
         >
           Sign Up
         </Button>

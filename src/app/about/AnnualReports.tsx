@@ -2,6 +2,7 @@
 
 import Image from '@/components/Image';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
+import { PAGE } from '@/utils/trackEvent';
 
 export default function AnnualReports() {
   return (
@@ -35,7 +36,7 @@ export default function AnnualReports() {
             is creating real, lasting change.
           </p>
 
-          <SelectAnnualReport />
+          <SelectAnnualReport page={PAGE.ABOUT} />
         </div>
       </div>
     </section>

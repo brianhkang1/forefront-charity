@@ -2,6 +2,7 @@ import Button from '@/components/Button';
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -72,7 +73,14 @@ export default async function GalaPage() {
         </div>
 
         <div className='mb-12 flex justify-center gap-2'>
-          <Button color='bg-dark-gold'>
+          <Button
+            color='bg-dark-gold'
+            trackEventParams={{
+              name: EVENT_NAME.BUY_TICKET_BUTTON_CLICK,
+              page: PAGE.GALA,
+              section: SECTION.GALA_ACTIONS,
+            }}
+          >
             <Link
               href='https://forefrontcharity.regfox.com/forefront-charitys-10th-annual-gala#tickets'
               rel='noopener noreferrer'
@@ -81,7 +89,14 @@ export default async function GalaPage() {
               Buy Ticket
             </Link>
           </Button>
-          <Button color='bg-dark-gold'>
+          <Button
+            color='bg-dark-gold'
+            trackEventParams={{
+              name: EVENT_NAME.BECOME_A_SPONSOR_BUTTON_CLICK,
+              page: PAGE.GALA,
+              section: SECTION.GALA_ACTIONS,
+            }}
+          >
             <Link
               href='https://forefrontcharity.regfox.com/forefront-charitys-10th-annual-gala#sponsorship-package'
               rel='noopener noreferrer'

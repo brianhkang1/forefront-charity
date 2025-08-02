@@ -1,5 +1,6 @@
 'use client';
 
+import { EVENT_NAME, PAGE, SECTION, trackEvent } from '@/utils/trackEvent';
 import clsx from 'clsx';
 
 import Loading from '../Loading';
@@ -8,6 +9,11 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium';
   color?: 'bg-forefront-teal' | 'bg-white' | 'bg-dark-gold';
   loading?: boolean;
+  trackEventParams: {
+    name: (typeof EVENT_NAME)[keyof typeof EVENT_NAME];
+    page: (typeof PAGE)[keyof typeof PAGE];
+    section: (typeof SECTION)[keyof typeof SECTION];
+  };
 }
 
 const BUTTON_SIZE_STYLES = {
@@ -27,9 +33,18 @@ export default function Button({
   color = 'bg-forefront-teal',
   className,
   loading,
+  trackEventParams,
   ...props
 }: Props) {
   const textColor = TEXT_COLOR[color];
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (trackEventParams) {
+      trackEvent(trackEventParams);
+    }
+
+    props.onClick?.(event);
+  };
 
   return (
     <button
@@ -40,6 +55,7 @@ export default function Button({
         className,
       )}
       {...props}
+      onClick={handleClick}
     >
       <div
         className={clsx(
