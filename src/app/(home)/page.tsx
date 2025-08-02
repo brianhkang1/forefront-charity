@@ -3,6 +3,7 @@ import DonationDialog from '@/components/DonationDialog';
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
 import findImage from '@/utils/findImage';
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -79,9 +80,22 @@ export default async function HomePage() {
             </h1>
 
             <div className='flex gap-3'>
-              <DonationDialog />
+              <DonationDialog
+                trackEventParams={{
+                  name: EVENT_NAME.DONATE_BUTTON_CLICK,
+                  page: PAGE.HOME,
+                  section: SECTION.HERO,
+                }}
+              />
 
-              <Button color='bg-white'>
+              <Button
+                color='bg-white'
+                trackEventParams={{
+                  name: EVENT_NAME.LEARN_MORE_BUTTON_CLICK,
+                  page: PAGE.HOME,
+                  section: SECTION.HERO,
+                }}
+              >
                 <Link href='/approach'>Learn More</Link>
               </Button>
             </div>
@@ -113,9 +127,22 @@ export default async function HomePage() {
             </h1>
 
             <div className='flex gap-3'>
-              <DonationDialog />
+              <DonationDialog
+                trackEventParams={{
+                  name: EVENT_NAME.DONATE_BUTTON_CLICK,
+                  page: PAGE.HOME,
+                  section: SECTION.HERO,
+                }}
+              />
 
-              <Button color='bg-white'>
+              <Button
+                color='bg-white'
+                trackEventParams={{
+                  name: EVENT_NAME.LEARN_MORE_BUTTON_CLICK,
+                  page: PAGE.HOME,
+                  section: SECTION.HERO,
+                }}
+              >
                 <Link href='/approach'>Learn More</Link>
               </Button>
             </div>
@@ -125,7 +152,7 @@ export default async function HomePage() {
 
       <div className='m-12 flex flex-col items-center gap-9 not-md:m-6 not-md:gap-6'>
         <FourPillars />
-        <PlatinumTransparency />
+        <PlatinumTransparency page={PAGE.HOME} />
         <Partnership />
         <Changemakers />
         <LivingTheMission />

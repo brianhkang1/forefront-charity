@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import Link from 'next/link';
 
 const GOLD_CARDS = [
@@ -9,6 +10,11 @@ const GOLD_CARDS = [
 
     buttonLabel: 'Learn More',
     url: '/documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
+    trackEventParams: {
+      name: EVENT_NAME.SPONSORSHIP_LEARN_MORE_BUTTON_CLICK,
+      page: PAGE.GALA,
+      section: SECTION.GALA_ACTIONS,
+    },
   },
   {
     title: 'Auction Items',
@@ -23,37 +29,51 @@ const GOLD_CARDS = [
       "Can't attend? You can still make a difference! Consider making a donation to help further FOREFRONT Charity's work and create lasting change.",
     buttonLabel: 'Donate',
     url: 'https://givebutter.com/c/FF10thgala',
+    trackEventParams: {
+      name: EVENT_NAME.GALA_DONATE_BUTTON_CLICK,
+      page: PAGE.GALA,
+      section: SECTION.GALA_ACTIONS,
+    },
   },
 ];
 
 export default function LivingTheMission() {
   return (
     <section className='flex flex-wrap items-center justify-center gap-6 pb-10 text-white not-md:flex-col not-md:gap-12'>
-      {GOLD_CARDS.map(({ title, description, buttonLabel, url }) => (
-        <div
-          key={title}
-          className='from-gold to-dark-gold h-[360px] w-[340px] rounded-md bg-gradient-to-r p-[3px]'
-        >
-          <div className='relative h-full w-full rounded bg-black px-[23px] pt-[15px] pb-[54px]'>
-            <div className='min-h-[80px] w-min text-4xl font-bold'>{title}</div>
+      {GOLD_CARDS.map(
+        ({ title, description, buttonLabel, url, trackEventParams }) => (
+          <div
+            key={title}
+            className='from-gold to-dark-gold h-[360px] w-[340px] rounded-md bg-gradient-to-r p-[3px]'
+          >
+            <div className='relative h-full w-full rounded bg-black px-[23px] pt-[15px] pb-[54px]'>
+              <div className='min-h-[80px] w-min text-4xl font-bold'>
+                {title}
+              </div>
 
-            {/* line divider */}
-            <div className='bg-gold mt-[16px] mb-[16px] h-[1px] w-full rounded-lg' />
+              {/* line divider */}
+              <div className='bg-gold mt-[16px] mb-[16px] h-[1px] w-full rounded-lg' />
 
-            <div className='min-h-[150px]'>{description}</div>
+              <div className='min-h-[150px]'>{description}</div>
 
-            {url ? (
-              <Button color='bg-dark-gold' size='small' disabled={!url}>
-                <Link href={url} rel='noopener noreferrer' target='_blank'>
-                  {buttonLabel}
-                </Link>
-              </Button>
-            ) : (
-              <span className='text-gold italic'>{buttonLabel}</span>
-            )}
+              {url ? (
+                <Button
+                  color='bg-dark-gold'
+                  size='small'
+                  disabled={!url}
+                  trackEventParams={trackEventParams}
+                >
+                  <Link href={url} rel='noopener noreferrer' target='_blank'>
+                    {buttonLabel}
+                  </Link>
+                </Button>
+              ) : (
+                <span className='text-gold italic'>{buttonLabel}</span>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        ),
+      )}
     </section>
   );
 }

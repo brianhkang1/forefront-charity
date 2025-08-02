@@ -1,6 +1,7 @@
 import Button from '@/components/Button';
 import DonationDialog from '@/components/DonationDialog';
 import Image from '@/components/Image';
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import Link from 'next/link';
 
 import CallToAction from './assets/CallToAction.png';
@@ -25,9 +26,22 @@ export default function ChangeTheWorld() {
           </div>
 
           <div className='mt-3 flex gap-2'>
-            <DonationDialog />
+            <DonationDialog
+              trackEventParams={{
+                name: EVENT_NAME.DONATE_BUTTON_CLICK,
+                page: PAGE.HOME,
+                section: SECTION.CHANGE_THE_WORLD,
+              }}
+            />
 
-            <Button color='bg-white'>
+            <Button
+              color='bg-white'
+              trackEventParams={{
+                name: EVENT_NAME.GET_INVOLVED_BUTTON_CLICK,
+                page: PAGE.HOME,
+                section: SECTION.CHANGE_THE_WORLD,
+              }}
+            >
               <Link href='mailto:contact@goforefront.org'>Get Involved</Link>
             </Button>
           </div>
@@ -50,9 +64,22 @@ export default function ChangeTheWorld() {
           </div>
 
           <div className='mt-3 flex w-40 flex-col gap-2'>
-            <DonationDialog />
+            <DonationDialog
+              trackEventParams={{
+                name: EVENT_NAME.DONATE_BUTTON_CLICK,
+                page: PAGE.HOME,
+                section: SECTION.CHANGE_THE_WORLD,
+              }}
+            />
 
-            <Button color='bg-white'>
+            <Button
+              color='bg-white'
+              trackEventParams={{
+                name: EVENT_NAME.GET_INVOLVED_BUTTON_CLICK,
+                page: PAGE.HOME,
+                section: SECTION.CHANGE_THE_WORLD,
+              }}
+            >
               <Link href='mailto:contact@goforefront.org'>Get Involved</Link>
             </Button>
           </div>

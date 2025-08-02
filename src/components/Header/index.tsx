@@ -1,6 +1,12 @@
 'use client';
 
 import Image from '@/components/Image';
+import {
+  EVENT_NAME,
+  PATHNAME_TO_PAGE,
+  SECTION,
+  trackEvent,
+} from '@/utils/trackEvent';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import clsx from 'clsx';
@@ -29,13 +35,26 @@ export default function Header() {
 
   const textColor =
     LINKS.find((link) => link.href === pathname)?.textColor || 'black';
+
   const textStyle = `text-${textColor}`;
+
+  const currentPage =
+    PATHNAME_TO_PAGE[pathname as keyof typeof PATHNAME_TO_PAGE];
 
   return (
     <>
       {/* Desktop header */}
       <header className='desktop absolute z-2 h-36 w-full items-center justify-between p-12 md:flex md:flex-wrap'>
-        <Link href='/'>
+        <Link
+          href='/'
+          onClick={() =>
+            trackEvent({
+              name: EVENT_NAME.FOREFRONT_ICON_CLICK,
+              page: currentPage,
+              section: SECTION.HEADER,
+            })
+          }
+        >
           <Image
             priority
             loading='eager'
@@ -65,14 +84,29 @@ export default function Header() {
             );
           })}
 
-          <DonationDialog />
+          <DonationDialog
+            trackEventParams={{
+              name: EVENT_NAME.DONATE_BUTTON_CLICK,
+              page: currentPage,
+              section: SECTION.HEADER,
+            }}
+          />
         </nav>
       </header>
 
       {/* Mobile header */}
       <header className='mobile sticky top-0 z-2 shadow-2xl'>
         <div className='flex w-full items-center justify-between bg-white px-6 py-4'>
-          <Link href='/'>
+          <Link
+            href='/'
+            onClick={() =>
+              trackEvent({
+                name: EVENT_NAME.FOREFRONT_ICON_CLICK,
+                page: currentPage,
+                section: SECTION.HEADER,
+              })
+            }
+          >
             <Image
               priority
               loading='eager'
@@ -85,7 +119,14 @@ export default function Header() {
           </Link>
 
           <div className='flex items-center gap-4'>
-            <DonationDialog buttonSize='small' />
+            <DonationDialog
+              buttonSize='small'
+              trackEventParams={{
+                name: EVENT_NAME.DONATE_BUTTON_CLICK,
+                page: currentPage,
+                section: SECTION.HEADER,
+              }}
+            />
 
             <HamburgerMenuIcon
               width={24}

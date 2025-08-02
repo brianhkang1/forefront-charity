@@ -1,6 +1,7 @@
 'use client';
 
 import Select from '@/components/Select';
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import { useState } from 'react';
 
 import Button from '../Button';
@@ -17,7 +18,11 @@ const ANNUAL_REPORT_OPTIONS = [
   { label: 'Annual Report 2017', value: '/documents/Annual_Report_2017.pdf' },
 ];
 
-export default function SelectAnnualReport() {
+interface Props {
+  page: (typeof PAGE)[keyof typeof PAGE];
+}
+
+export default function SelectAnnualReport({ page }: Props) {
   const [selectedReport, setSelectedReport] = useState<string>(DEFAULT_OPTION);
 
   const handleSelectAnnualReport = (fileId: string) => {
@@ -38,7 +43,16 @@ export default function SelectAnnualReport() {
         onValueChange={handleSelectAnnualReport}
       />
 
-      <Button size='small' disabled={!selectedReport} onClick={handleDownload}>
+      <Button
+        size='small'
+        disabled={!selectedReport}
+        onClick={handleDownload}
+        trackEventParams={{
+          name: EVENT_NAME.VIEW_REPORT_BUTTON_CLICK,
+          page,
+          section: SECTION.PLATINUM_TRANSPARENCY,
+        }}
+      >
         View Report
       </Button>
     </div>

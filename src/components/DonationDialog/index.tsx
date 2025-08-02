@@ -1,5 +1,6 @@
 'use client';
 
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { Dialog, VisuallyHidden } from 'radix-ui';
 
@@ -7,13 +8,23 @@ import Button from '../Button';
 
 interface Props {
   buttonSize?: 'small' | 'medium';
+  trackEventParams: {
+    name: (typeof EVENT_NAME)[keyof typeof EVENT_NAME];
+    page: (typeof PAGE)[keyof typeof PAGE];
+    section: (typeof SECTION)[keyof typeof SECTION];
+  };
 }
 
-export default function DonationDialog({ buttonSize }: Props) {
+export default function DonationDialog({
+  buttonSize,
+  trackEventParams,
+}: Props) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button size={buttonSize}>Donate</Button>
+        <Button size={buttonSize} trackEventParams={trackEventParams}>
+          Donate
+        </Button>
       </Dialog.Trigger>
 
       <Dialog.Portal>

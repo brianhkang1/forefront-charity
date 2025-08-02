@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Image from '@/components/Image';
+import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import Link from 'next/link';
 
 import OurChangemakersImage from './assets/OurChangemakers.png';
@@ -24,7 +25,13 @@ export default function Changemakers() {
             sustainable change.
           </p>
 
-          <Button>
+          <Button
+            trackEventParams={{
+              name: EVENT_NAME.LEARN_MORE_BUTTON_CLICK,
+              page: PAGE.HOME,
+              section: SECTION.CHANGEMAKERS,
+            }}
+          >
             <Link href='/approach'>Learn More</Link>
           </Button>
         </div>

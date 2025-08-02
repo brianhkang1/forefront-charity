@@ -1,7 +1,12 @@
 import Image from '@/components/Image';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
+import { PAGE } from '@/utils/trackEvent';
 
-export default function PlatinumTransparency() {
+interface Props {
+  page: (typeof PAGE)[keyof typeof PAGE];
+}
+
+export default function PlatinumTransparency({ page }: Props) {
   return (
     <section className='bg-teal-logo-200 w-full rounded-xl py-8 not-md:px-3'>
       <h2 className='mb-4 text-center not-md:mb-6'>
@@ -32,7 +37,7 @@ export default function PlatinumTransparency() {
             heart of everything we do. Learn more by reading our annual reports.
           </p>
 
-          <SelectAnnualReport />
+          <SelectAnnualReport page={page} />
         </div>
       </div>
     </section>
