@@ -66,7 +66,7 @@ export default async function GalaPage() {
           </h1>
 
           <div className='mb-5 text-2xl font-extralight text-white'>
-            <div>October 18, 2025 at 5:00 PM ET</div>
+            <div>October 18, 2025 at 5:30 PM ET</div>
             <div>Stanley H. Kaplan Penthouse</div>
             <div>165 West 65th Street, 10th Floor New York, NY 10023</div>
           </div>
