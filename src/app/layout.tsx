@@ -1,7 +1,6 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
@@ -46,7 +45,6 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <VercelAnalytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
       </body>
     </html>
