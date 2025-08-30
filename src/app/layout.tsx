@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
 
+import packageJson from '../../package.json';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
   title: {
     template: '%s - FOREFRONT Charity',
     default: 'FOREFRONT Charity',
+  },
+  other: {
+    version: packageJson.version,
   },
 };
 
