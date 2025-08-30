@@ -1,5 +1,6 @@
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
+import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
 import type { Metadata } from 'next';
 
@@ -20,6 +21,10 @@ export const metadata: Metadata = {
 export default async function ApproachPage() {
   const approachPageImagesData = await getGoogleDriveImages(
     process.env.APPROACH_PAGE_IMAGES_FOLDER_ID,
+  );
+
+  const fourPillarsStatsData = await getGoogleSheetsData(
+    process.env.FOUR_PILLAR_STATS_SHEETS_ID,
   );
 
   const heroImage = findImage(approachPageImagesData, 'hero');
@@ -102,7 +107,7 @@ export default async function ApproachPage() {
       </section>
 
       <VisionApproachImpact />
-      <FourPillars />
+      <FourPillars stats={fourPillarsStatsData} />
       <ExponentialImpact />
       <OurVision />
       <WeAreFocused />

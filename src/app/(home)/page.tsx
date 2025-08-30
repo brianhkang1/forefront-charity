@@ -2,6 +2,7 @@ import Button from '@/components/Button';
 import DonationDialog from '@/components/DonationDialog';
 import Image from '@/components/Image';
 import { getGoogleDriveImages } from '@/lib/googleDrive';
+import { getGoogleSheetsData } from '@/lib/googleSheets';
 import findImage from '@/utils/findImage';
 import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import type { Metadata } from 'next';
@@ -50,6 +51,10 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const homePageImagesData = await getGoogleDriveImages(
     process.env.HOME_PAGE_IMAGES_FOLDER_ID,
+  );
+
+  const fourPillarsStatsData = await getGoogleSheetsData(
+    process.env.FOUR_PILLAR_STATS_SHEETS_ID,
   );
 
   const heroDesktopImage = findImage(homePageImagesData, 'hero_desktop');
@@ -151,7 +156,7 @@ export default async function HomePage() {
       </section>
 
       <div className='m-12 flex flex-col items-center gap-9 not-md:m-6 not-md:gap-6'>
-        <FourPillars />
+        <FourPillars stats={fourPillarsStatsData} />
         <PlatinumTransparency page={PAGE.HOME} />
         <Partnership />
         <Changemakers />

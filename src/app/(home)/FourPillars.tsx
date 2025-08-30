@@ -15,7 +15,7 @@ const FOUR_PILLARS_CARDS = [
         <div>WATER</div>
       </>
     ),
-    highlight: '90+',
+    defaultHighlightNumber: '90+',
     description: 'Water Wells Built',
     src: PillarsWaterImage,
     alt: 'Clean water cup held by two hands',
@@ -29,7 +29,7 @@ const FOUR_PILLARS_CARDS = [
         <div>MEDICAL CARE</div>
       </>
     ),
-    highlight: '1300+',
+    defaultHighlightNumber: '1300+',
     description: 'Patients Served',
     src: PillarsMedicalImage,
     alt: 'Patient being treated',
@@ -43,7 +43,7 @@ const FOUR_PILLARS_CARDS = [
         <div>EDUCATION</div>
       </>
     ),
-    highlight: '235+',
+    defaultHighlightNumber: '235+',
     description: 'Students Enrolled',
     src: PillarsEducationImage,
     alt: 'Two young students smiling',
@@ -57,7 +57,7 @@ const FOUR_PILLARS_CARDS = [
         <div>OPPORTUNITIES</div>
       </>
     ),
-    highlight: '175+',
+    defaultHighlightNumber: '175+',
     description: 'Changemakers Trained',
     src: PillarsEmpowermentImage,
     alt: 'Female individual standing out in a crowd',
@@ -65,7 +65,25 @@ const FOUR_PILLARS_CARDS = [
   },
 ];
 
-export default function FourPillars() {
+interface Props {
+  stats: any[][] | null | undefined;
+}
+
+export default function FourPillars({ stats }: Props) {
+  const highlightNumbersByPillar = (() => {
+    const statsByPillar: Record<string, number> = {};
+
+    // Slice to get rid of headers
+    stats?.slice(1).forEach((stat) => {
+      const pillarName = stat[0];
+      const highlightNumber = stat[1];
+
+      statsByPillar[pillarName] = highlightNumber;
+    });
+
+    return statsByPillar;
+  })();
+
   return (
     <section className='w-full'>
       <div className='text-center'>
@@ -78,7 +96,15 @@ export default function FourPillars() {
 
       <div className='flex flex-wrap justify-center gap-[24px]'>
         {FOUR_PILLARS_CARDS.map(
-          ({ key, title, highlight, description, src, alt, borderColor }) => (
+          ({
+            key,
+            title,
+            defaultHighlightNumber,
+            description,
+            src,
+            alt,
+            borderColor,
+          }) => (
             <div key={key} className='relative'>
               <Image
                 fillWidth={245}
@@ -99,7 +125,8 @@ export default function FourPillars() {
                     <div className='relative pt-[7%] text-center'>
                       <h3>{title}</h3>
                       <div className='my-1 text-6xl font-bold not-md:text-5xl'>
-                        {highlight}
+                        {highlightNumbersByPillar[key] ||
+                          defaultHighlightNumber}
                       </div>
                       <div className='text-lg'>{description}</div>
                     </div>
