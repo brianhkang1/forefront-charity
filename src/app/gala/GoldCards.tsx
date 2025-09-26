@@ -10,6 +10,7 @@ const GOLD_CARDS = [
 
     buttonLabel: 'Learn More',
     url: '/documents/Forefront_Gala_Sponsorship_Deck_2025.pdf',
+    openTab: true,
     trackEventParams: {
       name: EVENT_NAME.SPONSORSHIP_LEARN_MORE_BUTTON_CLICK,
       page: PAGE.GALA,
@@ -20,8 +21,9 @@ const GOLD_CARDS = [
     title: 'Auction Items',
     description:
       "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
-    // buttonLabel: 'Purchase',
-    buttonLabel: 'Auction items coming soon - check back later!',
+    buttonLabel: 'Purchase',
+    url: '#auction-items',
+    openTab: false,
   },
   {
     title: 'Give',
@@ -29,6 +31,7 @@ const GOLD_CARDS = [
       "Can't attend? You can still make a difference! Consider making a donation to help further FOREFRONT Charity's work and create lasting change.",
     buttonLabel: 'Donate',
     url: 'https://givebutter.com/c/FF10thgala',
+    openTab: true,
     trackEventParams: {
       name: EVENT_NAME.GALA_DONATE_BUTTON_CLICK,
       page: PAGE.GALA,
@@ -41,7 +44,14 @@ export default function LivingTheMission() {
   return (
     <section className='flex flex-wrap items-center justify-center gap-6 pb-10 text-white not-md:flex-col not-md:gap-12'>
       {GOLD_CARDS.map(
-        ({ title, description, buttonLabel, url, trackEventParams }) => (
+        ({
+          title,
+          description,
+          buttonLabel,
+          url,
+          trackEventParams,
+          openTab,
+        }) => (
           <div
             key={title}
             className='from-gold to-dark-gold h-[360px] w-[340px] rounded-md bg-gradient-to-r p-[3px]'
@@ -63,7 +73,11 @@ export default function LivingTheMission() {
                   disabled={!url}
                   trackEventParams={trackEventParams}
                 >
-                  <Link href={url} rel='noopener noreferrer' target='_blank'>
+                  <Link
+                    href={url}
+                    rel={openTab ? 'noopener noreferrer' : undefined}
+                    target={openTab ? '_blank' : undefined}
+                  >
                     {buttonLabel}
                   </Link>
                 </Button>

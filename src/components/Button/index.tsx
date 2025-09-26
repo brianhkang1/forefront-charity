@@ -9,7 +9,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium';
   color?: 'bg-forefront-teal' | 'bg-white' | 'bg-dark-gold';
   loading?: boolean;
-  trackEventParams: {
+  trackEventParams?: {
     name: (typeof EVENT_NAME)[keyof typeof EVENT_NAME];
     page: (typeof PAGE)[keyof typeof PAGE];
     section: (typeof SECTION)[keyof typeof SECTION];
