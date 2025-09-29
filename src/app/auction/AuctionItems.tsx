@@ -10,16 +10,11 @@ const AUCTION_ITEMS = [
   { name: 'AuctionFake', src: AuctionFake, link: 'https://www.google.com' },
   { name: 'AuctionFake', src: AuctionFake, link: 'https://www.google.com' },
   { name: 'AuctionFake', src: AuctionFake, link: 'https://www.google.com' },
-  { name: 'AuctionFake', src: AuctionFake, link: 'https://www.google.com' },
-  { name: 'AuctionFake', src: AuctionFake, link: 'https://www.google.com' },
 ];
 
 export default function AuctionItems() {
   return (
-    <section
-      id='auction-items'
-      className='flex flex-col items-center pb-10 text-white'
-    >
+    <section id='items' className='flex flex-col items-center pb-10 text-white'>
       <div className='border-dark-gold mb-6 w-[90%] rounded-lg border-4 px-6 pt-20 pb-4 not-md:px-3 not-md:pt-15'>
         <h2>Auction Items</h2>
       </div>

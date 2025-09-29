@@ -6,15 +6,14 @@ import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import GoldCards from './GoldCards';
-import SpeakersHonorees from './SpeakersHonorees';
-import SponsorLogos from './SponsorLogos';
+import GoldCards from '../gala/GoldCards';
+import AuctionItems from './AuctionItems';
 
 // Default value, but explicitly set to ensure SSG
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: 'Gala',
+  title: 'Auction',
 };
 
 export default async function GalaPage() {
@@ -111,8 +110,7 @@ export default async function GalaPage() {
       </section>
 
       <GoldCards />
-      <SpeakersHonorees />
-      <SponsorLogos />
+      <AuctionItems />
     </div>
   );
 }

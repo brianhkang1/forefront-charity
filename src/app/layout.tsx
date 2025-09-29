@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Libre_Baskerville, Montserrat } from 'next/font/google';
 import Script from 'next/script';
 
 import packageJson from '../../package.json';
@@ -15,6 +15,13 @@ const montserrat = Montserrat({
   weight: 'variable',
   style: ['normal', 'italic'],
   variable: '--font-montserrat',
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-libre-baskerville',
 });
 
 export const metadata: Metadata = {
@@ -38,6 +45,7 @@ export default function RootLayout({
       className={clsx(
         'text-forefront-text scrollbar-forefront antialiased',
         montserrat.variable,
+        libreBaskerville.variable,
       )}
     >
       <Script

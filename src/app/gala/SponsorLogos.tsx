@@ -1,119 +1,184 @@
 import Image from '@/components/Image';
 
-import BronzeFake from './assets/Bronze_Fake.png';
-import GoldFake from './assets/Gold_Fake.png';
-import SilverFake from './assets/Silver_Fake.png';
-
-const DIAMOND_SPONSORS = [{ name: 'GoldFake', src: GoldFake }];
-
-const GOLD_SPONSORS = [
-  { name: 'GoldFake', src: GoldFake },
-  { name: 'SilverFake', src: SilverFake },
-];
-
-const SILVER_SPONSORS = [
-  { name: 'GoldFake', src: GoldFake },
-  { name: 'SilverFake', src: SilverFake },
-  { name: 'BronzeFake', src: BronzeFake },
-  { name: 'GoldFake', src: GoldFake },
-  { name: 'SilverFake', src: SilverFake },
-  { name: 'BronzeFake', src: BronzeFake },
-];
-
-const BRONZE_SPONSORS = [
-  { name: 'GoldFake', src: GoldFake },
-  { name: 'SilverFake', src: SilverFake },
-  { name: 'BronzeFake', src: BronzeFake },
-];
+import TextSponsor from './TextSponsor';
+import Ameriprise from './assets/Ameriprise.png';
+import Awe_Wonder from './assets/Awe_Wonder.jpeg';
+import Bluehouse from './assets/Bluehouse.png';
+import DrArthurYeh from './assets/Dr_Arthur_Yeh.png';
+import Hilltop from './assets/Hilltop.png';
+import LaurelSociety from './assets/Laurel_Society.png';
+import LibertyCoke from './assets/Liberty_Coke.png';
+import RiverdellVision from './assets/Riverdell_Vision.png';
+import SJ_Park from './assets/SJ_Park.png';
+import WhitehallDental from './assets/Whitehall_Dental.jpg';
 
 export default function SponsorLogos() {
   return (
-    <>
-      <section className='flex flex-col items-center pb-10 text-white'>
-        {/* DIAMOND SPONSORS */}
-        <div className='flex w-[90%] flex-col items-center'>
-          <div className='flex w-full items-center'>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
-            <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
-              DIAMOND SPONSOR
-            </div>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
+    <section className='flex flex-col items-center bg-white py-10'>
+      {/* DIAMOND SPONSORS */}
+      <div className='flex w-[90%] flex-col items-center'>
+        <div className='flex w-full items-center'>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
+          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+            DIAMOND SPONSOR
           </div>
-
-          <div className='flex flex-wrap items-center justify-center gap-5 py-10'>
-            {DIAMOND_SPONSORS.map((sponsor, index) => (
-              <Image
-                key={`diamond-${index}-${sponsor.name}`}
-                src={sponsor.src}
-                alt={sponsor.name}
-              />
-            ))}
-          </div>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        {/* GOLD SPONSORS */}
-        <div className='flex w-[90%] flex-col items-center'>
-          <div className='flex w-full items-center'>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
-            <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
-              GOLD SPONSOR
-            </div>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
-          </div>
+        <div className='py-10'>
+          <TextSponsor className='text-6xl not-md:text-5xl'>
+            <div>ANONYMOUS</div>
+            <div>DONOR</div>
+          </TextSponsor>
+        </div>
+      </div>
 
-          <div className='flex flex-wrap items-center justify-center gap-5 py-10'>
-            {GOLD_SPONSORS.map((sponsor, index) => (
-              <Image
-                key={`gold-${index}-${sponsor.name}`}
-                src={sponsor.src}
-                alt={sponsor.name}
-              />
-            ))}
+      {/* GOLD SPONSORS */}
+      <div className='flex w-[90%] flex-col items-center'>
+        <div className='flex w-full items-center'>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
+          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+            GOLD SPONSOR
           </div>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        {/* SILVER SPONSORS */}
-        <div className='flex w-[90%] flex-col items-center'>
-          <div className='flex w-full items-center'>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
-            <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
-              SILVER SPONSOR
-            </div>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
+        <div className='grid grid-cols-2 items-center justify-center gap-5 py-10'>
+          <div className='flex items-center justify-center not-xl:col-span-2'>
+            <TextSponsor className='text-5xl not-md:text-4xl'>
+              <div>In Loving Memory of</div>
+              <div>Dr. Ravi A. Patel</div>
+            </TextSponsor>
           </div>
 
-          <div className='flex flex-wrap items-center justify-center gap-5 py-10'>
-            {SILVER_SPONSORS.map((sponsor, index) => (
-              <Image
-                key={`silver-${index}-${sponsor.name}`}
-                src={sponsor.src}
-                alt={sponsor.name}
-              />
-            ))}
+          <div className='flex h-[180px] w-[575px] items-center not-md:h-[140px] not-md:w-[460px] not-xl:col-span-2'>
+            <Image
+              src={DrArthurYeh}
+              alt='Dr. Arthur Yeh & Associates'
+              className='h-[100%] w-[100%]'
+            />
+          </div>
+
+          <div className='col-span-2 flex justify-center'>
+            <TextSponsor className='text-5xl not-md:text-4xl'>
+              <div>George Hsieh &</div>
+              <div>Josephine Koh</div>
+            </TextSponsor>
           </div>
         </div>
+      </div>
 
-        {/* BRONZE SPONSORS */}
-        <div className='flex w-[90%] flex-col items-center'>
-          <div className='flex w-full items-center'>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
-            <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
-              BRONZE SPONSOR
-            </div>
-            <div className='h-[1px] w-full flex-grow-1 border-1 border-white' />
+      {/* SILVER SPONSORS */}
+      <div className='flex w-[90%] flex-col items-center'>
+        <div className='flex w-full items-center'>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
+          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+            SILVER SPONSOR
+          </div>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
+        </div>
+
+        <div className='grid grid-cols-3 items-center justify-center gap-10 py-10'>
+          <div className='flex items-center justify-center not-lg:col-span-3'>
+            <Image
+              src={Ameriprise}
+              alt='Ameriprise'
+              className='max-h-[275px] max-w-[275px] object-contain'
+            />
           </div>
 
-          <div className='flex flex-wrap items-center justify-center gap-5 py-10'>
-            {BRONZE_SPONSORS.map((sponsor, index) => (
-              <Image
-                key={`bronze-${index}-${sponsor.name}`}
-                src={sponsor.src}
-                alt={sponsor.name}
-              />
-            ))}
+          <div className='flex items-center justify-center not-lg:col-span-3'>
+            <Image
+              src={SJ_Park}
+              alt='SJ Park Psychiatry'
+              className='max-h-[275px] max-w-[275px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center not-lg:col-span-3'>
+            <Image
+              src={Bluehouse}
+              alt='Bluehouse Eyecare'
+              className='max-h-[275px] max-w-[275px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center not-lg:col-span-3'>
+            <Image
+              src={LibertyCoke}
+              alt='Liberty Coca-Cola Beverages'
+              className='max-h-[275px] max-w-[275px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center not-lg:col-span-3'>
+            <Image
+              src={Hilltop}
+              alt='Hilltop Acupuncture'
+              className='h-[275px] max-w-[275px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center not-lg:col-span-3'>
+            <Image
+              src={LaurelSociety}
+              alt='Laurel Society'
+              className='max-h-[275px] max-w-[275px] object-contain'
+            />
+          </div>
+
+          <div className='col-span-3 flex items-center justify-center'>
+            <Image
+              src={Awe_Wonder}
+              alt='Awe & Wonder'
+              className='max-h-[275px] max-w-[275px] object-contain'
+            />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+
+      {/* BRONZE SPONSORS */}
+      <div className='flex w-[90%] flex-col items-center'>
+        <div className='flex w-full items-center'>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
+          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+            BRONZE SPONSOR
+          </div>
+          <div className='h-[1px] w-full flex-grow-1 border-1' />
+        </div>
+
+        <div className='grid grid-cols-4 items-center justify-center gap-12 py-10 not-lg:grid-cols-2'>
+          <div className='flex items-center justify-center'>
+            <TextSponsor className='text-4xl not-md:text-3xl'>
+              <div>The Patel</div>
+              <div>Family</div>
+            </TextSponsor>
+          </div>
+
+          <div className='flex items-center justify-center'>
+            <Image
+              src={WhitehallDental}
+              alt='Whitehall Dental Arts'
+              className='max-h-[250px] max-w-[250px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center'>
+            <TextSponsor className='text-4xl not-md:text-3xl'>
+              <div>The Gelman</div>
+              <div>Family</div>
+            </TextSponsor>
+          </div>
+
+          <div className='flex items-center justify-center'>
+            <Image
+              src={RiverdellVision}
+              alt='Riverdell Vision'
+              className='h-[250px] max-w-[250px] object-contain'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
