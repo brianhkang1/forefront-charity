@@ -1,8 +1,9 @@
 import Image from '@/components/Image';
 
 import AnuchaBrowneImage from './assets/Anucha_Browne.jpg';
-import DreamBlueLogo from './assets/DreamBlueLogo.jpg';
+import DanielLeeImage from './assets/Daniel_Lee.jpg';
 import HenryLiaoImage from './assets/Henry_Liao.jpg';
+import JulianaCanaleImage from './assets/Juliana_Canale.jpg';
 
 const SPEAKER = {
   name: 'ANUCHA BROWNE',
@@ -16,20 +17,28 @@ const SPEAKER = {
 
 const HONOREES = [
   {
-    name: 'DREAM BLUE FOUNDATION',
-    subtitle: 'Dreamer Builder Honoree',
+    name: 'DANIEL LEE',
+    subtitle: 'Dream Builder Award',
     description:
-      'Dream Blue Foundation has exemplified generosity and dedication, helping turn countless dreams into reality. Through their unwavering support and visionary initiatives, they have empowered individuals and communities in India to reach their fullest potential, making a lasting impact on the lives they touch.',
-    src: DreamBlueLogo,
-    alt: 'Dream Blue Foundation',
+      'As the founder and CEO of Dream Blue Foundation, Daniel Lee has exemplified generosity and dedication, helping turn countless dreams into reality. Through Dream Blue’s unwavering support and visionary initiatives, they have empowered individuals and communities in FOREFRONT India to reach their fullest potential, making a lasting impact on the lives they touch.',
+    src: DanielLeeImage,
+    alt: 'Daniel Lee',
   },
   {
     name: 'HENRY LIAO',
-    subtitle: 'Pillar Honoree, Longest standing Board member',
+    subtitle: 'Pillar of Impact Honoree',
     description:
-      'Henry Liao has been a steadfast pillar of support and guidance. His dedication, leadership, and commitment have been instrumental in advancing the organization’s mission and creating lasting impact in the community.',
+      'In recognition of his unwavering dedication and support, Henry is being honored as FOREFRONT Charity’s longest-standing board member. His commitment has made a lasting impact on advancing the organization’s mission.',
     src: HenryLiaoImage,
     alt: 'Henry Liao',
+  },
+  {
+    name: 'JULIANA CANALE',
+    subtitle: 'Cornerstone Volunteer Award',
+    description:
+      'Exemplifying the true spirit of volunteerism, Juliana Canale is recognized as FOREFRONT’s longest standing volunteer. She has been a cornerstone of our mission, consistently inspiring and uplifting those around her. This award honors her enduring impact and steadfast devotion.',
+    src: JulianaCanaleImage,
+    alt: 'Juliana canale',
   },
 ];
 
@@ -64,7 +73,7 @@ export default function SpeakersHonorees() {
           <h2>Honorees</h2>
         </div>
 
-        <div className='flex w-[80%] flex-wrap justify-center gap-30 not-md:gap-15'>
+        <div className='flex w-[80%] flex-wrap justify-center gap-x-30 gap-y-10 not-md:gap-x-15'>
           {HONOREES.map((honoree) => (
             <div className='flex flex-col items-center' key={honoree.name}>
               <Image
@@ -75,10 +84,10 @@ export default function SpeakersHonorees() {
                 className='rounded-lg'
               />
               <div className='w-[325px]'>
-                <div className='mt-4 text-2xl font-bold text-nowrap not-md:text-xl not-md:text-wrap'>
+                <div className='mt-2 text-2xl font-bold text-nowrap not-md:text-xl not-md:text-wrap'>
                   {honoree.name}
                 </div>
-                <div className='mb-7 text-nowrap italic not-md:text-wrap'>
+                <div className='mb-4 text-nowrap italic not-md:text-wrap'>
                   {honoree.subtitle}
                 </div>
                 <div>{honoree.description}</div>

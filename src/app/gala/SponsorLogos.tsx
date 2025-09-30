@@ -2,7 +2,7 @@ import Image from '@/components/Image';
 
 import TextSponsor from './TextSponsor';
 import Ameriprise from './assets/Ameriprise.png';
-import Awe_Wonder from './assets/Awe_Wonder.jpeg';
+import Awe_Wonder from './assets/Awe_Wonder.png';
 import Bluehouse from './assets/Bluehouse.png';
 import DrArthurYeh from './assets/Dr_Arthur_Yeh.png';
 import Hilltop from './assets/Hilltop.png';
@@ -43,7 +43,7 @@ export default function SponsorLogos() {
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='grid grid-cols-2 items-center justify-center gap-5 py-10'>
+        <div className='grid grid-cols-2 items-center justify-center gap-5 pb-10 not-md:pt-10'>
           <div className='flex items-center justify-center not-xl:col-span-2'>
             <TextSponsor className='text-5xl not-md:text-4xl'>
               <div>In Loving Memory of</div>
@@ -78,7 +78,7 @@ export default function SponsorLogos() {
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='grid grid-cols-3 items-center justify-center gap-10 py-10'>
+        <div className='grid grid-cols-3 items-center justify-center gap-10 pt-5 pb-10 not-md:pt-10'>
           <div className='flex items-center justify-center not-lg:col-span-3'>
             <Image
               src={Ameriprise}
