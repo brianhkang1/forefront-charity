@@ -1,5 +1,6 @@
 import Image from '@/components/Image';
 
+import SectionTitleBox from './SectionTitleBox';
 import TextSponsor from './TextSponsor';
 import Ameriprise from './assets/Ameriprise.png';
 import Awe_Wonder from './assets/Awe_Wonder.png';
@@ -15,9 +16,9 @@ import WhitehallDental from './assets/Whitehall_Dental.jpg';
 export default function SponsorLogos() {
   return (
     <section className='flex flex-col items-center bg-white py-10'>
-      <div className='border-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
+      <SectionTitleBox className='bg-white text-black'>
         <h2>Sponsors</h2>
-      </div>
+      </SectionTitleBox>
 
       {/* DIAMOND SPONSORS */}
       <div className='flex w-[90%] flex-col items-center'>

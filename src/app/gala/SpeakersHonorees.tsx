@@ -1,5 +1,6 @@
 import Image from '@/components/Image';
 
+import SectionTitleBox from './SectionTitleBox';
 import AnuchaBrowneImage from './assets/Anucha_Browne.jpg';
 import DanielLeeImage from './assets/Daniel_Lee.jpg';
 import HenryLiaoImage from './assets/Henry_Liao.jpg';
@@ -46,9 +47,9 @@ export default function SpeakersHonorees() {
   return (
     <>
       <section className='flex flex-col items-center pb-10 text-white'>
-        <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
+        <SectionTitleBox>
           <h2>Keynote Speaker</h2>
-        </div>
+        </SectionTitleBox>
 
         <div className='flex w-[75%] flex-wrap items-center justify-center gap-4'>
           <Image
@@ -69,9 +70,9 @@ export default function SpeakersHonorees() {
       </section>
 
       <section className='flex flex-col items-center pb-10 text-white'>
-        <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
+        <SectionTitleBox>
           <h2>Honorees</h2>
-        </div>
+        </SectionTitleBox>
 
         <div className='flex w-[80%] flex-wrap justify-center gap-x-30 gap-y-10 not-md:gap-x-15'>
           {HONOREES.map((honoree) => (

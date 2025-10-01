@@ -2,6 +2,7 @@ import Button from '@/components/Button';
 import Image from '@/components/Image';
 import Link from 'next/link';
 
+import SectionTitleBox from '../gala/SectionTitleBox';
 import Egypt from './assets/Egypt.png';
 import LaurelSociety from './assets/Laurel_Society.png';
 import NamiNori from './assets/Nami_Nori.png';
@@ -39,9 +40,9 @@ const AUCTION_ITEMS = [
 export default function AuctionItems() {
   return (
     <section id='items' className='flex flex-col items-center pb-10 text-white'>
-      <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
+      <SectionTitleBox>
         <h2>Auction Items</h2>
-      </div>
+      </SectionTitleBox>
 
       {/* Top row, two items */}
       <div className='mt-10 flex flex-wrap items-center justify-center gap-6'>
