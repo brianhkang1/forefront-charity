@@ -15,17 +15,21 @@ import WhitehallDental from './assets/Whitehall_Dental.jpg';
 export default function SponsorLogos() {
   return (
     <section className='flex flex-col items-center bg-white py-10'>
+      <div className='border-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
+        <h2>Sponsors</h2>
+      </div>
+
       {/* DIAMOND SPONSORS */}
       <div className='flex w-[90%] flex-col items-center'>
         <div className='flex w-full items-center'>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
-          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+          <div className='mx-5 rounded-lg bg-[#1e3a8a] p-4 text-2xl font-bold text-nowrap text-white not-md:text-xl'>
             DIAMOND SPONSOR
           </div>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='py-10'>
+        <div className='py-12'>
           <TextSponsor className='text-6xl not-md:text-5xl'>
             <div>ANONYMOUS</div>
             <div>DONOR</div>
@@ -37,13 +41,13 @@ export default function SponsorLogos() {
       <div className='flex w-[90%] flex-col items-center'>
         <div className='flex w-full items-center'>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
-          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+          <div className='bg-gold mx-5 rounded-lg p-4 text-2xl font-bold text-nowrap text-white not-md:text-xl'>
             GOLD SPONSOR
           </div>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='grid grid-cols-2 items-center justify-center gap-5 pb-10 not-md:pt-10'>
+        <div className='grid grid-cols-2 items-center justify-center gap-5 pt-2 pb-12 not-md:pt-10'>
           <div className='flex items-center justify-center not-xl:col-span-2'>
             <TextSponsor className='text-5xl not-md:text-4xl'>
               <div>In Loving Memory of</div>
@@ -72,13 +76,13 @@ export default function SponsorLogos() {
       <div className='flex w-[90%] flex-col items-center'>
         <div className='flex w-full items-center'>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
-          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+          <div className='mx-5 rounded-lg bg-[#8b949e] p-4 text-2xl font-bold text-nowrap text-white not-md:text-xl'>
             SILVER SPONSOR
           </div>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='grid grid-cols-3 items-center justify-center gap-10 pt-5 pb-10 not-md:pt-10'>
+        <div className='grid grid-cols-3 items-center justify-center gap-10 pt-4 pb-15 not-md:pt-10'>
           <div className='flex items-center justify-center not-lg:col-span-3'>
             <Image
               src={Ameriprise}
@@ -141,13 +145,13 @@ export default function SponsorLogos() {
       <div className='flex w-[90%] flex-col items-center'>
         <div className='flex w-full items-center'>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
-          <div className='mx-5 text-2xl text-nowrap not-md:text-xl'>
+          <div className='mx-5 rounded-lg bg-[#cd7f32] p-4 text-2xl font-bold text-nowrap text-white not-md:text-xl'>
             BRONZE SPONSOR
           </div>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='grid grid-cols-4 items-center justify-center gap-12 py-10 not-lg:grid-cols-2'>
+        <div className='mt-[-30px] grid grid-cols-4 items-center justify-center gap-12 pb-10 not-md:mt-0 not-md:pt-12 not-lg:grid-cols-2'>
           <div className='flex items-center justify-center'>
             <TextSponsor className='text-4xl not-md:text-3xl'>
               <div>The Patel</div>

@@ -26,7 +26,7 @@ const HONOREES = [
   },
   {
     name: 'HENRY LIAO',
-    subtitle: 'Pillar of Impact Honoree',
+    subtitle: 'Pillar of Impact Award',
     description:
       'In recognition of his unwavering dedication and support, Henry is being honored as FOREFRONT Charity’s longest-standing board member. His commitment has made a lasting impact on advancing the organization’s mission.',
     src: HenryLiaoImage,
@@ -46,7 +46,7 @@ export default function SpeakersHonorees() {
   return (
     <>
       <section className='flex flex-col items-center pb-10 text-white'>
-        <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 pt-20 pb-4 not-md:px-3 not-md:pt-15'>
+        <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
           <h2>Keynote Speaker</h2>
         </div>
 
@@ -69,7 +69,7 @@ export default function SpeakersHonorees() {
       </section>
 
       <section className='flex flex-col items-center pb-10 text-white'>
-        <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 pt-20 pb-4 not-md:px-3 not-md:pt-15'>
+        <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
           <h2>Honorees</h2>
         </div>
 

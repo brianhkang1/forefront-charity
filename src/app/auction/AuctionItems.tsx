@@ -39,7 +39,7 @@ const AUCTION_ITEMS = [
 export default function AuctionItems() {
   return (
     <section id='items' className='flex flex-col items-center pb-10 text-white'>
-      <div className='border-dark-gold mb-6 w-[90%] rounded-lg border-4 px-6 pt-20 pb-4 not-md:px-3 not-md:pt-15'>
+      <div className='border-dark-gold mb-8 w-[90%] rounded-lg border-4 px-6 py-10 not-md:px-3'>
         <h2>Auction Items</h2>
       </div>
 
