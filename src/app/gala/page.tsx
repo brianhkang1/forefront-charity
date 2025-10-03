@@ -7,6 +7,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import GoldCards from './GoldCards';
+import SpeakersHonorees from './SpeakersHonorees';
+import SponsorLogos from './SponsorLogos';
 
 // Default value, but explicitly set to ensure SSG
 export const revalidate = false;
@@ -109,6 +111,8 @@ export default async function GalaPage() {
       </section>
 
       <GoldCards />
+      <SpeakersHonorees />
+      <SponsorLogos />
     </div>
   );
 }

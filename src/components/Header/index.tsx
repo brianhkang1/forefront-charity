@@ -22,6 +22,7 @@ const LINKS = [
   { label: 'Approach', href: '/approach', textColor: 'black' },
   { label: 'About', href: '/about', textColor: 'black' },
   { label: 'Gala', href: '/gala', textColor: 'white' },
+  { label: '', href: '/auction', textColor: 'white' },
 ];
 
 export default function Header() {
@@ -68,6 +69,7 @@ export default function Header() {
 
         <nav className={clsx('flex flex-wrap items-center gap-5', textStyle)}>
           {LINKS.map(({ label, href }) => {
+            if (!label) return;
             const isActivePage = pathname === href;
 
             return (

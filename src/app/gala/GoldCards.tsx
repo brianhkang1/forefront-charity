@@ -20,8 +20,8 @@ const GOLD_CARDS = [
     title: 'Auction Items',
     description:
       "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
-    // buttonLabel: 'Purchase',
-    buttonLabel: 'Auction items coming soon - check back later!',
+    buttonLabel: 'View Items',
+    url: '/auction/#items',
   },
   {
     title: 'Give',
@@ -63,7 +63,11 @@ export default function LivingTheMission() {
                   disabled={!url}
                   trackEventParams={trackEventParams}
                 >
-                  <Link href={url} rel='noopener noreferrer' target='_blank'>
+                  <Link
+                    href={url}
+                    rel={'noopener noreferrer'}
+                    target={'_blank'}
+                  >
                     {buttonLabel}
                   </Link>
                 </Button>
