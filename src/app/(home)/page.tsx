@@ -67,7 +67,6 @@ export default async function HomePage() {
         <Image
           priority
           loading='eager'
-          unoptimized
           hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='95vh'
@@ -111,7 +110,6 @@ export default async function HomePage() {
         <Image
           priority
           loading='eager'
-          unoptimized
           hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='70vh'

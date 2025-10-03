@@ -36,7 +36,6 @@ export default async function ApproachPage() {
         <Image
           priority
           loading='eager'
-          unoptimized
           hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='100vh'
@@ -61,7 +60,6 @@ export default async function ApproachPage() {
         <Image
           priority
           loading='eager'
-          unoptimized
           hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='80vh'

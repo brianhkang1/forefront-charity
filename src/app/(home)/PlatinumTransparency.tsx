@@ -21,7 +21,6 @@ export default function PlatinumTransparency({ page }: Props) {
             rel='noopener noreferrer'
           >
             <Image
-              unoptimized
               src='/icons/platinumTransparency.svg'
               alt='Platinum Transparency Logo'
               fillWidth={156}
