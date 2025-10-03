@@ -19,7 +19,6 @@ export default function AnnualReports() {
             rel='noopener noreferrer'
           >
             <Image
-              unoptimized
               src='/icons/platinumTransparency.svg'
               alt='Platinum Transparency Logo'
               fillWidth={156}

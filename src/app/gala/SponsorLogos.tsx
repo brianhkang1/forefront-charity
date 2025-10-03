@@ -56,7 +56,7 @@ export default function SponsorLogos() {
             </TextSponsor>
           </div>
 
-          <div className='flex h-[140px] w-[460px] items-center not-xl:col-span-2'>
+          <div className='flex h-[140px] w-[460px] items-center not-md:max-w-[100%] not-xl:col-span-2'>
             <Image
               src={DrArthurYeh}
               alt='Dr. Arthur Yeh & Associates'

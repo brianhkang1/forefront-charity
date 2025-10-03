@@ -31,7 +31,6 @@ export default async function GalaPage() {
         <Image
           priority
           loading='eager'
-          unoptimized
           hideContainerWhenMobile
           fillWidth='100%'
           fillHeight='82vh'
@@ -44,7 +43,6 @@ export default async function GalaPage() {
         <Image
           priority
           loading='eager'
-          unoptimized
           hideContainerWhenDesktop
           fillWidth='100%'
           fillHeight='50vh'

@@ -42,7 +42,6 @@ export default function Footer() {
               rel='noopener noreferrer'
             >
               <Image
-                unoptimized
                 src='/icons/facebook-logo.png'
                 alt='Platinum Transparency Logo'
                 fillWidth={14}
@@ -68,7 +67,6 @@ export default function Footer() {
             rel='noopener noreferrer'
           >
             <Image
-              unoptimized
               src='/icons/platinumTransparency.svg'
               alt='Platinum Transparency Logo'
               width={108}
