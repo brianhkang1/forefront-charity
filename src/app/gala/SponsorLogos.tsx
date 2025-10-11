@@ -7,6 +7,7 @@ import Awe_Wonder from './assets/Awe_Wonder.png';
 import Bluehouse from './assets/Bluehouse.png';
 import DrArthurYeh from './assets/Dr_Arthur_Yeh.png';
 import Hilltop from './assets/Hilltop.png';
+import Itiah from './assets/Itiah.png';
 import LaurelSociety from './assets/Laurel_Society.png';
 import LibertyCoke from './assets/Liberty_Coke.png';
 import RiverdellVision from './assets/Riverdell_Vision.png';
@@ -144,7 +145,7 @@ export default function SponsorLogos() {
 
       {/* BRONZE SPONSORS */}
       <div className='flex w-[90%] flex-col items-center'>
-        <div className='mb-6 flex w-full items-center'>
+        <div className='mb-8 flex w-full items-center'>
           <div className='h-[1px] w-full flex-grow-1 border-1' />
           <div className='mx-5 rounded-lg bg-[#cd7f32] p-4 text-2xl font-bold text-nowrap text-white not-md:text-xl'>
             BRONZE SPONSOR
@@ -152,7 +153,7 @@ export default function SponsorLogos() {
           <div className='h-[1px] w-full flex-grow-1 border-1' />
         </div>
 
-        <div className='mt-[-30px] grid grid-cols-4 items-center justify-center gap-12 pb-10 not-md:mt-0 not-md:pt-12 not-lg:grid-cols-2'>
+        <div className='flex max-w-[675px] flex-wrap items-center justify-center gap-12 pb-10 not-lg:grid-cols-2'>
           <div className='flex items-center justify-center'>
             <TextSponsor className='text-3xl not-md:text-2xl'>
               <div>The Patel</div>
@@ -180,6 +181,14 @@ export default function SponsorLogos() {
               src={RiverdellVision}
               alt='Riverdell Vision'
               className='h-[175px] max-w-[175px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center'>
+            <Image
+              src={Itiah}
+              alt='ITIAH Agnels for Learning'
+              className='h-[150px] max-w-[150px] object-contain'
             />
           </div>
         </div>
