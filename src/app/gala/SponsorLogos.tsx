@@ -8,6 +8,7 @@ import Bluehouse from './assets/Bluehouse.png';
 import DrArthurYeh from './assets/Dr_Arthur_Yeh.png';
 import Hilltop from './assets/Hilltop.png';
 import Itiah from './assets/Itiah.png';
+import Kairos from './assets/Kairos.png';
 import LaurelSociety from './assets/Laurel_Society.png';
 import LibertyCoke from './assets/Liberty_Coke.png';
 import RiverdellVision from './assets/Riverdell_Vision.png';
@@ -189,6 +190,14 @@ export default function SponsorLogos() {
               src={Itiah}
               alt='ITIAH Agnels for Learning'
               className='h-[150px] max-w-[150px] object-contain'
+            />
+          </div>
+
+          <div className='flex items-center justify-center'>
+            <Image
+              src={Kairos}
+              alt='Kairos Photography'
+              className='max-h-[175px] max-w-[175px] object-contain'
             />
           </div>
         </div>
