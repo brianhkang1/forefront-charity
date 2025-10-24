@@ -73,7 +73,7 @@ export default async function GalaPage() {
         </div>
 
         <div className='mb-12 flex justify-center gap-2'>
-          <Button
+          {/* <Button
             color='bg-dark-gold'
             trackEventParams={{
               name: EVENT_NAME.BUY_TICKET_BUTTON_CLICK,
@@ -103,6 +103,22 @@ export default async function GalaPage() {
               target='_blank'
             >
               Become a Sponsor
+            </Link>
+          </Button> */}
+          <Button
+            color='bg-dark-gold'
+            trackEventParams={{
+              name: EVENT_NAME.GALA_VIEW_EVENT_PHOTOS_CLICK,
+              page: PAGE.GALA,
+              section: SECTION.GALA_ACTIONS,
+            }}
+          >
+            <Link
+              href='https://www.dropbox.com/scl/fo/4yiygcelgy1gyx2dm2aam/ANPSDBax9w7PSOz85nG1XpM?dl=0&e=1&rlkey=85qlyxi256lock8vshggkmxfr&st=rq3tw56b'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              View Event Photos
             </Link>
           </Button>
         </div>
