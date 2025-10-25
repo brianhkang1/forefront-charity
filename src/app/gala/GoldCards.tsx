@@ -16,13 +16,13 @@ const GOLD_CARDS = [
       section: SECTION.GALA_ACTIONS,
     },
   },
-  {
-    title: 'Auction Items',
-    description:
-      "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
-    buttonLabel: 'View Items',
-    url: 'https://givebutter.com/c/FF10thgala/auction',
-  },
+  // {
+  //   title: 'Auction Items',
+  //   description:
+  //     "Get ready to bid on exclusive experiences and unique items! Browse our auction packages now and place your bids to support FOREFRONT's mission.",
+  //   buttonLabel: 'View Items',
+  //   url: 'https://givebutter.com/c/FF10thgala/auction',
+  // },
   {
     title: 'Give',
     description:

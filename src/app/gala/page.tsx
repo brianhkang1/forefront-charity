@@ -72,8 +72,23 @@ export default async function GalaPage() {
           </div>
         </div>
 
-        <div className='mb-12 flex justify-center gap-2'>
-          <Button
+        {/* line divider */}
+        <div className='flex justify-center'>
+          <div className='bg-gold mt-[48px] h-[1px] w-full max-w-[25%] rounded-lg' />
+        </div>
+
+        <div className='mx-[10%] mt-11 mb-6 text-center text-2xl font-extralight text-white'>
+          <div>
+            Thank you for making our 10th Annual Gala an unforgettable success!
+          </div>
+          <div>
+            Your generosity and support are helping bring hope “to all parts of
+            the world”
+          </div>
+        </div>
+
+        <div className='flex justify-center gap-2'>
+          {/* <Button
             color='bg-dark-gold'
             trackEventParams={{
               name: EVENT_NAME.BUY_TICKET_BUTTON_CLICK,
@@ -104,9 +119,30 @@ export default async function GalaPage() {
             >
               Become a Sponsor
             </Link>
+          </Button> */}
+          <Button
+            color='bg-dark-gold'
+            trackEventParams={{
+              name: EVENT_NAME.GALA_VIEW_EVENT_PHOTOS_CLICK,
+              page: PAGE.GALA,
+              section: SECTION.GALA_ACTIONS,
+            }}
+          >
+            <Link
+              href='https://www.dropbox.com/scl/fo/4yiygcelgy1gyx2dm2aam/ANPSDBax9w7PSOz85nG1XpM?dl=0&e=1&rlkey=85qlyxi256lock8vshggkmxfr&st=rq3tw56b'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              View Event Photos
+            </Link>
           </Button>
         </div>
       </section>
+
+      {/* line divider */}
+      <div className='flex justify-center'>
+        <div className='bg-gold my-[48px] h-[1px] w-full max-w-[25%] rounded-lg' />
+      </div>
 
       <GoldCards />
       <SpeakersHonorees />

@@ -22,6 +22,7 @@ export const EVENT_NAME = {
   BECOME_A_SPONSOR_BUTTON_CLICK: 'become_a_sponsor_button_click',
   SPONSORSHIP_LEARN_MORE_BUTTON_CLICK: 'sponsorship_learn_more_button_click',
   GALA_DONATE_BUTTON_CLICK: 'gala_donate_button_click',
+  GALA_VIEW_EVENT_PHOTOS_CLICK: 'gala_view_event_photos_click',
   SIGN_UP_BUTTON_CLICK: 'sign_up_button_click',
 } as const;
 
