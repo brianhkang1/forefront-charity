@@ -1,6 +1,6 @@
 {
   "name": "forefront-charity",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -17,8 +17,8 @@
     "googleapis": "^167.0.0",
     "next": "^16.0.10",
     "radix-ui": "^1.1.3",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
