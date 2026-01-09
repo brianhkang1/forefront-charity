@@ -6,7 +6,7 @@ import { EVENT_NAME, PAGE, SECTION } from '@/utils/trackEvent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import GoldCards from '../gala/GoldCards';
+import GoldCards from '../gala-2025/GoldCards';
 import AuctionItems from './AuctionItems';
 import SpecialThanks from './SpecialThanks';
 

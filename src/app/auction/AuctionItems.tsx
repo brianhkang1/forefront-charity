@@ -2,7 +2,7 @@ import Button from '@/components/Button';
 import Image from '@/components/Image';
 import Link from 'next/link';
 
-import SectionTitleBox from '../gala/SectionTitleBox';
+import SectionTitleBox from '../gala-2025/SectionTitleBox';
 import Egypt from './assets/Egypt.png';
 import LaurelSociety from './assets/Laurel_Society.png';
 import NamiNori from './assets/Nami_Nori.png';
