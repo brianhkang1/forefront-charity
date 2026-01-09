@@ -21,7 +21,6 @@ const LINKS = [
   { label: 'Home', href: '/', textColor: 'white' },
   { label: 'Approach', href: '/approach', textColor: 'black' },
   { label: 'About', href: '/about', textColor: 'black' },
-  { label: 'Gala', href: '/gala', textColor: 'white' },
   { label: '', href: '/auction', textColor: 'white' },
 ];
 
@@ -76,7 +75,7 @@ export default function Header() {
                 key={label}
                 href={href}
                 className={clsx(
-                  'px-[10px] py-[4px]',
+                  'px-2.5 py-1',
                   isActivePage && 'border-forefront-teal border-b-3',
                 )}
               >
@@ -171,8 +170,6 @@ export default function Header() {
                 );
               })}
             </nav>
-
-            {/* <DonationDialog onClick={() => setMobileMenuIsOpen(false)} /> */}
           </Dialog.Content>
         </Dialog.Root>
       </header>

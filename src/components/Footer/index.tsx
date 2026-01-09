@@ -53,9 +53,9 @@ export default function Footer() {
         </div>
 
         <div className='text-center not-xl:mb-10 md:min-w-83.75'>
-          <div>© 2025 by FOREFRONT Charity</div>
-          <div>1178 Broadway #3107</div>
-          <div>New York, NY, 10001</div>
+          <div>© 2026 by FOREFRONT Charity</div>
+          <div>120 East 23rd St, Floor 4 #432</div>
+          <div>New York, NY, 10010</div>
           <div>contact@goforefront.org</div>
           <div>US 501(c)(3) Public Charity, EIN 47-3373120</div>
         </div>
