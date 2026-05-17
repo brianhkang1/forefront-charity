@@ -36,7 +36,7 @@ export async function postToGoogleSheets(
 
       await GoogleSheetsService.spreadsheets.values.append({
         spreadsheetId,
-        range: 'Sheet1',
+        range: 'New',
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         requestBody: {
