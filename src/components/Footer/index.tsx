@@ -1,4 +1,5 @@
 import Image from '@/components/Image';
+import PlatinumTransparencyImg from '@/components/PlatinumTransparencyImg';
 import { InstagramLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
 import SignupForm from '../SignupForm';
@@ -61,18 +62,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <a
-            href='https://www.guidestar.org/profile/47-3373120'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Image
-              src='/icons/platinumTransparency.svg'
-              alt='Platinum Transparency Logo'
-              width={108}
-              height={108}
-            />
-          </a>
+          <PlatinumTransparencyImg width={108} height={108} />
         </div>
       </div>
     </footer>
