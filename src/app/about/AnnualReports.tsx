@@ -1,6 +1,6 @@
 'use client';
 
-import Image from '@/components/Image';
+import PlatinumTransparencyImg from '@/components/PlatinumTransparencyImg';
 import SelectAnnualReport from '@/components/SelectAnnualReport';
 import { PAGE } from '@/utils/trackEvent';
 
@@ -13,18 +13,7 @@ export default function AnnualReports() {
 
       <div className='flex items-center justify-center gap-6 px-2 not-md:flex-col'>
         <div>
-          <a
-            href='https://www.guidestar.org/profile/47-3373120'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Image
-              src='/icons/platinumTransparency.svg'
-              alt='Platinum Transparency Logo'
-              fillWidth={156}
-              fillHeight={156}
-            />
-          </a>
+          <PlatinumTransparencyImg width={156} height={156} />
         </div>
 
         <div className='max-w-xl not-md:mx-6'>
