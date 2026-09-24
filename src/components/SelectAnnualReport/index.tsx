@@ -6,9 +6,10 @@ import { useState } from 'react';
 
 import Button from '../Button';
 
-const DEFAULT_OPTION = '/documents/Annual_Report_2024.pdf';
+const DEFAULT_OPTION = '/documents/Annual_Report_2025.pdf';
 
 const ANNUAL_REPORT_OPTIONS = [
+  { label: 'Annual Report 2025', value: '/documents/Annual_Report_2025.pdf' },
   { label: 'Annual Report 2024', value: '/documents/Annual_Report_2024.pdf' },
   { label: 'Annual Report 2023', value: '/documents/Annual_Report_2023.pdf' },
   { label: 'Annual Report 2022', value: '/documents/Annual_Report_2022.pdf' },
