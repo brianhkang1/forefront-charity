@@ -24,7 +24,7 @@ export default function AnnualReports() {
             is creating real, lasting change.
           </p>
 
-          <SelectAnnualReport page={PAGE.ABOUT} />
+          {/* <SelectAnnualReport page={PAGE.ABOUT} /> */}
         </div>
       </div>
     </section>

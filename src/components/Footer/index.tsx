@@ -10,7 +10,7 @@ export default function Footer() {
       <div className='flex h-full w-full max-w-[1280px] flex-wrap items-center justify-between not-xl:flex-col'>
         <div>
           <SignupForm />
-          <div className='mt-4 flex items-center gap-2 not-xl:-mt-4 not-xl:mb-4 not-xl:justify-center'>
+          {/* <div className='mt-4 flex items-center gap-2 not-xl:-mt-4 not-xl:mb-4 not-xl:justify-center'>
             <a
               href={'https://www.linkedin.com/company/goforefront'}
               target='_blank'
@@ -50,7 +50,7 @@ export default function Footer() {
                 className='cursor-pointer'
               />
             </a>
-          </div>
+          </div> */}
         </div>
 
         <div className='text-center not-xl:mb-10 md:min-w-83.75'>

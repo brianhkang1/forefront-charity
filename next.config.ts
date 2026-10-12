@@ -12,11 +12,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/about-us',
-        destination: '/about',
-        permanent: true,
-      },
+      // {
+      //   source: '/about-us',
+      //   destination: '/about',
+      //   permanent: true,
+      // },
       {
         source: '/our-approach',
         destination: '/approach',
