@@ -61,9 +61,9 @@ export default function Footer() {
           <div>US 501(c)(3) Public Charity, EIN 47-3373120</div>
         </div>
 
-        <div>
+        {/* <div>
           <PlatinumTransparencyImg width={108} height={108} />
-        </div>
+        </div> */}
       </div>
     </footer>
   );

@@ -20,8 +20,7 @@ import DonationDialog from '../DonationDialog';
 const LINKS = [
   { label: 'Home', href: '/', textColor: 'white' },
   { label: 'Approach', href: '/approach', textColor: 'black' },
-  { label: 'About', href: '/about', textColor: 'black' },
-  { label: '', href: '/auction', textColor: 'white' },
+  // { label: 'About', href: '/about', textColor: 'black' },
 ];
 
 export default function Header() {
