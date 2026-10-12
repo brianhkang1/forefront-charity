@@ -104,7 +104,7 @@ export default async function ApproachPage() {
         </div>
       </section>
 
-      <VisionApproachImpact />
+      {/* <VisionApproachImpact /> */}
       <FourPillars stats={fourPillarsStatsData} />
       <ExponentialImpact />
       <OurVision />

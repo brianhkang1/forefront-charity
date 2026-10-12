@@ -155,7 +155,7 @@ export default async function HomePage() {
 
       <div className='m-12 flex flex-col items-center gap-9 not-md:m-6 not-md:gap-6'>
         <FourPillars stats={fourPillarsStatsData} />
-        <PlatinumTransparency page={PAGE.HOME} />
+        {/* <PlatinumTransparency page={PAGE.HOME} /> */}
         <Partnership />
         <Changemakers />
         <LivingTheMission />
